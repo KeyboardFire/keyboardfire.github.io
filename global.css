@@ -5,6 +5,7 @@ body {
     line-height: 1.6;
     font-size: 18px;
     font-family: sans-serif;
+    text-align: justify;
     color: #444;
     padding: 0px 10px;
 }
@@ -13,13 +14,16 @@ header {
     text-align: center;
 }
 
+a {
+    color: #FF7040;
+}
+
 nav {
     font-size: 26px;
 }
 
 nav a {
     text-decoration: none;
-    color: #FF7040;
 }
 
 nav a#active {
