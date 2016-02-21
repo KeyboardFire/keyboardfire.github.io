@@ -1,0 +1,27 @@
+body {
+    background-color: #FFFAF0;
+    margin: 40px auto;
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #444;
+    padding: 0px 10px;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    font-size: 26px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FF7040;
+}
+
+nav a#active {
+    color: #FF0000;
+}
