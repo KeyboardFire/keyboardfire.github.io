@@ -3,4 +3,4 @@ kfp: KeyboardFire's preprocessor
 
 Usage:
 
-    ./kfp
+    cargo run
