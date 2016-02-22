@@ -11,7 +11,11 @@ extern crate chrono;
 use self::chrono::*;
 
 struct Post {
-    title: String, date: NaiveDate, summary: String, slug: String
+    title: String,
+    date: NaiveDate,
+    summary: String,
+    slug: String,
+    category: String
 }
 
 pub fn gen_blog() -> Result<(), io::Error> {
@@ -19,11 +23,8 @@ pub fn gen_blog() -> Result<(), io::Error> {
     //   chronological order, so that we can generate a.) /blog.html and b.)
     //   /blog/somecategory/index.html
     // this is that thing
-    let mut posts = HashMap::new();
+    let mut posts = Vec::<Post>::new();
     let categories = vec!["lojban", "books"];
-    for category in categories.clone() {
-        posts.insert(category, Vec::<Post>::new());
-    }
 
     // slurp the entire template file into memory
     // yum
@@ -64,18 +65,14 @@ pub fn gen_blog() -> Result<(), io::Error> {
             let mut bw = BufWriter::new(try!(File::create(format!(
                 "../blog/{}/{}.html", category, &fname[..fname.len()-3]))));
 
-            if let Some(v) = posts.get_mut(category) {
-                v.push(Post {
-                    title: title.to_string(),
-                    date: NaiveDate::parse_from_str(date, "%Y-%m-%d")
-                        .expect("metadata date parse error"),
-                    summary: summary.to_string(),
-                    slug: (&fname[..fname.len()-3]).to_string()
-                });
-            } else {
-                println!("warning: category {} not found, ignoring post",
-                        category);
-            }
+            posts.push(Post {
+                title: title.to_string(),
+                date: NaiveDate::parse_from_str(date, "%Y-%m-%d")
+                    .expect("metadata date parse error"),
+                summary: summary.to_string(),
+                slug: (&fname[..fname.len()-3]).to_string(),
+                category: category.to_string()
+            });
 
             for template_line in template.lines() {
                 if template_line.ends_with("<!--<>-->") {
@@ -100,12 +97,10 @@ pub fn gen_blog() -> Result<(), io::Error> {
     }
 
     // sort the list of posts by date real quick
-    for (_, v) in posts.iter_mut() {
-        v.sort_by(|a, b| b.date.cmp(&a.date));
-    }
+    posts.sort_by(|a, b| b.date.cmp(&a.date));
 
     // now let's generate /blog/somecategory/index.html next
-    for category in categories.clone() {
+    for category in categories.iter() {
         let mut bw = BufWriter::new(try!(File::create(format!(
             "../blog/{}/index.html", category))));
 
@@ -116,9 +111,8 @@ pub fn gen_blog() -> Result<(), io::Error> {
 
                 try!(writeln!(bw, "{}<h2>Posts in category [{}]</h2>",
                         indent, category));
-                for post in posts.get(category).unwrap() {
-                    try!(writeln!(bw, "{}", post_html(post, category, &indent,
-                                                      3)));
+                for post in posts.iter().filter(|p| p.category == *category) {
+                    try!(writeln!(bw, "{}", post_html(post, &indent)));
                 }
             } else {
                 try!(writeln!(bw, "{}", template_line));
@@ -139,16 +133,17 @@ pub fn gen_blog() -> Result<(), io::Error> {
             let indent: String = (0..line.find(|c| c != ' ').unwrap())
                 .map(|_| ' ').collect();
 
-            try!(writeln!(bw, "{}<style>.post{{margin-left:20px}}</style>",
-                          indent));
-            for category in categories.clone() {
-                try!(writeln!(bw,
-                 "{0}<section class='category'>\
-                \n{0}    <h3>[<a href='/blog/{1}'>{1}</a>]</h3>\
-                \n{0}</section>
-                \n{2}",
-                indent, category, post_html(&posts.get(category).unwrap()[0],
-                    category, &indent, 4)));
+            // write categories
+            try!(writeln!(bw, "{}<p>Categories:", indent));
+            for category in categories.iter() {
+                try!(writeln!(bw, "{}    [<a href='/blog/{}'>{1}</a>]",
+                    indent, category));
+            }
+            try!(writeln!(bw, "{}</p>", indent));
+
+            // write posts
+            for post in posts.iter() {
+                try!(writeln!(bw, "{}", post_html(post, &indent)));
             }
         } else {
             try!(writeln!(bw, "{}", line));
@@ -159,16 +154,15 @@ pub fn gen_blog() -> Result<(), io::Error> {
     Ok(())
 }
 
-fn post_html(post: &Post, category: &str, indent: &String, header_level: usize)
-        -> String {
+fn post_html(post: &Post, indent: &String) -> String {
     format!(
      "{0}<section class='post'>\
-    \n{0}   <h{1}>\
-    \n{0}       <a href='/blog/{2}/{3}.html'>{4}</a>\
-    \n{0}       <div class='subheader'>{5}</div>\
-    \n{0}   </h{1}>\
-    \n{0}   <p>{6}</p>\
+    \n{0}   <h3>\
+    \n{0}       <a href='/blog/{1}/{2}.html'>{3}</a>\
+    \n{0}       [<a href='/blog/{1}'>{1}</a>]
+    \n{0}       <div class='subheader'>{4}</div>\
+    \n{0}   </h3>\
+    \n{0}   <p>{5}</p>\
     \n{0}</section>",
-    indent, header_level, category, post.slug, post.title, post.date,
-        post.summary)
+    indent, post.category, post.slug, post.title, post.date, post.summary)
 }
