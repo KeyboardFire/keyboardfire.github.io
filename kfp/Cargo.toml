@@ -5,3 +5,4 @@ authors = ["andy@keyboardfire.com"]
 
 [dependencies]
 hoedown = "3.0.3"
+chrono = "0.2.19"
