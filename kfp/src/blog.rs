@@ -24,7 +24,6 @@ pub fn gen_blog() -> Result<(), io::Error> {
     //   /blog/somecategory/index.html
     // this is that thing
     let mut posts = Vec::<Post>::new();
-    let categories = vec!["lojban", "books"];
 
     // slurp the entire template file into memory
     // yum
@@ -98,6 +97,16 @@ pub fn gen_blog() -> Result<(), io::Error> {
 
     // sort the list of posts by date real quick
     posts.sort_by(|a, b| b.date.cmp(&a.date));
+
+    // also get a list of categories sorted by frequency
+    let mut full_categories: Vec<String> = posts.iter()
+        .map(|p| p.category.clone()).collect();
+    full_categories.sort();
+    let mut categories = full_categories.clone();
+    categories.dedup();
+    categories.sort_by(|a, b|
+        full_categories.iter().filter(|&x| x == b).count().cmp(
+            &full_categories.iter().filter(|&x| x == a).count()));
 
     // now let's generate /blog/somecategory/index.html next
     for category in categories.iter() {
