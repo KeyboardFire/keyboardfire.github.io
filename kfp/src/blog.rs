@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 use std::fs::{self, File};
-use std::io::{self, Read, Write, BufWriter};
+use std::io::{self, Read, BufRead, BufReader, Write, BufWriter};
 
 extern crate hoedown;
 use self::hoedown::*;
@@ -14,18 +14,14 @@ struct Post {
     title: String, date: NaiveDate, summary: String, slug: String
 }
 
-pub fn patch_blog() -> Result<(), io::Error> {
-    // TODO
-    Ok(())
-}
-
 pub fn gen_blog() -> Result<(), io::Error> {
     // we need to keep a thing of all the posts in each category, in
     //   chronological order, so that we can generate a.) /blog.html and b.)
     //   /blog/somecategory/index.html
     // this is that thing
     let mut posts = HashMap::new();
-    for category in vec!["lojban", "books"] {
+    let categories = vec!["lojban", "books"];
+    for category in categories.clone() {
         posts.insert(category, Vec::<Post>::new());
     }
 
@@ -109,7 +105,7 @@ pub fn gen_blog() -> Result<(), io::Error> {
     }
 
     // now let's generate /blog/somecategory/index.html next
-    for category in posts.keys() {
+    for category in categories.clone() {
         let mut bw = BufWriter::new(try!(File::create(format!(
             "../blog/{}/index.html", category))));
 
@@ -121,15 +117,8 @@ pub fn gen_blog() -> Result<(), io::Error> {
                 try!(writeln!(bw, "{}<h2>Posts in category [{}]</h2>",
                         indent, category));
                 for post in posts.get(category).unwrap() {
-                    try!(writeln!(bw,
-                     "{0}<section class='post'>\
-                    \n{0}   <h3>\
-                    \n{0}       <a href='/blog/{1}/{2}.html'>{3}</a>\
-                    \n{0}       <div class='subheader'>{4}</div></h3>\
-                    \n{0}   <p>{5}</p>\
-                    \n{0}</section>",
-                    indent, category, post.slug, post.title, post.date,
-                        post.summary));
+                    try!(writeln!(bw, "{}", post_html(post, category, &indent,
+                                                      3)));
                 }
             } else {
                 try!(writeln!(bw, "{}", template_line));
@@ -137,5 +126,49 @@ pub fn gen_blog() -> Result<(), io::Error> {
         }
     }
 
+    // finally, patch /blog.html
+    // there's no better way to do this than by copying down to a temp file and
+    //   then replacing the original
+    try!(fs::copy("../blog.html", "../_blog.html"));
+    let (br, mut bw) = (
+        BufReader::new(try!(File::open("../_blog.html"))),
+        BufWriter::new(try!(File::create("../blog.html"))));
+    for br_line in br.lines() {
+        let line = br_line.unwrap();
+        if line.ends_with("<!--<C>-->") {
+            let indent: String = (0..line.find(|c| c != ' ').unwrap())
+                .map(|_| ' ').collect();
+
+            try!(writeln!(bw, "{}<style>.post{{margin-left:20px}}</style>",
+                          indent));
+            for category in categories.clone() {
+                try!(writeln!(bw,
+                 "{0}<section class='category'>\
+                \n{0}    <h3>[<a href='/blog/{1}'>{1}</a>]</h3>\
+                \n{0}</section>
+                \n{2}",
+                indent, category, post_html(&posts.get(category).unwrap()[0],
+                    category, &indent, 4)));
+            }
+        } else {
+            try!(writeln!(bw, "{}", line));
+        }
+    }
+    try!(fs::remove_file("../_blog.html"));
+
     Ok(())
+}
+
+fn post_html(post: &Post, category: &str, indent: &String, header_level: usize)
+        -> String {
+    format!(
+     "{0}<section class='post'>\
+    \n{0}   <h{1}>\
+    \n{0}       <a href='/blog/{2}/{3}.html'>{4}</a>\
+    \n{0}       <div class='subheader'>{5}</div>\
+    \n{0}   </h{1}>\
+    \n{0}   <p>{6}</p>\
+    \n{0}</section>",
+    indent, header_level, category, post.slug, post.title, post.date,
+        post.summary)
 }

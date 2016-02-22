@@ -29,3 +29,13 @@ nav a {
 nav a#active {
     color: #FF0000;
 }
+
+.subheader {
+    font-size: 16px;
+    font-style: italic;
+    color: #888;
+}
+
+/* these really don't belong here but... */
+.post h3, .post h4 { margin-bottom: 0px; }
+.post p { margin-top: 0px; }
