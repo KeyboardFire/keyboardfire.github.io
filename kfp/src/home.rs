@@ -14,7 +14,10 @@ pub fn gen_home() -> Result<(), io::Error> {
         if !path.ends_with("TEMPLATE.html") {
             let br = BufReader::new(try!(File::open(path.clone())));
             let fname = path.file_name().unwrap().to_str().unwrap();
-            let mut bw = BufWriter::new(try!(File::create(format!("../{}", fname))));
+            let mut bw = BufWriter::new(try!(File::create(
+                if fname == "index.html" { "../index.html".to_string() }
+                else { format!("../{}/index.html", &fname[..fname.len()-5]) }
+            )));
 
             let mut template_lines = template.lines();
             let mut indent_level = 0;
@@ -29,8 +32,8 @@ pub fn gen_home() -> Result<(), io::Error> {
                                 template_line[..idx-1].to_string().rfind('/')
                                     .unwrap()+1..idx-2];
                             try!(writeln!(bw, "{}{}>{}", &template_line[..idx-1],
-                                    if fname == target_path { " id='active'" }
-                                        else { "" },
+                                    if &fname[..fname.len()-5] == target_path
+                                        { " id='active'" } else { "" },
                                     &template_line[idx+10..]));
                         },
                         None => {

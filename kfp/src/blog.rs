@@ -129,10 +129,10 @@ pub fn gen_blog() -> Result<(), io::Error> {
     // finally, patch /blog.html
     // there's no better way to do this than by copying down to a temp file and
     //   then replacing the original
-    try!(fs::copy("../blog.html", "../_blog.html"));
+    try!(fs::copy("../blog/index.html", "../_blog.html"));
     let (br, mut bw) = (
         BufReader::new(try!(File::open("../_blog.html"))),
-        BufWriter::new(try!(File::create("../blog.html"))));
+        BufWriter::new(try!(File::create("../blog/index.html"))));
     for br_line in br.lines() {
         let line = br_line.unwrap();
         if line.ends_with("<!--<C>-->") {
