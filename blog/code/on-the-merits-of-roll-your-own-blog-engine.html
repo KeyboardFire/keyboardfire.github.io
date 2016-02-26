@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width'>
+        <title>Keyboard Fire&mdash;blog</title>
+        <link rel='stylesheet' type='text/css' href='/global.css'>
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href='/'><img src='/logo.png' alt='Keyboard Fire'></a>
+                <nav>
+                    <a href='/portfolio'>Portfolio</a> &bull;
+                    <a href='/blog' id='active'>Blog</a> &bull;
+                    <a href='/contact'>Contact</a>
+                </nav>
+            </header>
+            <h2>On the merits of "roll your own blog engine"<div class='subheader'>posted on 2016-02-25 in category <a href='/blog/code'>code</a></div></h2>
+            <!--METADATA
+            category: code
+            date: 2016-02-25
+            title: On the merits of "roll your own blog engine"
+            -->
+            
+            <p>This blog, along with the rest of my website, runs on a (currently, as of 1st
+            draft) <a href="https://github.com/KeyboardFire/kfp/tree/f20718fc5db49fdaf38b02e8263d37aba00de2c8">214 SLOC</a> Rust backend. So my first blog post might as well be an
+            explanation of why I chose to do it this way.</p>
+            
+            <p>Of course, building a blog engine / CMS from scratch is an oft-ridiculed
+            endeavor. Don&#39;t reinvent the wheel, it&#39;s a waste of time, people have already
+            done it far better than you ever can, etc. There&#39;s even this quote from Jeff
+            Atwood, cofounder of Stack Exchange, creator of Discourse, and blogger on
+            <a href="http://blog.codinghorror.com/">Coding Horror</a>:</p>
+            
+            <blockquote>
+            <p>Although I&#39;ll admit I&#39;ve been sorely tempted myself, I wonder if writing your
+            own blog software isn&#39;t a form of procrastination in and of itself.</p>
+            
+            <p><sub>(<a href="http://blog.codinghorror.com/on-frameworkitis/">source</a>)</sub></p>
+            </blockquote>
+            
+            <p>So why <em>did</em> I resolve to create the tentatively-named <code>kfp</code>, &quot;KeyboardFire
+            preprocessor&quot;?</p>
+            
+            <ul>
+            <li><p><strong>It&#39;s seamless.</strong> I had previously tried both Wordpress and
+            <a href="http://dropplets.com/">Dropplets</a>, and while I could wrestle with them both
+            to get them to look <em>somewhat</em> like the rest of my website, they were by no
+            means perfect. By necessity, my blog has always looked significantly
+            different than the remainder of my hand-coded site.</p>
+            
+            <p>With an integrated solution, that&#39;s no longer the case. The way I&#39;ve
+            structured <code>kfp</code>, it allows me to simply use the same <code>TEMPLATE.html</code> for
+            both the blog and any other page. This lets me achieve a flawless
+            continuity throughout my website, even in the source code: I&#39;ve added the
+            extra touch of adapting to indentation level so that the HTML source code
+            could even theoretically be believed to have been written by hand, should
+            one not know better.</p></li>
+            <li><p><strong>Infinite customizability.</strong> Since <code>kfp</code> is strictly a <em>single-purpose</em>
+            program, I&#39;m not restricted to generalizations that platforms like Wordpress
+            have to make in order to be usable by millions of people. Sure, I can patch
+            the Wordpress source code, but naturally the codebase is <em>gigantic</em>, and I
+            don&#39;t have the huge advantage of knowing the source code like the back of my
+            hand, so thoroughly that I might have written it myself....</p>
+            
+            <p>As an example, take Markdown. <code>kfp</code> automagically renders <code>.md</code> blog posts
+            written in Markdown format (with a short metadata block at the top) into
+            HTML because <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is
+            substantially easier to write in than raw HTML. However, different Markdown
+            renderers can have slightly different behavior; some have custom features
+            such as footnotes, for instance. With a blog engine written from scratch, I
+            can customize my markdown renderer without limitation. I can use <em>any</em>
+            external renderer written in <em>any</em> language—I can even add my own
+            specially-made features.</p>
+            
+            <p>Another more important example is how it works server-side. Wordpress runs
+            on PHP, which means it requires the web host to support PHP in order to
+            work. Since I&#39;m hosting my website on Github Pages, I only get to serve
+            static HTML. So instead of dynamically running code every time a user
+            requests a page, I simply manually run <code>kfp</code> on my own machine and then
+            push to Github. This way, all files served to the client are static HTML.
+            <code>kfp</code> is also not dependent on any specific PHP version or anything of the
+            like; it&#39;ll continue to work regardless of which webhost I&#39;m using.</p></li>
+            <li><p><strong>Avoided complexity.</strong> As I mentioned in the previous point, Wordpress has
+            the extra burden of catering to millions of people with thousands of
+            different use cases. <code>kfp</code> is 214 lines of source code. Speaks for itself,
+            really.</p>
+            
+            <p>And yes, yes, I don&#39;t have to use all of Wordpress&#39;s features, and disk
+            space is cheap, and it&#39;s really not that big of a deal. But it&#39;s simply an
+            extra perk, another benefit that I can get from going about things this
+            way.</p></li>
+            <li><p><strong>For practice!</strong> I&#39;ve learned a lot about Rust from writing <code>kfp</code>. As
+            always, the best way to learn a new programming language is to just make
+            stuff in it, and writing <code>kfp</code> with best practices in mind has taught me a
+            lot. It&#39;s surprisingly fun, too.</p></li>
+            </ul>
+            
+            <p>I&#39;m pretty happy with the way <code>kfp</code> and the newest (and hopefully last)
+            iteration of my website design have turned out. Although, I must confess...
+            Jeff Atwood&#39;s quote about procrastination rings a lot truer than I&#39;ve been
+            indicating. ;)</p>
+        </main>
+    </body>
+</html>
