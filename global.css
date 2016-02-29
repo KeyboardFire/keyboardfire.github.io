@@ -14,6 +14,15 @@ header {
     text-align: center;
 }
 
+a#logo {
+    display: block;
+    margin: 0px auto;
+    width: 355px;
+    height: 185px;
+    background-image: url(/logo.png);
+    background-image: url(/logo.svg), linear-gradient(transparent, transparent);
+}
+
 a {
     color: #FF6000;
 }
