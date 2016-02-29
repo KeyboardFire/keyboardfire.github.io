@@ -15,7 +15,7 @@ header {
 }
 
 a {
-    color: #FF7040;
+    color: #FF6000;
 }
 
 nav {
@@ -24,10 +24,15 @@ nav {
 
 nav a {
     text-decoration: none;
+    transition: color 0.25s;
 }
 
 nav a#active {
     color: #FF0000;
+}
+
+nav a:hover {
+    color: #FFB000;
 }
 
 .subheader {
