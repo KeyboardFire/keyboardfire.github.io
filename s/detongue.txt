@@ -1,9 +1,11 @@
-Phonetic inventory:
-p b ɸ β ʙ̥ ʙ ʔ h pʼ ɓ[?]
+Phonemic inventory:
+p b ɸ β ʙ̥ ʙ ʔ h pʼ
       unrounded  rounded
 high  ɪ̈~ɘ        ʊ̈~ɵ
 low   ɐ~ɜ        ɞ̞~ɞ
 Diphthongs may change in rounding or height but not both
+/ɓ/ is in complementary distribution with /b/
+    the stop occurs before /β/, and the implosive everywhere else
 
 Syllable structure: 1 or more consonants, vowel
 (C)(C)(C)(C)(C)(C)V
@@ -13,7 +15,6 @@ Phonotactics for consonant clusters:
 - fricatives can be followed by same-voiced or glottal stops
 - trills can be followed by glottal stop
 - glottal stop and ejective can be followed by fricatives or ejective
-- ɓ cannot appear in clusters
 
 (left: first consonant, right: second consonant)
 
