@@ -1,0 +1,206 @@
+Phonetic inventory:
+p b ɸ β ʙ̥ ʙ ʔ h pʼ ɓ[?]
+      unrounded  rounded
+high  ɪ̈~ɘ        ʊ̈~ɵ
+low   ɐ~ɜ        ɞ̞~ɞ
+Diphthongs may change in rounding or height but not both
+
+Syllable structure: 1 or more consonants, vowel
+(C)(C)(C)(C)(C)(C)V
+
+Phonotactics for consonant clusters:
+- stops can be followed by fricatives of same voicing
+- fricatives can be followed by same-voiced or glottal stops
+- trills can be followed by glottal stop
+- glottal stop and ejective can be followed by fricatives or ejective
+- ɓ cannot appear in clusters
+
+(left: first consonant, right: second consonant)
+
+   p b ɸ β ʙ̥ ʙ h ʔ pʼ
+p      *       *
+b        *     *
+ɸ  *           * * *
+β    *         * * *
+ʙ̥              * *
+ʙ              * *
+h  * * * *       * *
+ʔ      * *     *   *
+pʼ     * *     *   *
+
+p, pf, ph:                      grammar words
+b:                              pronouns
+vb, vh, vx, vpx, hb, hv, xv:    nouns
+fp, fh, fx, fpx, hp, hf, xf:    verbs
+f, v, h:                        semi-cases
+pp, ppx, pph, bb, bbx, bbh:     adjectives
+x, px:                          logic
+available: bh, bv, hx, hpx, xh, px*
+
+`xsel -b`.split($/)[1..-1].map{|x|x[2..-1].scan(/../).map{|c|c[-1]}*''}.map{|x|x.size.times.select{|i|x[i]==?*}};f=->indices,depth{depth==0?1:indices.map{|idx|f[data[idx],depth-1]}.inject(:+)};8.times.map{|i|f[data.size.times,i+1]}
+=> [9, 30, 128, 508, 2076, 8380, 34004, 137668]
+
+Orthography:
+- characters exist for: pbɸβʔh
+- trills are written by doubling the plosive of respective voicing
+- ejective/implosive is written as p/b respectively followed by ʔ
+- vowel characters: ɪ̈ʊ̈ɐɞ̞, rounding-diphthong-marker, height-diphthong-marker
+
+Latin script (unofficial, not actually used by "natives"):
+- consonants: pbfvxh
+- vowels: iuao (no diphthong markers--just write out the diphthong)
+
+"Cases" ([thematic] relations):
+-i  {P}atient  PATIENT (direct object, absolutive/accusative)
+-u  {A}gent    AGENT (subject, ergative/nominative)
+-a  {G}oal     GOAL/RECIPIENT (to/for, indirect object, dative) / also: [to/for] [audience/observer]
+-o  {U}nknown  (genitive-ish) [event/abstract/concept/idea/[vague/unspecified] relation]
+
+P is-a-potato
+P is-eaten by-A
+P is-given by-A to-G
+P is-written by-A with-I
+P is-a-runner in-manner-F
+
+([[) giveP potatoP giveA meP giveG youP ]]
+([[) wantA meP wantP [[ eatA youP ]] ]]
+"eating makes you hungry"
+([[) causeP [[ hungryP ]] causeA [[ eatP ]] ]]
+
+Digits (0-9)     pa po piu pui pia pai pou puo poa pao
+Negative sign    pi
+Decimal point    pu
+Fraction bar     pfa
+Portion          pfo
+Greater than     pfi
+Less than        pfu
+Word question    pfiu
+Num question     pfui
+Irrealis/gnomic  pfou
+(Time tense)     pfuo
+Imperfective     pfao
+Perfective       pfoa
+Inchoative       pfai
+Cessative        pfia
+Start clause     phi
+End clause       phu
+End all clauses  pha
+Variables        0 or more pho + ph + any diphthong
+
+note: roots with rounding diphthongs are marked *, height diphthongs marked
+      with ^
+
+Keyword     Root    Basic definition                                Notes
+
+me          b       P is-me
+you         b*      P is-you
+person      b^      P is-a-person                                   human, he, she, they, used in some forms of we; -1: thing, it
+star        vx*     P is-a-star
+moon        vx^     P is-a-moon
+water       vb      P is-water
+sky         vb*     P is-the-sky                                    air
+stone       bv      P is-stone
+sand        bv*     P is-sand
+earth       bv^     P is-earth
+cloud       vb^     P is-a-cloud
+smoke       vbv     P is-smoke
+fire        vbv*    P is-fire
+ash         vbv^    P is-ash
+path        bvb     P is-a-path-to G                                route
+mountain    bvb*    P is-a-mountain                                 0.5: hill
+day         vx      P is-a-day                                      -1: night
+fish        hv      P is-a-fish
+bird        hv*     P is-a-bird
+dog         hv^     P is-a-dog
+louse       hvb     P is-a-louse
+tree        hb      P is-a-tree
+seed        hb*     P is-a-seed
+leaf        hb^     P is-a-leaf
+root        hbv     P is-a-root
+bark        hbv*    P is-bark
+grease      xvxv    P is-grease
+egg         xvxv*   P is-an-egg
+
+part        hp      P is-part-of A
+same        hp*     P is-the-same-as A                              -1: other, 0.5: similar; use with form
+know        xfx     P is-known-by A                                 0.5: think/believe
+need        fx      P is-needed-by A                                0.5: want/desire
+feel        xf      P is-felt-by A                                  see/hear/smell with instrument=body part
+speak       xfx*    P is-said-by A
+language    xfx^    P is-the-language-of A                          code, encoding
+cause       fp      P is-caused-by A                                do, happen, because, if (subj./irrealis-gnomic mood)
+go          fp*     P is-gone-from-by A to G                        come, leave, move; use with medium=air/water for fly/swim
+have        fp^     P is-possessed-by A                             own, in, inside
+time        hf*     P is-the-time-of A
+place       hf      P is-the-place-of A
+touch       xf*     P is-touched-by A                               use with locus
+can         fx*     P is-able-to-be-done-by A                       ability
+must        fx^     P is-required-to-be-done-by A according-to G    0.5: should
+consume     fh*     P is-consumed-by A                              eat, drink
+strike      xf^     P is-struck-by A                                bite with instrument=teeth
+give        fh      P is-given-by A to G
+hot         fpf^    P is-heated-by A                                -1: cold
+full        fpfp    P is-filled-by A                                -1: empty
+wet         fpf     P is-wet-by A                                   -1: dry
+burn        fpf*    P is-burnt-by A
+name        hp^     P is-a-name-used-by A for G                     call
+live        fpx*    P is-born-to A                                  ipfv: alive, -1 pfv: P is-killed-by A, -1 ipfv: dead
+sleep       fpx^    P is-put-to-sleep-by A                          ipfv: asleep, -1 pfv: P is-woken-up-by A, -1 ipfv: wake up, awaken
+lie         fpx     P is-laid-by A on G                             P is-a-lier (intrans), lay, use with locus=body part for sit/stand
+most        pxpx    P is-most-among A                               nonstandard agent; 0.5: more, -0.5: less, -1: least; use with form (in property)
+
+good        bb      P is-good-to G                                  -1: bad
+big         bb*     P is-big                                        -1: small
+male        bb^     P is-male                                       -1: female, 0: other
+certain     pp      P is-certain                                    -1: impossible, 0: maybe/possible
+always      pp*     P is-always                                     -1: never, 0: sometimes, 0.5: frequently, -0.5: infrequently
+exist       pp^     P is                                            -1: nothing
+future      ppx     P is-in-the-future                              standard default now; 0: now, -1: past
+long        ppx*    P is-long-in-duration                           -1: short
+far         bbx     P is-far                                        standard default here; there, that; 0: here, this, close, -1: ???
+long        bbx*    P is-large-in-length                            -1: short; use with form (dimension)
+red         pph     P is-red                                        -1: green
+yellow      pph*    P is-yellow                                     -1: purple
+blue        pph^    P is-blue                                       -1: orange
+white       bbh     P is-white                                      -1: black
+new         ppx^    P is-new-to G                                   -1: old; use with form (property)
+round       bbx^    P is-round
+
+skin        xh^     P is-the-skin-of A
+flesh       hxh     P is-the-flesh-of A                             meat
+blood       hxh*    P is-the-blood-of A
+bone        xhxh    P is-the-bone-of A
+hair        hxh^    P is-the-hair-of A
+head        xhx     P is-the-head-of A
+ear         xh*     P is-the-hear-of A
+eye         xh      P is-the-eye-of A
+mouth       hx^     P is-the-mouth-of A
+hand        hx      P is-the-hand-of A
+foot        hx*     P is-the-foot-of A
+knee        hxpx    P is-the-knee-of A
+abdomen     xhx^    P is-the-abdomen-of A
+neck        hxpx*   P is-the-neck-of A
+horn        hxpxh   P is-the-horn-of A
+buttocks    xhx*    P is-the-buttocks-of A
+tail        hxpxh*  P is-the-tail-of A
+feather     hxpxh^  P is-the-feather-of A
+nose        xhxhx   P is-the-nose-of A                              humans don't have these; used only for animals
+tooth       xhxhx*  P is-the-tooth-of A                             humans don't have these; used only for animals
+tongue      xhxhx^  P is-the-tongue-of A                            humans don't have these; used only for animals
+claw        hpx     P is-the-claw-of A                              nail
+breast      hxpx^   P is-the-breast-of A
+heart       xhxh*   P is-the-heart-of A
+liver       xhxh^   P is-the-liver-of A
+
+instrument  f       P is-done-with-instrument A                     implement, tool, utensil, resource
+medium      f*      P is-done-via-medium A
+method      f^      P is-done-by-method A                           means, process
+form        v       P is-done-in-property A                         aspect, manner, dimension
+degree      v*      P is-done-by-amount A                           to extent
+standard    v^      P is-by-standard A                              compared with, by norm, frame of reference
+locus       h       P is-at-locus A                                 location, range, time
+
+true        x       P is-the-truth-value-of A                       P defaults to 1 (true); -1: false
+and         px      P is-the-value-of A and G                       TFFF, -1: FTTT
+or          px*     P is-the-value-of A or G                        TTTF, -1: FFFT
+iff         px^     P is-the-value-of A iff G                       TFFT, -1: FTTF
