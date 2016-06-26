@@ -68,6 +68,12 @@ P is-a-runner in-manner-F
 "eating makes you hungry"
 ([[) causeP [[ hungryP ]] causeA [[ eatP ]] ]]
 
+EXAMPLE SENTENCES
+
+"I have a big dog who needs to eat."
+fpiahviaphao fpuobi bbiuphao fxiphifhuiphaophu fxuphao
+fpia hvia phao fpuo bi bbiu phao fxi phi fhui phao phu fxu phao
+
 Digits (0-9)     pa po piu pui pia pai pou puo poa pao
 Negative sign    pi
 Decimal point    pu
