@@ -1,5 +1,5 @@
 <!--METADATA
-category: code
+tags: code foo
 date: 2016-02-25
 title: On the merits of "roll your own blog engine"
 -->
