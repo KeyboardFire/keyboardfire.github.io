@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width'>
+        <title>Keyboard Fire&mdash;blog</title>
+        <link rel='stylesheet' type='text/css' href='/global.css'>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-80800146-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <a id='logo' href='/'></a>
+                <nav>
+                    <a href='/portfolio'>Portfolio</a> &bull;
+                    <a href='/blog' id='active'>Blog</a> &bull;
+                    <a href='/contact'>Contact</a>
+                </nav>
+            </header>
+            <h2>The One True Date/Time Format<div class='subheader'>posted on 2016-08-14 with tags [<a href='/blog/time'>time</a>]</div></h2>
+            <!--METADATA
+            tags: time
+            date: 2016-08-14
+            title: The One True Date/Time Format
+            -->
+            
+            <p>Everybody I meet seems to have a different way of writing down dates and times. Of the myriad of possibilities, to me, there&#39;s one that makes the most sense.</p>
+            
+            <p>This is <strong>The One True Date/Time Format</strong>:</p>
+            
+            <blockquote>
+            <p>2016-08-13 19:45:28</p>
+            </blockquote>
+            
+            <p>That is, the year, month, and then day separated by dashes, then the hour (in
+            24-hour time), minute, and second separated by colons, with everything except
+            the year zero-padded to two digits. As noted by <a href="https://xkcd.com/1179/">the xkcd comic on date
+            formatting</a>, this is the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+            8601</a> standard. That&#39;s not the only
+            advantage it has, though.</p>
+            
+            <p>Firstly, the order of each date element makes intuitive sense. Starting with
+            the longest time period (year), the numbers are listed in order by the
+            magnitude of the amounts of time they represent, all the way down to seconds.
+            The month/day/year format, common in the US, isn&#39;t ordered logically like this,
+            but rather by how dates are spoken, which would only make sense if the date
+            were written spelled out (&quot;September 13, 2016,&quot; not &quot;8/13/16&quot;).</p>
+            
+            <p>All numbers are also padded to two digits (except the year). Combined with the
+            previous point, this means that dates and times in this format sort extremely
+            nicely.  It&#39;s also—although this is completely a matter of personal
+            opinion—more aesthetically pleasing; I&#39;ve always found &quot;12/4/2015&quot; to be quite
+            ugly and asymmetrical.</p>
+            
+            <p>As for the separators, the hyphen has the marginal advantage that it can be
+            used in file names and can&#39;t possibly be confused for the number 1. Since the
+            ISO standard also specifies hyphens as separators, with slashes being used for
+            date ranges, I prefer to use hyphens over slashes (or dots).</p>
+            
+            <p>24-hour time makes a lot more sense than 12-hour time. It gets rid of
+            confusion/ambiguity, it&#39;s more compact, it doesn&#39;t arbitrarily divide the day
+            at some irrelevant point, and it&#39;s consistent with how dates work (imagine if
+            we wrote dates differently depending on whether they were in the first or
+            second half of the year!).</p>
+            
+            <p>Obviously, I can&#39;t convince everybody to switch to this format. But I can at
+            least outline my reasons for using it, and hopefully persuade a few people.</p>
+        </main>
+    </body>
+</html>
