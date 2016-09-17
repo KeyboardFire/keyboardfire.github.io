@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<title>FLAILGULL</title>
+		<script type='text/javascript' src='jquery-1.11.1.min.js'></script>
+		<script type='text/javascript'>
+			// Toolbox
+			var t = {
+				reqAnimFrame: window.requestAnimationFrame ||
+					window.oRequestAnimationFrame ||
+					window.msRequestAnimationFrame ||
+					window.mozReqestAnimationFrame ||
+					window.webkitRequestAnimationFrame ||
+					function(f){setTimeout(f,1);},
+				
+				getImg: function(filename) {
+					var img = new Image();
+					img.src = filename;
+					return img;
+				}
+			};
+			
+			// Canvas
+			var c = {cnv: null, ctx: null, w: 1000, h: 1000};
+			
+			// Flailgull globals
+			var f = {
+				prevTime: new Date().getTime(),
+				flailgulls: []
+			};
+			
+			// Flailgull instances / objects
+			function Flailgull() {
+				// member variables
+				this.cumulDelta = 0;
+				this.frameIndex = 0;
+				this.x = 0;
+				this.y = 0;
+				
+				// constant members
+				this.FRAMES = Flailgull.DEFAULTS.FRAMES;
+				this.FLAILS_PER_SECOND = Flailgull.DEFAULTS.FLAILS_PER_SECOND;
+				this.MILLIS_PER_FRAME = 1000 / this.FRAMES.length / this.FLAILS_PER_SECOND;
+			}
+			Flailgull.DEFAULTS = {
+				FRAMES: [t.getImg('flailgullimage1.png'), t.getImg('flailgullimage2.png'), t.getImg('flailgullimage3.png'), t.getImg('flailgullimage2.png')],
+				FLAILS_PER_SECOND: 4
+			};
+			Flailgull.prototype.eachTick = function(delta) {
+				this.cumulDelta += Math.min(delta, this.MILLIS_PER_FRAME); // prevent weirdness when switching tabs and whatnot
+				if (this.cumulDelta >= this.MILLIS_PER_FRAME) {
+					this.cumulDelta -= this.MILLIS_PER_FRAME;
+					this.frameIndex = (this.frameIndex + 1) % this.FRAMES.length;
+				}
+				this.draw();
+			};
+			Flailgull.prototype.draw = function() {
+				c.ctx.drawImage(this.FRAMES[this.frameIndex], this.x, this.y);
+			};
+			
+			// Initialize and run flailgullness
+			$(function() {
+				c.cnv = $('#cnv').attr('width', c.w + 'px').attr('height', c.h + 'px');
+				c.ctx = c.cnv[0].getContext('2d');
+				
+				f.flailgulls.push(new Flailgull());
+				
+				var tick;
+				t.reqAnimFrame.call(window, tick = function() {
+					var curTime = new Date().getTime();
+					var delta = curTime - f.prevTime;
+					f.prevTime = curTime;
+					
+					c.ctx.clearRect(0, 0, 1000, 1000);
+					
+					for (var i = 0; i < f.flailgulls.length; i++) {
+						f.flailgulls[i].eachTick(delta);
+					}
+					
+					t.reqAnimFrame.call(window, tick);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>FLAILGULL</h1>
+		<noscript>YOU ARE NOT WORTHY OF FLAILGULL AS YOU HAVE JAVASCRIPT DISABLED</noscript>
+		<canvas id='cnv'>YOU ARE NOT WORTHY OF FLAILGULL AS YOUR WEB BROWSER IS OUTDATED</canvas>
+	</body>
+</html>

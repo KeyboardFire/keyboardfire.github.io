@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<title>FLAILGULL</title>
+		<script type='text/javascript' src='jquery-1.11.1.min.js'></script>
+		<script type='text/javascript'>
+			// Toolbox
+			var t = {
+				reqAnimFrame: window.requestAnimationFrame ||
+					window.oRequestAnimationFrame ||
+					window.msRequestAnimationFrame ||
+					window.mozReqestAnimationFrame ||
+					window.webkitRequestAnimationFrame ||
+					function(f){setTimeout(f,1);},
+				
+				getImg: function(filename) {
+					var img = new Image();
+					img.src = filename;
+					return img;
+				}
+			};
+			
+			// Canvas
+			var c = {
+				cnv: null, ctx: null,
+				w: 1000, h: 1000,
+				img: {
+					fg1: 'flailgullimage1.png',
+					fg2: 'flailgullimage2.png',
+					fg3: 'flailgullimage3.png',
+					fg4: 'flailgullimage2.png'
+				}
+			};
+			
+			// Flailgull globals
+			var f = {
+				prevTime: new Date().getTime(),
+				flailgulls: []
+			};
+			
+			// Flailgull instances / objects
+			function Flailgull(params) {
+				params = params || {};
+				
+				// member variables
+				this.cumulDelta = 0;
+				this.frameIndex = 0;
+				this.x = params.x || 0;
+				this.y = params.y || 0;
+				
+				// constant members
+				this.FRAMES = params.FRAMES || Flailgull.DEFAULTS.FRAMES;
+				this.FLAILS_PER_SECOND = params.FLAILS_PER_SECOND || Flailgull.DEFAULTS.FLAILS_PER_SECOND;
+				this.MILLIS_PER_FRAME = 1000 / this.FRAMES.length / this.FLAILS_PER_SECOND;
+				
+				// more members that relate to constants
+				this.w = params.w || this.FRAMES[0].width;
+				this.h = params.h || this.FRAMES[0].height;
+				if ((params.w && !params.h) || (params.h && !params.w)) {
+					// scale
+					if (params.w) this.h *= (params.w / this.FRAMES[0].width);
+					if (params.h) this.w *= (params.h / this.FRAMES[0].height);
+				}
+			}
+			Flailgull.DEFAULTS = {
+				// this will really set FRAMES to [undefined x 4], and it will be reset in onload
+				FRAMES: [c.img.fg1, c.img.fg2, c.img.fg3, c.img.fg4],
+				FLAILS_PER_SECOND: 4
+			};
+			Flailgull.prototype.eachTick = function(delta) {
+				this.cumulDelta += Math.min(delta, this.MILLIS_PER_FRAME); // prevent weirdness when switching tabs and whatnot
+				if (this.cumulDelta >= this.MILLIS_PER_FRAME) {
+					this.cumulDelta -= this.MILLIS_PER_FRAME;
+					this.frameIndex = (this.frameIndex + 1) % this.FRAMES.length;
+				}
+				this.draw();
+			};
+			Flailgull.prototype.draw = function() {
+				c.ctx.drawImage(this.FRAMES[this.frameIndex], this.x, this.y, this.w, this.h);
+			};
+			
+			// Initialize and run flailgullness
+			$(function() {
+				// Preload images before everything else
+				var imgCount = 0, imgLoadedCount = 0;
+				for (var img in c.img) {
+					imgCount++;
+					var imgEl = new Image();
+					imgEl.onload = function() {
+						if (++imgLoadedCount >= imgCount) {
+							initFlailgull();
+						}
+					};
+					imgEl.src = c.img[img];
+					c.img[img] = imgEl;
+				}
+				// Fix flailgull default images
+				Flailgull.DEFAULTS.FRAMES = [c.img.fg1, c.img.fg2, c.img.fg3, c.img.fg4];
+				
+				function initFlailgull() {
+					// Set up canvas
+					c.cnv = $('#cnv').attr('width', c.w + 'px').attr('height', c.h + 'px');
+					c.ctx = c.cnv[0].getContext('2d');
+					
+					// Create flailgulls
+					var offsetY = new Flailgull({w:200}).h;
+					for (var i = 0; i < 35; i++) {
+						f.flailgulls.push(new Flailgull({w: 200, x: (i%5)*200, y: (i/5|0)*offsetY}));
+					}
+					
+					// Start ticks
+					var tick;
+					t.reqAnimFrame.call(window, tick = function() {
+						var curTime = new Date().getTime();
+						var delta = curTime - f.prevTime;
+						f.prevTime = curTime;
+						
+						c.ctx.clearRect(0, 0, 1000, 1000);
+						
+						for (var i = 0; i < f.flailgulls.length; i++) {
+							f.flailgulls[i].eachTick(delta);
+						}
+						
+						t.reqAnimFrame.call(window, tick);
+					});
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<h1>FLAILGULL</h1>
+		<noscript>YOU ARE NOT WORTHY OF FLAILGULL AS YOU HAVE JAVASCRIPT DISABLED</noscript>
+		<canvas id='cnv'>YOU ARE NOT WORTHY OF FLAILGULL AS YOUR WEB BROWSER IS OUTDATED</canvas>
+	</body>
+</html>
