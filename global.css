@@ -1,12 +1,11 @@
 body {
-    background-color: #FFFAF0;
+    background-color: #181818;
+    color: #d8d8d8;
     margin: 40px auto;
     max-width: 800px;
     line-height: 1.6;
     font-size: 18px;
     font-family: sans-serif;
-    text-align: justify;
-    color: #444;
     padding: 0px 10px;
 }
 
@@ -24,7 +23,7 @@ a#logo {
 }
 
 a {
-    color: #FF6000;
+    color: #dc9656;
 }
 
 nav {
@@ -37,17 +36,18 @@ nav a {
 }
 
 nav a#active {
-    color: #FF0000;
+    color: #ab4642;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #FFB000;
+    color: #f7ca88;
 }
 
 .subheader {
     font-size: 16px;
     font-style: italic;
-    color: #888;
+    color: #585858;
 }
 
 /* these really don't belong here but... */
