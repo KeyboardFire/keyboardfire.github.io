@@ -1,0 +1,37 @@
+body {
+    background-color: #181818;
+    color: #d8d8d8;
+    font: 12pt 'Noto Sans', sans-serif;
+}
+
+#container {
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 0 10px;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 11pt;
+    margin: 0 0 1em;
+}
+
+#download {
+    text-indent: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px dotted #585858;
+}
+
+#download p {
+    margin: 0;
+}
+
+.full { white-space: nowrap; font-style: italic; color: #a1b56c; }
+.part { white-space: nowrap; font-style: italic; color: #f7ca88; }
+.no { white-space: nowrap; font-style: italic; color: #ab4642; }
+
+a { color: #86c1b9; }
+a:visited { color: #ba8baf; }
