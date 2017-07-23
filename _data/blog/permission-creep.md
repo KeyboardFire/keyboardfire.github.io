@@ -3,10 +3,10 @@ tags: code koan linux
 date: 2016-08-19
 title: Permission creep
 -->
-A novice monk, walking through the temple, came across a master performing
-system administration tasks. As the monk watched, the master, needing elevated
-privileges to delete a file, typed `su` to log in as root, entered a long and
-convoluted password, ran a single command, and exited the root shell.
+A novice monk, walking through the temple, came across a master performing system administration tasks.
+As the monk watched, the master, needing elevated privileges to delete a file,
+typed `su` to log in as root, entered a long and convoluted password, ran a
+single command, and exited the root shell.
 
 The monk approached the master and asked, "Why do you not stay logged in as
 root all the time, so that there is no need to go through so much trouble to
