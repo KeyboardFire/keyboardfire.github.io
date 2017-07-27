@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss version='2.0'>
+  <channel>
+    <title>KeyboardFire—blog</title>
+    <link>http://keyboardfire.com/blog/</link>
+    <description>ramblings on various topics</description>
+    <language>en</language>
+    <item>
+      <title>On math and memorization</title>
+      <link>http://keyboardfire.com/blog/on-math-and-memorization</link>
+      <description>Some thoughts on the current state of math education and how it could be improved.</description>
+      <pubDate>Tue, 09 May 2017 17:00:00 GMT</pubDate>
+      <guid>http://keyboardfire.com/blog/on-math-and-memorization</guid>
+    </item>
+    <item>
+      <title>Permission creep</title>
+      <link>http://keyboardfire.com/blog/permission-creep</link>
+      <description>A novice monk, walking through the temple, came across a master performing system administration tasks.</description>
+      <pubDate>Fri, 19 Aug 2016 17:00:00 GMT</pubDate>
+      <guid>http://keyboardfire.com/blog/permission-creep</guid>
+    </item>
+    <item>
+      <title>The One True Date/Time Format</title>
+      <link>http://keyboardfire.com/blog/the-one-true-date-time-format</link>
+      <description>Everybody I meet seems to have a different way of writing down dates and times. Of the myriad of possibilities, to me, there&#39;s one that makes the most sense.</description>
+      <pubDate>Sun, 14 Aug 2016 17:00:00 GMT</pubDate>
+      <guid>http://keyboardfire.com/blog/the-one-true-date-time-format</guid>
+    </item>
+    <item>
+      <title>On the merits of "roll your own blog engine"</title>
+      <link>http://keyboardfire.com/blog/on-the-merits-of-roll-your-own-blog-engine</link>
+      <description>This blog, along with the rest of my website, runs on a (currently, as of 1st draft) 214 SLOC Rust backend. So my first blog post might as well be an explanation of why I chose to do it this way.</description>
+      <pubDate>Thu, 25 Feb 2016 17:00:00 GMT</pubDate>
+      <guid>http://keyboardfire.com/blog/on-the-merits-of-roll-your-own-blog-engine</guid>
+    </item>
+  </channel>
+</rss>
