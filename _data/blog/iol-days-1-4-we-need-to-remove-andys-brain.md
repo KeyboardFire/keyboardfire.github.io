@@ -1,6 +1,6 @@
 <!--METADATA
 tags: iol
-date: 2017-07-27
+date: 2017-07-30
 title: IOL, days 1-4: We need to remove Andy's brain
 -->
 I'm going to the International Linguistics Olympiad! So I figured I'd document what happens along the way.
