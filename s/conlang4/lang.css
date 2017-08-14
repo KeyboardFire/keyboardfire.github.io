@@ -1,0 +1,99 @@
+html, body {
+    font: 14pt sans-serif;
+    line-height: 1.4;
+    background-color: #fff;
+    color: #000;
+}
+
+#container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#totop {
+    display: block;
+    width: 2em;
+    height: 2em;
+    background-color: #ddd;
+    position: fixed;
+    top: 1em;
+    left: 1em;
+}
+
+#totop > div {
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    border-bottom: 0.866em solid #222;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+}
+
+@media print {
+    html, body {
+        font: 12pt serif;
+    }
+    #totop, #tochead, #toc {
+        display: none;
+    }
+}
+
+p#toc a {
+    display: block;
+}
+
+p#toc a.sub {
+    text-indent: 1em;
+}
+
+li {
+    margin: 0.5em 0;
+}
+
+i {
+    font-style: normal;
+    font-variant: small-caps;
+}
+
+th {
+    text-align: center;
+}
+
+.phontbl td {
+    text-align: center;
+    padding: 0.2em 0.5em;
+}
+
+.phontbl td b {
+    display: block;
+    padding-bottom: 0.1em;
+}
+
+.inflectbl td {
+    width: 5em;
+    padding: 0.2em 0.5em;
+}
+
+.inflectbl2 td {
+    width: 4em;
+    padding: 0.2em 0.5em;
+    text-align: center;
+}
+
+.smalltbl td {
+    text-align: center;
+    width: 2.5em;
+}
+
+.smalltbl #ergspc {
+    width: 1em;
+}
+
+.bigtbl td {
+    text-align: center;
+    width: 4em;
+}
+
+#lextbl th {
+    text-align: left;
+}

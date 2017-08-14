@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang='en' id='top'>
+    <head>
+        <title>conlang4</title>
+        <meta type='viewport' content='width=device-width'>
+        <meta charset='utf-8'>
+        <link rel='stylesheet' type='text/css' href='lang.css'>
+    </head>
+    <body>
+        <div id='container'>
+
+            <a id='totop' href='#top'><div></div></a>
+
+            <h1>conlang4</h1>
+
+            <h2 id='tochead'>Table of contents</h2>
+
+            <p id='toc'>
+                <a href='#intro'>Introduction</a>
+                <a href='#phon'>Phonology and orthography</a>
+                <a href='#phonotac' class='sub'>Phonotactics</a>
+                <a href='#assim' class='sub'>Assimilation</a>
+                <a href='#pros' class='sub'>Prosody</a>
+                <a href='#morph'>Morphology</a>
+                <a href='#noun' class='sub'>Nouns</a>
+                <a href='#verb' class='sub'>Verbs</a>
+                <a href='#adj' class='sub'>Adjectives</a>
+                <a href='#comp' class='sub'>Compounds</a>
+                <a href='#syntax'>Syntax</a>
+                <a href='#order' class='sub'>Word order</a>
+                <a href='#samp'>Sample texts</a>
+                <a href='#lex'>Lexicon</a>
+            </p>
+
+            <h2 id='intro'>Introduction</h2>
+
+            <p>conlang4</p>
+
+            <h2 id='phon'>Phonology and orthography</h2>
+
+            <p><em>Elements of the phonology were inspired by Korean, Quechua,
+                and Klingon.</em></p>
+
+            <table class='phontbl'>
+                <tr>
+                    <td><b>⟨m⟩</b> [m]</td>
+                    <td colspan=2><b>⟨n⟩</b> [n̪]</td>
+                </tr>
+                <tr>
+                    <td><b>⟨p⟩</b> [p]</td>
+                    <td colspan=2><b>⟨t⟩</b> [t̪]</td>
+                    <td colspan=2><b>⟨c⟩</b> [c]</td>
+                    <td><b>⟨q⟩</b> [q]</td>
+                    <td><b>⟨x⟩</b> [ʔ]</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>⟨f⟩</b> [ɬ̪]</td>
+                    <td><b>⟨v⟩</b> [ɮ̪]</td>
+                    <td><b>⟨s⟩</b> [ɕ]</td>
+                    <td><b>⟨z⟩</b> [ʑ]</td>
+                    <td><b>⟨k⟩</b> [q͡χ]</td>
+                    <td><b>⟨h⟩</b> [h~ɸʷ~ç]</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan=2></td>
+                    <td colspan=2></td>
+                    <td><b>⟨g⟩</b> [ɴ͡ɢ]</td>
+                </tr>
+            </table>
+
+            <table class='phontbl'>
+                <tr>
+                    <td><b>⟨u⟩</b> [u~o]</td>
+                    <td><b>⟨i⟩</b> [i~e]</td>
+                </tr>
+                <tr>
+                    <td colspan=2><b>⟨a⟩</b> [ä~ɜ]</td>
+                </tr>
+            </table>
+
+            <p>Diphthongs: /au/ /ua/ /ai/ /ia/</p>
+
+            <h3 id='phonotac'>Phonotactics</h3>
+
+            <p>The syllable structure is <strong>C(C)V(N)</strong>. The two
+            consecutive Cs can take any of the following patterns:</p>
+
+            <ul>
+                <li>{p t̪ c q ʔ} followed by {ɬ̪ ɕ h}, except for /qɕ/</li>
+                <li>{ɕ ʑ} followed by {m n̪}</li>
+            </ul>
+
+            <p>The syllable /qhi/ is illegal.</p>
+
+            <h3 id='assim'>Assimilation</h3>
+
+            <p>/h/ is [h] before /a/, [ɸʷ] before /u/, and [ç] before /i/.</p>
+
+            <p>Trailing nasals assimilate to the following place of
+            articulation, but not across word boundaries. (However, ⟨g⟩ and
+            ⟨ng⟩ are pronounced identically rather than with a lengthened
+            nasal.)</p>
+
+            <p>The vowels /u i a/ behave as follows:</p>
+
+            <table>
+                <tr>
+                    <td>Around&nbsp;uvulars:</td>
+                    <td>[o&nbsp;e&nbsp;ä]</td>
+                    <td>(including /qɬ̪/, /qh/)</td>
+                </tr>
+                <tr>
+                    <td>Around&nbsp;palatals:</td>
+                    <td>[u&nbsp;i&nbsp;ɜ]</td>
+                    <td>(including /cɬ̪/, /ch/, /Xɕ/ but not /ɕN/, /ʑN/)</td>
+                </tr>
+                <tr>
+                    <td>Elsewhere:</td>
+                    <td>[u i ä]</td>
+                </tr>
+            </table>
+
+            <p>In a sequence of uvular-vowel-palatal or palatal-vowel-uvular,
+            the vowel behaves in the uvular context.</p>
+
+            <p>In diphthongs, the first vowel assimilates normally, and the
+            second vowel changes depending on the first:</p>
+
+            <ul>
+                <li>/au/ → [äo] or [ɜu]</li>
+                <li>/ua/ → [oä] or [uɜ]</li>
+                <li>/ai/ → [äe] or [ɜi]</li>
+                <li>/ia/ → [eä] or [iɜ]</li>
+            </ul>
+
+            <h3 id='pros'>Prosody</h3>
+
+            <p>Stress is always on the first syllable. Multisyllabic words
+            always contain one long phone—either the first vowel or the second
+            consonant. In the orthography, the vowel is doubled to indicate the
+            former; otherwise, the latter is assumed. In diphthongs, it is the
+            second vowel that is lengthened (and doubled in the
+            orthography).</p>
+
+            <p>The first syllable of a word following a preposition or other
+            grammatical particle is unstressed.</p>
+
+            <h2 id='morph'>Morphology</h2>
+
+            <p><em>Elements of the morphology and syntax were inspired by
+                Russian, Hindustani, and Navajo.</em></p>
+
+            <h3 id='noun'>Nouns</h3>
+
+            <p>Nouns are assigned to one of four genders based on animacy:</p>
+
+            <ul>
+                <li>animate: humans and other animals (typically end in
+                    <em>-a</em>)</li>
+                <li>inanimate dynamic: plants, natural forces, machines
+                    (typically end in <em>-n</em>)</li>
+                <li>inanimate static: other physically tangible objects
+                    (typically end in <em>-u</em>)</li>
+                <li>abstract: ideas, concepts, etc. (typically end in
+                    <em>-i</em>)</li>
+            </ul>
+
+            <p>The nonstandard glossing abbreviations <i>an</i>, <i>dy</i>,
+            <i>st</i>, and <i>ab</i> will be used for the remainder of this
+            document.</p>
+
+            <p>Nouns are also declined for case:</p>
+
+            <ul>
+                <li>nominative: the subject of an intransitive or transitive
+                    perfective verb</li>
+                <li>absolutive: the subject of an intransitive imperfective
+                    verb or the object of a transitive imperfective verb</li>
+                <li>direct: the object of a transitive perfective verb or the
+                    subject of an intransitive imperfective verb</li>
+                <li>prepositional: used with locative-type prepositions</li>
+                <li>instrumental: indicates means of accomplishing the
+                    action</li>
+            </ul>
+
+            <p>The "direct" case is in reality a conflation of the accusative
+            and ergative cases. Here is a more visual representation of the
+            split-ergativity system:</p>
+
+            <table class='smalltbl'>
+                <tr>
+                    <th colspan=3>Perfective</th>
+                    <th></th>
+                    <th colspan=3>Imperfective</th>
+                </tr>
+                <tr>
+                    <th>S</th>
+                    <th>A</th>
+                    <th>O</th>
+                    <th></th>
+                    <th>S</th>
+                    <th>A</th>
+                    <th>O</th>
+                </tr>
+                <tr>
+                    <td><i>nom</i></td>
+                    <td><i>nom</i></td>
+                    <td><i>dir</i></td>
+                    <td id='ergspc'></td>
+                    <td><i>abs</i></td>
+                    <td><i>dir</i></td>
+                    <td><i>abs</i></td>
+                </tr>
+            </table>
+
+            <p>In this way, the noun cases present in a sentence serve to
+            unambiguously identify whether the verb has perfective or
+            imperfective aspect. Thus, no other grammatical distinction of
+            aspect is made.</p>
+
+            <p>Noun declension chart (note that declensions are based purely on
+            spelling and not on gender, although there are few exceptions to
+            the last-letter rule for gender):</p>
+
+            <table class='inflectbl'>
+                <tr>
+                    <th></th>
+                    <th><em>-a</em></th>
+                    <th><em>-Vn</em></th>
+                    <th><em>-u</em></th>
+                    <th><em>-i</em></th>
+                </tr>
+                <tr>
+                    <th><i>nom</i></th>
+                    <td><em>-ata</em><br><em>-atsa</em><br><em>-aqa</em></td>
+                    <td><em>-VtVn</em><br><em>-VtsVn</em><br><em>-VqVm</em></td>
+                    <td><em>-atu</em><br><em>-itsu</em><br><em>-aqu</em></td>
+                    <td><em>-ita</em><br><em>-itsa</em><br><em>-aqi</em></td>
+                </tr>
+                <tr>
+                    <th><i>abs</i></th>
+                    <td><em>-anun</em><br><em>-ancu</em><br><em>-agom</em></td>
+                    <td><em>-unVn</em><br><em>-uncV</em><br><em>-ugVm</em></td>
+                    <td><em>-unu</em><br><em>-ucua</em><br><em>-ugu</em></td>
+                    <td><em>-uni</em><br><em>-ucia</em><br><em>-ugi</em></td>
+                </tr>
+                <tr>
+                    <th><i>dir</i></th>
+                    <td><em>-afi</em><br><em>-acfi</em><br><em>-aqfi</em></td>
+                    <td><em>-Vfin</em><br><em>-Vcfin</em><br><em>-Vqfim</em></td>
+                    <td><em>-ufi</em><br><em>-ucfi</em><br><em>-uqfi</em></td>
+                    <td><em>-ifi</em><br><em>-icfi</em><br><em>-iqfi</em></td>
+                </tr>
+                <tr>
+                    <th><i>prep</i></th>
+                    <td><em>-a</em><br><em>-achi</em><br><em>-anka</em></td>
+                    <td><em>-Vn</em><br><em>-Vnchi</em><br><em>-Vnkam</em></td>
+                    <td><em>-u</em><br><em>-uchi</em><br><em>-unka</em></td>
+                    <td><em>-i</em><br><em>-ichi</em><br><em>-inka</em></td>
+                </tr>
+                <tr>
+                    <th><i>ins</i></th>
+                    <td><em>-ampa</em><br><em>-ampsa</em><br><em>-apuqa</em></td>
+                    <td><em>-VpVm</em><br><em>-VpsVm</em><br><em>-VpVqVm</em></td>
+                    <td><em>-um</em><br><em>-usim</em><br><em>-uqum</em></td>
+                    <td><em>-ipa</em><br><em>-ipsa</em><br><em>-ipaqi</em></td>
+                </tr>
+            </table>
+
+            <p>The three forms in each cell represent the uninflected,
+            diminuitive, and augmentative.</p>
+
+            <h3 id='verb'>Verbs</h3>
+
+            <p>Verbs are required to be marked for evidentiality/mood:</p>
+
+            <ul>
+                <li>experience: direct observation on the part of the speaker,
+                    witness</li>
+                <li>hearsay: reported information, relayed, secondhand</li>
+                <li>inferential: presumably, probably, must be, expectation,
+                    conclusion</li>
+                <li>speculative: maybe, possibly, postulation, assumption</li>
+                <li>imperative: also used for performatives</li>
+                <li>subjunctive: also used for conditionals</li>
+                <li>gnomic: also used for interrogatives</li>
+            </ul>
+
+            <p>Verbs are also conjugated to agree with gender of the subject
+            and object. No grammaticalized tense markers exist, and aspect is
+            distinguished as described in the <em>Nouns</em> section.</p>
+
+            <p>Here are the tables of verb conjugations. The rows are the
+            gender of the noun marked with <i>dir</i>, and the columns
+            <i>nom</i>/<i>abs</i>. Use these tables by removing the last vowel
+            of the verb, appending the suffix, and replacing occurrences of V
+            with the removed vowel.</p>
+
+            <ul>
+                <li><i>exp</i><table class='inflectbl2'>
+                        <tr>
+                            <th></th>
+                            <th><i>an</i></th>
+                            <th><i>dy</i></th>
+                            <th><i>st</i></th>
+                            <th><i>ab</i></th>
+                        </tr>
+                        <tr>
+                            <th>∅</th>
+                            <td><em>-a</em></td>
+                            <td><em>-Vn</em></td>
+                            <td><em>-u</em></td>
+                            <td><em>-i</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>an</i></th>
+                            <td><em>-aa</em></td>
+                            <td><em>-Vna</em></td>
+                            <td><em>-ua</em></td>
+                            <td><em>-ia</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>dy</i></th>
+                            <td><em>-an</em></td>
+                            <td><em>-VnVn</em></td>
+                            <td><em>-un</em></td>
+                            <td><em>-in</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>st</i></th>
+                            <td><em>-au</em></td>
+                            <td><em>-Vnu</em></td>
+                            <td><em>-uu</em></td>
+                            <td><em>-ixu</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>ab</i></th>
+                            <td><em>-ai</em></td>
+                            <td><em>-Vni</em></td>
+                            <td><em>-uxi</em></td>
+                            <td><em>-ii</em></td>
+                        </tr>
+                    </table></li>
+                <li><i>hsy</i><table class='inflectbl2'>
+                        <tr>
+                            <th></th>
+                            <th><i>an</i></th>
+                            <th><i>dy</i></th>
+                            <th><i>st</i></th>
+                            <th><i>ab</i></th>
+                        </tr>
+                        <tr>
+                            <th>∅</th>
+                            <td><em>-u</em></td>
+                            <td><em>-i</em></td>
+                            <td><em>-a</em></td>
+                            <td><em>-Vn</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>an</i></th>
+                            <td><em>-uu</em></td>
+                            <td><em>-ixu</em></td>
+                            <td><em>-au</em></td>
+                            <td><em>-Vnu</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>dy</i></th>
+                            <td><em>-uxi</em></td>
+                            <td><em>-ii</em></td>
+                            <td><em>-ai</em></td>
+                            <td><em>-Vni</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>st</i></th>
+                            <td><em>-ua</em></td>
+                            <td><em>-ia</em></td>
+                            <td><em>-aa</em></td>
+                            <td><em>-Vna</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>ab</i></th>
+                            <td><em>-un</em></td>
+                            <td><em>-in</em></td>
+                            <td><em>-an</em></td>
+                            <td><em>-VnVn</em></td>
+                        </tr>
+                    </table></li>
+                <li><i>infr</i><table class='inflectbl2'>
+                        <tr>
+                            <th></th>
+                            <th><i>an</i></th>
+                            <th><i>dy</i></th>
+                            <th><i>st</i></th>
+                            <th><i>ab</i></th>
+                        </tr>
+                        <tr>
+                            <th>∅</th>
+                            <td><em>-atfa</em></td>
+                            <td><em>-VntfV</em></td>
+                            <td><em>-utfu</em></td>
+                            <td><em>-itfi</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>an</i></th>
+                            <td><em>-atfa</em></td>
+                            <td><em>-Vntfa</em></td>
+                            <td><em>-utfa</em></td>
+                            <td><em>-itfa</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>dy</i></th>
+                            <td><em>-antfa</em></td>
+                            <td><em>-VntfVn</em></td>
+                            <td><em>-untfu</em></td>
+                            <td><em>-intfi</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>st</i></th>
+                            <td><em>-atfu</em></td>
+                            <td><em>-Vntfu</em></td>
+                            <td><em>-utfu</em></td>
+                            <td><em>-itfu</em></td>
+                        </tr>
+                        <tr>
+                            <th><i>ab</i></th>
+                            <td><em>-atfi</em></td>
+                            <td><em>-Vntfi</em></td>
+                            <td><em>-utfi</em></td>
+                            <td><em>-itfi</em></td>
+                        </tr>
+                    </table></li>
+                <li><i>spec</i>: <i>infr</i> marker with ⟨tf⟩ replaced with ⟨sn⟩</li>
+                <li><i>imp</i>: <em>-av-</em> + <i>exp</i> marker</li>
+                <li><i>sjv</i>: <em>-izm-</em> + <i>exp</i> marker</li>
+                <li><i>gno</i>: <em>-uz-</em> + <i>exp</i> marker</li>
+            </ul>
+
+            <p>Several applicative markers exist that promote an inferior case
+            to the nominative or absolutive case:</p>
+
+            <table class='bigtbl'>
+                <tr>
+                    <th><i>dir</i></th>
+                    <th><i>prep</i></th>
+                    <th><i>ins</i></th>
+                </tr>
+                <tr>
+                    <td><em>-fi</em></td>
+                    <td><em>-hua</em></td>
+                    <td><em>-pham</em></td>
+                </tr>
+            </table>
+
+            <p>The direct applicative is essentially a passive/antipassive
+            marker. With the prepositional applicative, the preposition in
+            question comes immediately before the verb. The
+            nominative/absolutive case can be recovered with the particle
+            <em>tan</em> followed by a noun in the replaced case.</p>
+
+            <p>Verbs can be made into nouns with the <em>-ni</em> suffix, which
+            can be analyzed as a complementizer (<i>comp</i>). TODO example.
+            If the verb has arguments that cannot be easily inferred, they
+            simply follow the verb (although one would normally not do this
+            when the desired interpretation is obvious; for example, <em>I like
+            to walk</em> would be translated as TODO rather than TODO).</p>
+
+            <p>The relativizer (<i>rel</i>) is the suffix <em>-vi</em>. This
+            causes a verb to modify the previous noun; it specifies that the
+            noun fits the role of the nominative or absolutive case (as
+            appropriate) for the given verb. To specify that the noun takes any
+            other case, one of the applicatives described above can be
+            used.</p>
+
+            <p>Both the complementizer and the relativizer can stand alone as
+            their own words, in which case they indicate the termination of the
+            subclause. However, these words are typically omitted unless doing
+            so would cause the sentence to become ambiguous (and even then,
+            they are usually only used for particularly confusing
+            sentences).</p>
+
+            <h3 id='adj'>Adjectives</h3>
+
+            <p>There are none. Adjectives are simply relativized verbs. For
+            example, <em>the black cat</em> is expressed as <em>the cat that is
+            black</em>. The same is true for possessives.</p>
+
+            <h3 id='comp'>Compounds</h3>
+
+            <p>Words can be compounded by juxtaposition, which triggers some
+            sound changes and mutations (reflected in the orthography). This
+            juxtaposition causes the latter word to modify the former in an
+            intrinsic way (e.g. modifying the noun for <em>fish</em> with the
+            verb for <em>to be red</em> does not mean <em>red fish</em> but
+            rather something like <em>salmon</em>).</p>
+
+            <p>The sound changes, which are mostly forms of lenition, are as
+            follows:</p>
+
+            <ul>
+                <li>The long vowel or consonant is shortened to its normal
+                    length.</li>
+                <li>The initial consonant of the latter word undergoes the
+                    following shift: <ul>
+                        <li>/p/ → {/pɕ/ before /i/, /pɬ̪/ otherwise} → {/ɕ/, /ɬ̪/}</li>
+                        <li>/t̪/ → {/t̪ɬ̪/ before /a/, /t̪ɕ/ otherwise} → {/ɬ̪/, /ɕ/}</li>
+                        <li>/ɬ̪/ → /ɮ̪/ → /n̪/</li>
+                        <li>/c/ → /ɕ/ → /ʑ/ → /ʑm/</li>
+                        <li>{/ɕm/, /ɕn̪/} → {/ʑm/, /ʑn̪/} → {/m/, /n̪/} → /∅/</li>
+                        <li>/q/ → /q͡χ/ → /ɴ͡ɢ/ → /ʔ/</li>
+                        <li>{/ʔ/, /Xh/} → /h/ → /∅/</li>
+                    </ul></li>
+                <li>If the preceding step results in an illegal diphthong, an
+                    epenthetic /ʔ/ is inserted.</li>
+                <li>If the last syllable of the former word is uvular and the
+                    first syllable of the latter word is palatal or vice versa,
+                    a /m/ or /n̪/ (if the former word ends in a palatal or
+                    uvular respectively) followed by the first vowel of the
+                    latter word is inserted between them.</li>
+                <li>The last vowel of the former word changes to whatever vowel
+                    now follows it.</li>
+            </ul>
+
+            <p>All steps involving vowel harmony (the last two steps) will only
+            copy the first vowel in a diphthong.</p>
+
+            <p>More than two words may be juxtaposed, in which case "A B C"
+            indicates that "C" modifies "A B" rather than "B C" modifying "A".
+            If the latter meaning is desired, the first step of the sound
+            changes above is skipped (that is, the long vowel or consonant
+            remains long). If this is the case and the word has a long
+            consonant, it must be doubled in the orthography to indicate that
+            it remains long in this position.</p>
+
+            <h2 id='syntax'>Syntax</h2>
+
+            <h3 id='order'>Word order</h3>
+
+            <p>Word order is generally strongly head-initial. Verbs come before
+            the subject and object, but the subject and object are required to
+            be ordered in terms of the animacy hierarchy (that is, if the
+            subject is more animate than the object, it comes first, and vice
+            versa). If the subject and object are of the same animacy, the one
+            in the non-direct case comes first.</p>
+
+            <p>Modifiers also come after the phrase they are modifying.
+            This is true for relative clauses and compounds (see the
+            <em>Morphology</em> section). Prepositions precede the noun that
+            they pertain to.</p>
+
+            <h2 id='samp'>Sample texts</h2>
+
+            <p>panau mata citapufi csiipivi qu ta<br>
+            [ˈpan̪ːao̯ ˈmat̪a 'cit̪ːapuɬi ˈcɕiːpiɮi ˈqo ta]<br>
+            emit-<i>exp</i>.<i>an</i>.<i>st</i> 1sg-<i>nom</i> book-<i>dir</i>
+            small-<i>rel</i> towards 2sg-<i>prep</i><br>
+            I give you the small book.</p>
+
+            <h2 id='lex'>Lexicon</h2>
+
+            <table id='lextbl'>
+                <tr>
+                    <th>word</th>
+                    <th>PoS</th>
+                    <th>translation</th>
+                </tr>
+
+                <tr>
+                    <td>citapu</td>
+                    <td>n <i>st</i></td>
+                    <td>book (from Arabic/Hebrew root)</td>
+                </tr>
+
+                <tr>
+                    <td>csiipi</td>
+                    <td>v</td>
+                    <td>to be small (from Unix command <code>gzip</code>)</td>
+                </tr>
+
+                <tr>
+                    <td>ma</td>
+                    <td>pro <i>an</i></td>
+                    <td>1st person pronoun (from typical Indo-European
+                        languages)</td>
+                </tr>
+
+                <tr>
+                    <td>pana</td>
+                    <td>v</td>
+                    <td>emit, give, send (from Toki Pona, unknown origin)</td>
+                </tr>
+
+                <tr>
+                    <td>ta</td>
+                    <td>pro <i>an</i></td>
+                    <td>2nd person pronoun (from typical Indo-European
+                        languages)</td>
+                </tr>
+
+                <tr>
+                    <td>qu</td>
+                    <td>prep</td>
+                    <td>towards (from Russian)</td>
+                </tr>
+
+            </table>
+
+        </div>
+    </body>
+</html>
