@@ -10,6 +10,14 @@ body {
     padding: 0 10px;
 }
 
+img {
+    max-width: 100%;
+}
+
+ul:not(.progress) li {
+    margin: 0.5em 0;
+}
+
 h1 {
     margin-bottom: 0;
 }
@@ -27,6 +35,12 @@ h2 {
 
 #download p {
     margin: 0;
+}
+
+p.sub {
+    color: #888888;
+    font-size: 9pt;
+    margin-bottom: 2em;
 }
 
 .full { white-space: nowrap; font-style: italic; color: #a1b56c; }

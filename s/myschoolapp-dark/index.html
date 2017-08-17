@@ -11,7 +11,8 @@
             <h1>myschoolapp-dark</h1>
             <h2>contact: andy@keyboardfire.com</h2>
             <div id='download'>
-                <p><a href='myschoolapp-dark.css'>myschoolapp-dark.css</a> <em>(last updated: 2017-07-05)</em></p>
+                <p><a href='myschoolapp-dark.css'>myschoolapp-dark.css</a> <em>(last updated: 2017-08-17)</em></p>
+                <p><a href='myschoolapp-patches.user.js'>myschoolapp-patches.user.js</a> <em>(last updated: 2017-08-17)</em></p>
                 <p><a href='LICENSE'>LICENSE</a></p>
             </div>
             <p>this is a <strong>dark theme for myschoolapp.com</strong>. when installed, it:</p>
@@ -20,19 +21,26 @@
                 <li>normalizes fonts so that only one font is used across the entire site</li>
                 <li>removes awfulness such as animations, shadow effects, rounded corners, etc.</li>
             </ul>
-            <p>you can use it by downloading <strong>myschoolapp-dark.css</strong> above and installing it with <a href='https://addons.mozilla.org/en-US/firefox/addon/stylish/?src=external-userstylesorghelp'>Stylish for Firefox</a> or <a href='https://chrome.google.com/webstore/detail/fjnbnpbmkenffdnngjfgmeleoegfcffe'>Stylish for Chrome</a> (untested).</p>
-            <p>here is a summary of progress made so far. <span class=full>full support</span> indicates pages that are completely styled, <span class=part>partial support</span> indicates pages that are in the process of being styled, and <span class=no>no support</span> indicates pages that I have no intention to style/maintain at present.</p>
+            <p class='sub'>(download <strong>myschoolapp-dark.css</strong> above, install with <a href='https://addons.mozilla.org/en-US/firefox/addon/stylish/?src=external-userstylesorghelp'>Stylish for Firefox</a> or <a href='https://chrome.google.com/webstore/detail/fjnbnpbmkenffdnngjfgmeleoegfcffe'>Stylish for Chrome</a> (untested))</p>
+            <p>the second file is a collection of several improvements to the behavior of the site:</p>
             <ul>
+                <li>reduces the number of clicks to change assignment status from 3 to 1, like so:<br><img src='example.png'></li>
+                <li>automatically sorts assignments by due date, the way most sane human beings would find to be actually useful</li>
+                <li>removes distracting animations on topics pages, replacing them with still images (sorry Dr. Harris)</li>
+            </ul>
+            <p class='sub'>(download <strong>myschoolapp-patches.user.js</strong>, install with <a href='https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/'>Greasemonkey for Firefox</a> or <a href='https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo'>Tampermonkey for Chrome</a> (untested))</p>
+            <p>here is a summary of progress made so far. <span class=full>full support</span> indicates pages that are completely styled, <span class=part>partial support</span> indicates pages that are in the process of being styled, and <span class=no>no support</span> indicates pages that I have no intention to style/maintain at present.</p>
+            <ul class='progress'>
                 <li><strong>My Day</strong>
-                    <ul>
+                    <ul class='progress'>
                         <li><strong>Progress</strong>&mdash;<span class=full>full support</span></li>
                         <li><strong>Schedule</strong>&mdash;<span class=full>full support</span></li>
-                        <li><strong>*Assignment Center</strong>&mdash;<span class=full>full support</span></li>
+                        <li><strong>Assignment Center</strong>&mdash;<span class=full>full support</span></li>
                         <li><strong>*Course Requests</strong>&mdash;<span class=full>full support</span></li>
                     </ul>
                 </li>
                 <li><strong>Classes</strong>
-                    <ul>
+                    <ul class='progress'>
                         <li><strong>Bulletin Board</strong>&mdash;<span class=full>full support</span></li>
                         <li><strong>Topics</strong>&mdash;<span class=full>full support</span></li>
                         <li><strong>Assignments</strong>&mdash;<span class=part>partial support</span></li>
@@ -42,7 +50,7 @@
                 <li><strong>Groups</strong>&mdash;<span class=no>no support</span></li>
                 <li><strong>Resources</strong>&mdash;<span class=full>full support</span></li>
                 <li><strong>News</strong>
-                    <ul>
+                    <ul class='progress'>
                         <li><strong>*Featured Content</strong>&mdash;<span class=full>full support</span></li>
                         <li><strong>Recent Activity</strong>&mdash;<span class=full>full support</span></li>
                         <li><strong>Scoreboard</strong>&mdash;<span class=full>full support</span></li>
@@ -54,7 +62,7 @@
                 <li><strong>Search</strong>&mdash;<span class=no>no support</span></li>
                 <li><strong>*Official Notes</strong>&mdash;<span class=full>full support</span></li>
                 <li><strong>Student</strong>
-                    <ul>
+                    <ul class='progress'>
                         <li><strong>Profile</strong>&mdash;<span class=full>full support</span></li>
                         <li><strong>*Files & Forms</strong>&mdash;<span class=full>full support</span></li>
                         <li><strong>Settings</strong>&mdash;<span class=part>partial support</span></li>
