@@ -71,7 +71,7 @@ function fixAssignmentStatus(tries) {
                             $('span.primary-status[data-id="'+id+'"]')
                                 .removeClass('label-todo label-warning label-success primary-status')
                                 .addClass('label-' + 'todo warning success'.split(' ')[i] + ' primary-status')
-                                .text('Todo/In Progress/Completed'.split('/')[i]);
+                                .text('To Do/In Progress/Completed'.split('/')[i]);
                         }
                     });
                 });
