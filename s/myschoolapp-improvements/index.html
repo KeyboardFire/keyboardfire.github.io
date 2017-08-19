@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>myschoolapp-improvements</title>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width,initial-scale=1'>
+        <link rel='stylesheet' type='text/css' href='style.css'></link>
+    </head>
+    <body>
+
+        <div id='header'><div>
+
+            <h1>myschoolapp-improvements</h1>
+            <strong id='subhead'>contact: andy@keyboardfire.com</strong>
+
+        </div></div>
+
+        <div id='imageboxes'>
+
+            <div class='topbox'>
+                <img src='theme.png'>
+                <div class='topdesc'>
+                    <h2>theme</h2>
+                    <ul>
+                        <li>dark theme (like this page)</li>
+                        <li>one font across the entire site</li>
+                        <li>less awfulness (animations, shadows, rounded corners, ...)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class='topbox'>
+                <img src='behavior.png'>
+                <div class='topdesc'>
+                    <h2>behavior</h2>
+                    <ul>
+                        <li>one-click assignment status update</li>
+                        <li>auto-sort assignments by due date</li>
+                        <li>animations on topics page become still images</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class='topbox'>
+                <img src='app.png'>
+                <div class='topdesc'>
+                    <h2>app</h2>
+                    <ul>
+                        <li>compact display with custom two-letter class abbreviations</li>
+                        <li>easily cycle through status</li>
+                        <li>tap name to view long description</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div style='clear:both'></div>
+
+        <div id='content'><div>
+
+            <p><strong>theme</strong> is a dark theme for myschoolapp.com. it restyles all colors to <a href='https://github.com/chriskempson/base16'>the base16-default-dark color scheme</a>, which is white on black and also used on this page. additionally, it normalizes fonts so that only one font is ever used on the entire site, as opposed to the 6239581264 fonts that the folks at Blackbaud for some reason decided were necessary. finally, it removes terrible bad things that suck, such as unnecessary animations, shadow effects, and boxes with rounded corners. you can get it by downloading <strong><a href='myschoolapp-theme.css'>myschoolapp-theme.css</a></strong> and installing it with <a href='https://addons.mozilla.org/en-US/firefox/addon/stylish/?src=external-userstylesorghelp'>Stylish for Firefox</a> or <a href='https://chrome.google.com/webstore/detail/fjnbnpbmkenffdnngjfgmeleoegfcffe'>Stylish for Chrome</a> (untested).</p>
+
+            <p><strong>behavior</strong> is a collection of several patches that improve various aspects of the site. firstly, it reduces the number of clicks needed to change the status of an assignment (to do, in progress, completed) from 3 to 1, like so:
+            <img class='inline' src='behavior-example.png'>
+            it automatically sorts assignments by due date as well, the way most sane human beings would find to be actually useful. it also replaces distracting animated images on topics pages with still images (sorry, Dr. Harris). you can get it by downloading <strong><a href='myschoolapp-behavior.user.js'>myschoolapp-behavior.user.js</a></strong> and installing it with <a href='https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/'>Greasemonkey for Firefox</a> or <a href='https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo'>Tampermonkey for Chrome</a> (untested).</p>
+
+            <p><strong>app</strong> is, unsurprisingly, an Android app. its sole feature is the ability to access the list of assignments. the design is as compact as possible, using custom two-letter abbreviations for each class (which are requested after initial login and can be changed at any time by tapping in the left column on one of the abbreviations). tapping the assignment name will show its details, and assignments are automatically sorted by due date. tapping on the status will cycle between to do, in progress, and completed. login information is saved forever after you login for the first time, and swiping downwards refreshes the list of assignments. you can get it by downloading <strong><a href='myschoolapp-app.apk'>myschoolapp-app.apk</a></strong>.</p>
+
+        </div></div>
+
+        <div id='footer'>
+            all content and referenced content on this page is licensed under the <a href='LICENSE'>GNU GPL 3.0</a>
+        </div>
+
+    </body>
+</html>
