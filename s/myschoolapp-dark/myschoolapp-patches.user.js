@@ -51,7 +51,11 @@ function fixAssignmentStatus(tries) {
     }
 
     var sortDue = $('.assignment-table-sort[data-sort="date_due"]');
-    if (sortDue.hasClass('muted')) sortDue.click();
+    if (sortDue.hasClass('muted')) {
+        sortDue.click();
+        fixAssignmentStatus(0);
+        return;
+    }
 
     $('.assignment-status-update').replaceWith(function() {
         var index = $(this).data('index'), id = $(this).data('id');
