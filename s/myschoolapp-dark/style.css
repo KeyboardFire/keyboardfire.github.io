@@ -35,31 +35,6 @@ h2 {
     margin: 0 0 1em;
 }
 
-#download {
-    text-indent: 1em;
-    padding-bottom: 1em;
-    border-bottom: 1px dotted #585858;
-}
-
-#download p {
-    margin: 0;
-}
-
-p.sub {
-    color: #888888;
-    font-size: 10pt;
-    margin: 0.5em 0 2em;
-}
-
-p.hidden {
-    color: #888888;
-    font-size: 9pt;
-    font-style: italic;
-    padding: 1em 5% 0;
-    border-top: 1px dotted #585858;
-    margin-top: 2em;
-}
-
 .full { white-space: nowrap; font-style: italic; color: #a1b56c; }
 .part { white-space: nowrap; font-style: italic; color: #f7ca88; }
 .no { white-space: nowrap; font-style: italic; color: #ab4642; }
