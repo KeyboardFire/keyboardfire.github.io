@@ -21,13 +21,15 @@ function makeTimer(ev) {
     var remaining = document.createElement('span');
     remaining.id = ev.id;
     var desc = document.createElement('span');
-    desc.appendChild(document.createTextNode(' until ' + ev.name));
+    desc.appendChild(document.createTextNode(ev.name));
     wrapper.appendChild(remaining);
     wrapper.appendChild(desc);
     return wrapper;
 }
 
 function fmtSecs(n) {
+    if (n < 0) return '✓ ';
+
     var secs = n % 60;
     n = Math.floor(n / 60);
     var mins = n % 60;
@@ -36,7 +38,7 @@ function fmtSecs(n) {
     n = Math.floor(n / 24);
     var days = n;
 
-    return days + ' days ' + [hours, mins, secs.toFixed(2)].map(pad).join(':');
+    return days + ' days ' + [hours, mins, secs.toFixed(2)].map(pad).join(':') + ' until ';
 }
 
 function pad(n) {
