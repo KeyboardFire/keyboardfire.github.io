@@ -1,6 +1,6 @@
 var data = [
-    { id: 'czech', name: 'Czech Duolingo', happens: 1503291600 },
     { id: 'school', name: 'school starts', happens: 1503464400 },
+    { id: 'czech', name: 'Czech Duolingo', happens: 1504242000 },
     { id: 'korean', name: 'Korean Duolingo', happens: 1504760400 }
 ];
 
