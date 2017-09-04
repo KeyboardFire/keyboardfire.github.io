@@ -38,5 +38,5 @@ function process(text) {
         .replace(/person/g, '{\\dot{\\text I}}')
         .replace(/talk/g, '{\\Large<\\kern-1em-}')
         .replace(/like/g, '{\\vcenter{\\Large\\heartsuit}}')
-        .replace(/(write|letter|work)/g, '{\\vcenter{\\img[width=1em,height=1em]{$1.svg}}}');
+        .replace(/(write|letter|work|eat)/g, '{\\vcenter{\\img[width=1em,height=1em]{$1.svg}}}');
 }
