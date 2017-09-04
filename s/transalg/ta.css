@@ -1,0 +1,28 @@
+html, body {
+    font-family: sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+form#main {
+    display: none;
+    margin-bottom: 1em;
+}
+
+form#main div#inputwrap {
+    overflow: hidden;
+    padding-right: 1em;
+}
+
+form#main input#input {
+    width: 100%;
+}
+
+form#main input#render {
+    float: right;
+    margin-left: 1em;
+}
+
+div#output {
+    font-size: 20pt;
+}
