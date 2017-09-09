@@ -1,36 +1,1226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang='en'>
     <head>
         <meta charset='utf-8'>
-        <title>TRANSALG</title>
-        <script type="text/x-mathjax-config">
-        MathJax.Ajax.config.path["img"] = "https://cdn.rawgit.com/pkra/mathjax-img/1.0.0/";
-        MathJax.Hub.Config({
-            extensions: ['[img]/img.js'],
-            messageStyle: "none"
-        });
-        </script>
-        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-        <script type='text/javascript' src='ta.js'></script>
-        <link rel='stylesheet' type='text/css' href='ta.css'></link>
+        <meta name='viewport' content='width=device-width'>
+        <style>
+            html,body {
+                background-color: #fff;
+                color: #000;
+                font: 13pt sans-serif;
+            }
+
+            main {
+                max-width: 1000px;
+                margin: 0px auto;
+                padding: 1em;
+            }
+
+            div#book .fade {
+                font-style: italic;
+            }
+
+            div#book p {
+                margin: 0;
+            }
+
+            div#book p.fade {
+                font-size: 11pt;
+                color: #888;
+            }
+
+            div#book h2 span.fade {
+                display: block;
+                font-size: 14pt;
+            }
+
+            div#book img.inline {
+                vertical-align: middle;
+                margin: 0 0.5em;
+            }
+        </style>
     </head>
     <body>
-        <noscript>please enable javascript</noscript>
-        <form id='main' autocomplete='off'>
-            <input type='submit' value='render' id='render'>
-            <div id='inputwrap'><input type='text' id='input'></div>
-        </form>
-        <div id='output'>\(\)</div>
-        <p>examples from the IOL problem (2003#1):</p>
-        <ol>
-            <li><a class='ex' href='#'>(father+brother)^talk</a> "The father and the brother are talking."</li>
-            <li><a class='ex' href='#'>n(>person)^{work-t}</a> "The giants are working without haste."</li>
-            <li><a class='ex' href='#'>(orphans)^write = letter</a> "The orphans are writing a letter."</li>
-            <li><a class='ex' href='#'>(-n person_1)^write - t = person_2</a> "It wasn't us who wrote about you (sg.)."</li>
-            <li><a class='ex' href='#'>letter^{\sqrt{write}} - t = -woman_3</a> "It was not by her that the letter was written."</li>
-            <li><a class='ex' href='#'>(father)^{-like} = work</a> "The father doesn't like the work."</li>
-            <li><a class='ex' href='#'>((>person) - like)^eat - t = parents</a> "The wicked giant ate the parents."</li>
-            <li><a class='ex' href='#'>woman_3^{-t}</a> "She is not in a hurry."</li>
-        </ul>
+        <main>
+<h1>Transcendental Algebra (2017)</h1>
+<h2>Foreword</h2>
+<p>In 2003, Ksenia Gilyarova wrote a problem about a constructed writing system known as Transcendental Algebra, created by Jacob Linzbach, for the first International Linguistics Olympiad. An easily understandable and accessible resource documenting the details of this language has since been unavailable to years of subsequent IOL contestants. 14 years later, we have located a copy of Linzbach's original book <i>Transcendent algebra, ideografie matematical, experiment de un lingue filosofic</i>, transcribed it, and translated it to English for the benefit of anyone interested in learning more about Linzbach's work.</p>
+<p>The book is written in an early version of an international auxiliary language called Occidental—later renamed Interlingue—which was created by Edgar de Wahl. As Linzbach published his book in 1921 a year before Wahl published the official book on Occidental in 1922, some of the word forms and usage do not match what is documented in other resources, of which there are few. Nevertheless, our interpretation of the book is, we hope, as close as possible to Linzbach's original ideas. He also included a 2-page inset giving examples of Transcendental Algebra statements and their translations in German, French, Russian, and Estonian; we have transcribed these examples as well and translated them to English.</p>
+<p>We hope you find the following transcription and translation of <i>Transcendent algebra</i> to be as interesting as we did, as well as informative and helpful in learning about Linzbach's "philosophical language".</p>
+<p>Chuanshu Jiang (IOL team Australia)<br>Andrew Tockman (IOL team USA)</p>
+<hr><div id="book">
+<h2>Author's note.<span class='fade'>De autor.</span></h2>
+<p>The present printed brochure is extracted from detailed work.</p>
+<p class='fade'>Li present brochur autolitografic es extract ex detaliat labor.</p>
+<p>Desiring to inform the European reader of this new problem,</p>
+<p class='fade'>Desirante informar li letor European peri ti nov poblema,</p>
+<p>I have asked the well-known linguist Mr. Edgar de Wahl to translate the text of this brochure</p>
+<p class='fade'>mi ha petit li conosset cosmoglottist sr. E. de Wahl traducter li textu de ti ci brochur</p>
+<p>to his universal auxiliary language “Occidental”,</p>
+<p class='fade'>in composit de il lingue universal auxiliari "Occidental",</p>
+<p>which being based on roots and suffixes extracted from international words,</p>
+<p class='fade'>quel essent basat sur radicas e suffixes, extractet de paroles international,</p>
+<p>and combined for maximum simplicity of grammar and word formation,</p>
+<p class='fade'>e combinat per max simplic grammatica e parolformation,</p>
+<p>is comprehensible without study to every person of western civilization.</p>
+<p class='fade'>es comprensibil sin studia a omni hom de occidental civilisation.</p>
+<p>As a result there has appeared an interesting symbiosis of two artificial languages:</p>
+<p class='fade'>In resultat ha apparet un symbiose interessant de du lingues artifical:</p>
+<p>one constructed language, aspiring to the role of international auxiliary language,</p>
+<p class='fade'>un pasilalie, aspirant ad role de auxiliari lingue international,</p>
+<p>and a prospective constructed script, which is, like mathematics, a common language;</p>
+<p class='fade'>e un pasigrafie, volent esser, quem matematica, un lingue commun;</p>
+<p>the expressions of one language explain here the expressions of another.</p>
+<p class='fade'>li expressiones de un lingue explica ci li expressiones del altri.</p>
+<p>I will be grateful to the reader for communication of remarks.</p>
+<p class='fade'>Mi va esser mersios al letor por communication de remarcas.</p>
+<p>Jacob Linzbach.</p>
+<p class='fade'>Jacob Linzbach.</p>
+<h2>Introduction<span class='fade'>Introduction</span></h2>
+<p>Leibniz writes: </p>
+<p class='fade'>Leibniz scri: </p>
+<p>"A part of the secret of the success of algebra consists in its characteristic;</p>
+<p class='fade'>"Un part del secrete del success de algebra consiste in su caracteristica,</p>
+<p>that is, in the art of utilizing symbols.</p>
+<p class='fade'>i.e. in arte utilisar symboles. </p>
+<p>Therefore there appears the possibility to imagine the creation of new algorithms,</p>
+<p class='fade'>Pro to appare possibilitia imaginar li creation de nov algoritmes, </p>
+<p>of new algebras, which study other relations too, different than relations between quantities.</p>
+<p class='fade'>de nov algebras, studiant anque altri relationes, different de relationes inter quantitas. </p>
+<p>Furthermore, there appears the hope of reducing all thoughts to a combination of characters,</p>
+<p class='fade'>Mem plu, -- appare li espera reducter omni consideration a un combination de signes, </p>
+<p>and there appears the possibility of pondering over a time when two philosophers, like two mathematicians,</p>
+<p class='fade'>e appare possibilita meditar super tel tempor quande du filosofos, simil du matematicos, </p>
+<p>instead of [having] infinite disputes, will take pens in hands and, sitting at a table, will replace disputes with calcuation.</p>
+<p class='fade'>in vice de infinit disputes va prender plumes in manus e sedent ad table va vicear disput per calculation. </p>
+<p>The common mathematics transforms itself thus in calculation of thoughts (calculus ratiocinatus) and confounds with logic."</p>
+<p class='fade'>Li commun matematica transforma-se talmen in calcul de considerationes (calculus ratiocinatus) e confunde con logical."</p>
+<p>This problem of universal mathematics is solved by transcendental algebra.</p>
+<p class='fade'>Ti ci problema de universal matematica es solvet per transcendent algebra.</p>
+<h2>Symbolics<span class='fade'>Symbolica</span></h2>
+<p>To constant quantities a, b, c, d… correspond in transcendent algebra definite concepts represented by figures, for example:</p>
+<p class='fade'>A quantitas constant a, b, c, d… corresponde in transcendent algebra definit conceptiones, representat per figures, por exemple:</p>
+<p>Variable quantities x, y, z, t… represent themselves with symbols:</p>
+<p class='fade'>Quantitas variabil x, y, z, t… representa se per schemas:</p>
+<p>Beyond figures and symbols, also used are numbers 1, 2, 3, 4… and letters a, b, c, d…, x, y, z, t…</p>
+<p class='fade'>Ultra figures e schemas es usat anque cifres 1, 2, 3, 4… e litteres a, b, c, d…, x, y, z, t… </p>
+<p>Figures, symbols, numbers and letters join themselves using mathematical characters:</p>
+<p class='fade'>Figures, schemas, cifres e litteres junte se per matematical signes:</p>
+<p>Concepts that are not able to be expressed immediately [through basic combinations of glyphs] represent themselves by means of mathematical operations.</p>
+<p class='fade'>Concepiones, ne possent esser expresset inmediatnen, representase por medie de matematical operationes.</p>
+<p>In calculation of concepts the value of all the laws of common algebra is conserved.</p>
+<p class='fade'>In calculation de conceptiones conserva valor omni leges de algebra commun. </p>
+<p>The results of calculations are found intuitively by way of method of interpretation, used in philosophy.</p>
+<p class='fade'>Li resultates del calcul es trovat intuitivnen per medie de metode de interpretation, usat in filosofie.</p>
+<h2>Addition<span class='fade'>Addition</span></h2>
+<p><img class='inline' src='26b17225b626fb9238849fd60eabdf60.png'>plus, and, with, present</p>
+<p class='fade'>plus, e, con, presentie</p>
+<p>horse and cow</p>
+<p class='fade'>cavall e vacca</p>
+<p>domestic animals</p>
+<p class='fade'>animales domestic</p>
+<p>animals</p>
+<p class='fade'>animales</p>
+<p>carpentry tools</p>
+<p class='fade'>instrumentes de carpintero</p>
+<p>stars</p>
+<p class='fade'>sideres</p>
+<p><img class='inline' src='53caca138ca6dd4f0c4ca3fa51180a84.png'>I, you, and he/she</p>
+<p class='fade'>mi, tu e il</p>
+<p><img class='inline' src='dac9c118f9ac2181551acf4c03678ae7.png'>house #1 and house #2</p>
+<p class='fade'>dom № 1 e dom № 2</p>
+<p>June 9th, 1874</p>
+<p class='fade'>9 Juni 1874</p>
+<p><img class='inline' src='ade0b7cde816f32e30df771dd88997f7.png'>big house and small house</p>
+<p class='fade'>granddom e dometto</p>
+<p><img class='inline' src='36c61220f03107ecbc16b60eac47b3c6.png'>giant and dwarf</p>
+<p class='fade'>gigant e pigméo</p>
+<p>man with umbrella</p>
+<p class='fade'>homo con parapluvie</p>
+<h2>Subtraction<span class='fade'>Subtraction</span></h2>
+<p>Subtraction is the reciprocal operation to addition.</p>
+<p class='fade'>Subtraction es operation reciproc a addition.</p>
+<p><img class='inline' src='336d5ebc5436534e61d16e63ddfca327.png'>minus, without, not, absent</p>
+<p class='fade'>minus, sin, ne, absentie</p>
+<p>fat with skinny without skinny is fat</p>
+<p class='fade'>grossi con tenui sin tenui es grossi</p>
+<p>long</p>
+<p class='fade'>long</p>
+<p>short</p>
+<p class='fade'>curt</p>
+<p>heavy</p>
+<p class='fade'>ponderos</p>
+<p>longer</p>
+<p class='fade'>plu long</p>
+<p>car body/box</p>
+<p class='fade'>carrebux</p>
+<p>walls</p>
+<p class='fade'>mures</p>
+<p>body, trunk, torso</p>
+<p class='fade'>corpor, trunc, torso</p>
+<p>Impossibility of subtraction of negative concepts:</p>
+<p class='fade'>Impossibilitá de subtraction da negativ conceptiones:</p>
+<p>person</p>
+<p class='fade'>homo</p>
+<p>person with umbrella</p>
+<p class='fade'>homo con parapluvie</p>
+<p>person without umbrella (during rain)</p>
+<p class='fade'>homo sin parapluvie (durante pluvie)</p>
+<p><img class='inline' src='0b2571b261b51187367a1371ef35fd00.png'>person without heart</p>
+<p class='fade'>homo sin cordie</p>
+<p><img class='inline' src='3f1a643244bd93a30689c79ba3e43240.png'>person with absence of heart is person without heart</p>
+<p class='fade'>homo con absentie de cordie es homo sin cordie</p>
+<p><img class='inline' src='92214fbc6d4703a0fab3d7cf4704c0cb.png'>person not without heart is person with heart</p>
+<p class='fade'>homo ne sin cordie es homo con cordie</p>
+<p><img class='inline' src='56091abb7fc8a238c43cc7696e17d575.png'>I, <img class='inline' src='eef5240ac63f7a5359d1262d03de23d1.png'>not I, [rest of the] world</p>
+<p class='fade'>mi, ne mi, mundi</p>
+<p><img class='inline' src='4eb412266635cbfc6e5f3129217f418c.png'>me without you, <img class='inline' src='cd3aa0dccfdd19c8b730eb24acc70ca8.png'>solitude</p>
+<p class='fade'>mi sin tu, solitaritá</p>
+<p>present without future, is not hope</p>
+<p class='fade'>present sin futur, ne es espera</p>
+<p>right without left, absence of symmetry</p>
+<p class='fade'>destri sin left, absentie de symmetrie</p>
+<p>inside without being outside, state of lacking freedom</p>
+<p class='fade'>intern sin esser extern, statu de inliberitá</p>
+<p>blind</p>
+<p class='fade'>ciec</p>
+<p>open</p>
+<p class='fade'>apert</p>
+<p>Algebraic addition of figures with symbols, letters, and numbers:</p>
+<p class='fade'>Addition algebraic de figures con schemas, litteres e cifres:</p>
+<p>the book is on the table</p>
+<p class='fade'>libre es sur table</p>
+<p>under the book is the table</p>
+<p class='fade'>sub libre es table</p>
+<p>on, not on</p>
+<p class='fade'>sur, ne sur</p>
+<p>not on, under</p>
+<p class='fade'>ne sur, sub</p>
+<p>on the table, not on the table, under the book</p>
+<p class='fade'>sur table, ne sur table, sub libre</p>
+<p>the mill is behind the house, in front of the mill is the house</p>
+<p class='fade'>molino es dope de dom, avan molino es dom</p>
+<p>the mill is in front of and to the right of the house, the house is behind and to the left of the mill</p>
+<p class='fade'>molino es avan destre de dom, dom es dope left de molino</p>
+<p>not in front of means behind</p>
+<p class='fade'>ne avan significa dope</p>
+<p>I am in the house</p>
+<p class='fade'>mi es in dom</p>
+<p>around me is the house</p>
+<p class='fade'>circum mi es dom</p>
+<p>outside of me is the house</p>
+<p class='fade'>extern mi es dom</p>
+<p>the bench is between the house and the tree</p>
+<p class='fade'>banc es inter dom e arbor</p>
+<p>next to the bench is the house and the tree</p>
+<p class='fade'>apu banc es dom e arbor</p>
+<p>Algebraic, using letters:</p>
+<p class='fade'>Algebraic, per litteres:</p>
+<p>the bench is to the right of the house and to the left of the tree</p>
+<p class='fade'>banc es destre de dom e left de arbor</p>
+<p>to the left and to the right of the bench are the house and the tree</p>
+<p class='fade'>a left e a destre de banc es dom e arbor</p>
+<p><img class='inline' src='4ca0b876771302f75885955610401712.png'>15 of some units away from the house</p>
+<p class='fade'>alqui 15 unités distant de dom</p>
+<p><img class='inline' src='4d72e79a1fe2cb9cdb70f0c31e06a8b4.png'>from the house</p>
+<p class='fade'>de dom</p>
+<p><img class='inline' src='c654562c7f4260d0bc989306a2469e70.png'>to the house</p>
+<p class='fade'>ad dom, til dom</p>
+<p><img class='inline' src='2f685f7ca07f18e3e2a05cf49729ed3b.png'>from the heart</p>
+<p class='fade'>de cordie</p>
+<p><img class='inline' src='985c299f79649be0d33a484815d23044.png'>to the heart</p>
+<p class='fade'>ad cordie, til cordie</p>
+<p><img class='inline' src='e5004aa82edfb0e2837d72ee991461d0.png'>from above, <img class='inline' src='d7f5c00c36978c674feb2578da0d40ff.png'>to above</p>
+<p class='fade'>de supre, ad supre</p>
+<h2>Multiplication<span class='fade'>Multiplication</span></h2>
+<p>A. Multiplication of figures by numbers.</p>
+<p class='fade'>A. Multiplication de figures per número.</p>
+<p>three horses</p>
+<p class='fade'>tri cavalles</p>
+<p>houses, trees, people, horses</p>
+<p class='fade'>domes, arbores, homos, cavalles</p>
+<p>7 days is a quarter of a month, a week</p>
+<p class='fade'>7 dies es ¼ mensu, seman</p>
+<p>weeks</p>
+<p class='fade'>semanes</p>
+<p>12 hours is half a day</p>
+<p class='fade'>12 hores es demi die</p>
+<p>365 days is a year</p>
+<p class='fade'>365 dies es un annu</p>
+<p>years, times</p>
+<p class='fade'>annus, tempores</p>
+<p>B. Multiplication of figures by figures</p>
+<p class='fade'>B. Multiplication de figures per figures</p>
+<p>Professor John Perry writes in his Practical Mathematics on the multiplication of vector quantities the following:</p>
+<p class='fade'>Professor John Perry scri in su Practical Matematica peri multiplication de quantitas vectora secuent:</p>
+<p>If I were asked to multiply 2 tables by 3 chairs I would not refuse; I would say,  </p>
+<p class='fade'>"Si on va petir me multiplicar 2 stules per 3 tables, mi ne var refusar; mi var dir, </p>
+<p>6 chair-tables. But if I were asked to say what I mean by a chair-table, I would refuse to answer</p>
+<p class='fade'>que to var esser 6 stulotables. Ma mi va refusar respoder, quo esse stulotable,</p>
+<p>because nobody has ever given a meaning to the term.</p>
+<p class='fade'>Proque ancor nequi ha provat attribuer qualcunc signification a tal termin. </p>
+<p>But I do know that when this sort of thing comes into a Physical Problem,</p>
+<p class='fade'>Tamen mi save que tal productes recontra se in solution de problemas fisical,</p>
+<p>we can always give a useful meaning.</p>
+<p class='fade'>e li termines correspondent sempre recive un util logical signification. </p>
+<p>This is beyond ordinary Algebra,</p>
+<p class='fade'>Ti considerationes sta ultra limites de algebra commun, </p>
+<p>and yet our processes are carried on by the rules of Algebra.</p>
+<p class='fade'>quancam li process self de calculation es operat segun regules de algebra.</p>
+<p>Please observe, that I do not say that 2 tables x 3 chairs = 2 chairs x 3 tables.</p>
+<p class='fade'>Ples remarcar, que mi ne posse asserter que 2 tables x 3 stules = 2 stules x 3 tables.</p>
+<p>Whether this is or is not true, depends on the meaning we attach to the whole process."</p>
+<p class='fade'>To depende del sense, quel noi attribue al tut process.”</p>
+<p>Here is a visual interpretation of this problem:</p>
+<p class='fade'>Ec un aspectiv interpretation de ti problema:</p>
+<p>6 places (to sit on a chair at the table)</p>
+<p class='fade'>6 plazzes (por seder sur stul ad table)</p>
+<p>Variant interpretation:</p>
+<p class='fade'>Interpretation variabil:</p>
+<p>6 places, place</p>
+<p class='fade'>6 plazzes, plazz</p>
+<p>Other examples:</p>
+<p class='fade'>Altri exemples:</p>
+<p>strength of light of 150 candelas</p>
+<p class='fade'>fortie de luce 150 candeles</p>
+<p>[amount of] work of 50 horse-drawn carriages [50 horsepower]</p>
+<p class='fade'>laboreffect de 50 carretades</p>
+<p>100 plates served to guests</p>
+<p class='fade'>cent plates servit a hospites</p>
+<p>work, laziness [quality of not working]</p>
+<p class='fade'>labor, deslaboritá</p>
+<p>armed forces, armed forces armed in different ways</p>
+<p class='fade'>fortie armat, f.a. de armatur different</p>
+<p><img class='inline' src='e1bf982ee55fd2043dac88fedee78828.png'>marriage, <img class='inline' src='ad92ad3dff6b13acd1cc0d70314623a9.png'>celibacy</p>
+<p class='fade'>mariagie, celibatu</p>
+<p><img class='inline' src='064fac7923862b996764bb49f73d31b6.png'>widower</p>
+<p class='fade'>viduagie de marito</p>
+<p><img class='inline' src='3360b4621f8c6c02040dda4d2747a44e.png'>widow</p>
+<p class='fade'>viduagie de marita</p>
+<p><img class='inline' src='74695b17be6b30f7f935393db261e3da.png'>polygamy, <img class='inline' src='056157800a00e8a857f3d61c5a5ff7c5.png'>polyandry</p>
+<p class='fade'>polygamie, polyandrie</p>
+<p><img class='inline' src='e1ed58a26f1744cfe07cbdb57a2098c7.png'>6 marriages</p>
+<p class='fade'>6 maritagies</p>
+<p><img class='inline' src='c7f3ca4357060cde18cb31983f8dce78.png'>family, <img class='inline' src='72bc2272cb290a28d28ef38d2f766ca0.png'>not-family</p>
+<p class='fade'>familie, ne-familie</p>
+<p><img class='inline' src='a91a8323235923946a593fc7748899da.png'>family without children</p>
+<p class='fade'>familie sin infantes</p>
+<p><img class='inline' src='1ca5deabe7039ac1294d1b2bd4e88e67.png'>being orphaned</p>
+<p class='fade'>orfanagie</p>
+<p><img class='inline' src='37e8ea4f51390cc1e7c07f3efa17f089.png'>friendship</p>
+<p class='fade'>amicitá, amicagie</p>
+<p><img class='inline' src='b6804585a0e75c2a3bb2955e0c555ddd.png'>company</p>
+<p class='fade'>companie</p>
+<p><img class='inline' src='5a60256a1dad932d51dbb69dd3c71ed7.png'>society</p>
+<p class='fade'>societé</p>
+<p><img class='inline' src='b944b1363b05b2e057789f2857895fff.png'>eating [is taking place], <img class='inline' src='b0b5577d8d8db603375713dc232ef2c7.png'>no eating</p>
+<p class='fade'>manjada, nemanjada</p>
+<p><img class='inline' src='8d4d37535eb33ff08c3c39dce06da778.png'>starvation, no eating due to lack of food</p>
+<p class='fade'>fame, nemanjada pro manca de pan</p>
+<p><img class='inline' src='f324be5e2adc80e17b2c3c4dcd186527.png'>abundance, no eating from lack of eating, nobody to eat</p>
+<p class='fade'>abundantie, nemanjada pro manca de manjant, nequi por manjar</p>
+<p>The product is a function of factors.</p>
+<p class='fade'>Product es function de factores.</p>
+<p>Multiplication creates from given concepts a new one of greater reach/capacity, for example:</p>
+<p class='fade'>Muliplication crea ex dat conceptiones un nov de plugrand capacitá, p.e.:</p>
+<p>man, pipe, smoking</p>
+<p class='fade'>homo, pip, fumada</p>
+<p>drunkenness, sobriety</p>
+<p class='fade'>ebrietá, sobrietá</p>
+<p>meal, nutrition</p>
+<p class='fade'>nutritura, nutrition</p>
+<p>wine, beer, water</p>
+<p class='fade'>vin, bir, aqua</p>
+<p>agronomy</p>
+<p class='fade'>agronomie</p>
+<p>commerce, carpentry</p>
+<p class='fade'>commercie, carpinterie</p>
+<p>astronomy, philosophy</p>
+<p class='fade'>astronomie, filosofie</p>
+<p>knowledge/conscience</p>
+<p class='fade'>conossentie</p>
+<p>world, universe</p>
+<p class='fade'>mundi, cosmo</p>
+<p>reading (matter)</p>
+<p class='fade'>letura</p>
+<p>writing</p>
+<p class='fade'>scritura</p>
+<p>illiteracy</p>
+<p class='fade'>analfabetism</p>
+<p>aviation</p>
+<p class='fade'>aviation</p>
+<p>conversation, speech</p>
+<p class='fade'>conversation, parla</p>
+<p>silence, monologue</p>
+<p class='fade'>silentie, monolog</p>
+<p>thinking is talking</p>
+<p class='fade'>pensada es parlada</p>
+<p>C. Multiplication of figures by symbols and letters</p>
+<p class='fade'>C. Multiplication de figures per schemas e litteres</p>
+<p>head, body, torso, forehead</p>
+<p class='fade'>cap, córpor, torso, front</p>
+<p>chin, nape, height</p>
+<p class='fade'>menton, nuc, altore</p>
+<p>base (of triangle), cathetus [leg]</p>
+<p class='fade'>bas (de triangul), cathete</p>
+<p>seed, room, court[yard]</p>
+<p class='fade'>sem, chambre, curt</p>
+<p>D. Multiplication of symbols by symbols</p>
+<p class='fade'>D. Multiplication de schemas per schemas</p>
+<p>square, parallelogram, cube</p>
+<p class='fade'>quadrat, parallelogramm, cub</p>
+<p>prism, cylinder, ellipsoid</p>
+<p class='fade'>prisma, cylindrtion, ellipsoid</p>
+<p>communication, concentration</p>
+<p class='fade'>communication, concentra[-tion]</p>
+<p>oscillation, perforation</p>
+<p class='fade'>oscillation, perforation</p>
+<h2>Division<span class='fade'>Division</span></h2>
+<p>A. Division of figures by numbers</p>
+<p class='fade'>A. Division de figures per números</p>
+<p>The operation is reduced to multiplication by the reciprocal number:</p>
+<p class='fade'>Li operation es reductet ad multiplication per numer reciproc:</p>
+<p>half-house, flank [wings]</p>
+<p class='fade'>demidom, flanc</p>
+<p>hour</p>
+<p class='fade'>hor</p>
+<p>B. Division of figures by figures</p>
+<p class='fade'>B. Division de figures per figures</p>
+<p>Division is the reciprocal operation to multiplication. To the reciprocal meanings</p>
+<p class='fade'>Division es operation reciproc a multiplication. A significationes reciproc</p>
+<p>correspond the concepts of total and fractional, for example:</p>
+<p class='fade'>corresponde conceptiones total e fractional, p.e.:</p>
+<p>whole house, some part of house</p>
+<p class='fade'>dom integri, alqui part de dom</p>
+<p>part of house, namely the window</p>
+<p class='fade'>part de dom, nominat fenestre</p>
+<p>window, of house</p>
+<p class='fade'>fenestre, de dom</p>
+<p>roof of house, walls of house</p>
+<p class='fade'>tecte de dom, mures de dom</p>
+<p>head of horse, neck of horse</p>
+<p class='fade'>cap de cavall, col de cavall</p>
+<p>mane of horse, body of horse</p>
+<p class='fade'>crinage de c., corpor de cav.</p>
+<p>foot of horse, hoof of horse</p>
+<p class='fade'>pedes de cav., huf de cav.</p>
+<p>knee of horse, chest of horse</p>
+<p class='fade'>genu de c., pector de c.</p>
+<p>Division creates from given concepts a new one of lesser reach/capacity</p>
+<p class='fade'>Division crea ex dat conceptiones un nov de minu grand capacita</p>
+<p>by the adding of attributes in the form of the denominator:</p>
+<p class='fade'>per adjuntion de attributes in form de nominator:</p>
+<p>houses in general, every house</p>
+<p class='fade'>dom in general, chascun d.</p>
+<p>horse's house, a special case of the concept of houses</p>
+<p class='fade'>dom de cavall, un casu partial del conception dom</p>
+<p>some person, one person</p>
+<p class='fade'>alqui hom, un hom</p>
+<p>person of the pipe, smoker</p>
+<p class='fade'>hom de pipe, fumator</p>
+<p>room</p>
+<p class='fade'>chambre</p>
+<p>room of smoking, smoking room</p>
+<p class='fade'>chambre de fumation, fumatoria</p>
+<p>bird nest, cuckoo</p>
+<p class='fade'>avio nidant, cucú</p>
+<p>bottom window</p>
+<p class='fade'>fenestre de bass</p>
+<p>tomorrow</p>
+<p class='fade'>deman</p>
+<p>yesterday</p>
+<p class='fade'>yer</p>
+<p>woman of man, married woman</p>
+<p class='fade'>femina de mascul, femina maritat</p>
+<p>man of woman, married man</p>
+<p class='fade'>mascul de femina, mascul maritat</p>
+<p>husband, wife, children</p>
+<p class='fade'>marito, marita, infantes</p>
+<p>father and mother are parents</p>
+<p class='fade'>patre e matre es genitores</p>
+<p>brother, sister</p>
+<p class='fade'>fratre, sestra</p>
+<p>head of man</p>
+<p class='fade'>cap de homo</p>
+<p>person of head, leader, a special case of the concept of person</p>
+<p class='fade'>homo de cap, chef, un casu partial del conception homo</p>
+<p>people in general, every person</p>
+<p class='fade'>homo in general, chascun h.</p>
+<p>single person, individual</p>
+<p class='fade'>homo singul, individue.</p>
+<h2>Exponentiation<span class='fade'>Potentiation</span></h2>
+<p>Exponentiation is a function of figures, signifying the representation of an event in cinematographic form:</p>
+<p class='fade'>Potentie es un function de figur, significant representation de eveniment in form cinematografic:</p>
+<p>flight</p>
+<p class='fade'>vol, volagie</p>
+<p>oscillation</p>
+<p class='fade'>oscilllation</p>
+<p>walking</p>
+<p class='fade'>marcha</p>
+<p>Moments of the event are factors.</p>
+<p class='fade'>Momentes de eveniment es factores.</p>
+<p>The product in the sense of the exponentiation is a representation of the event.</p>
+<p class='fade'>Product in sens de potentie es representation de eveniment.</p>
+<p>The number of moments or the exponent of the exponentiation signifies fluctuation (rhythm) of the event:</p>
+<p class='fade'>Numero de momentes o exponent de potentie significa fluxion (rithm) de eveniment:</p>
+<p>life, talking, pronunciation, writing, knitting</p>
+<p class='fade'>vive, parla, prononuciation, scrition, tricotagie,</p>
+<p>Elevation of a figure in total exponentiation signifies an event,</p>
+<p class='fade'>Elevation de figur in total potentie significa un eveniment, </p>
+<p>coming from the given concept, as of subject, for example:</p>
+<p class='fade'>exfluent del dat conception, quam de subyect, p.e.: </p>
+<p>forge hammer, forging</p>
+<p class='fade'>martell forge, forgeada.</p>
+<h2>Radication<span class='fade'>Radication</span></h2>
+<p>Radication is the reciprocal operation to exponentiation.</p>
+<p class='fade'>Radication es operation recproc a potentiation. </p>
+<p>bird, person</p>
+<p class='fade'>avio, homo</p>
+<p>feet, pendulum</p>
+<p class='fade'>pedes, pendul</p>
+<p>Extraction of the root, or elevation to a fractional exponent</p>
+<p class='fade'>Extraction de radica, o elevation in fractional potentie</p>
+<p>signifies an event, guiding to the given concept, as of object, for example:</p>
+<p class='fade'>significa un eveniment, ductent al dat conception, quam ad obyect, p.e.:</p>
+<p>making of an envelope</p>
+<p class='fade'>fabrication de covert,</p>
+<p>growth of a tree</p>
+<p class='fade'>cresentation de arbor,</p>
+<p>maturing of a fruit</p>
+<p class='fade'>maturijation de fruct,</p>
+<p>beginning of a day, sunrise</p>
+<p class='fade'>comensa de die, aurore,</p>
+<p>beginning of a night, sunset</p>
+<p class='fade'>comensa de nocte, purpur de vespere,</p>
+<p>birth</p>
+<p class='fade'>nascentie,</p>
+<p>beginning of puberty</p>
+<p class='fade'>comensa de pubertá.</p>
+<h2>Interpretation of all exponents.<span class='fade'>Interpretation de omni potenties.</span></h2>
+<p>A. Numerical exponents</p>
+<p class='fade'>A. Potenties numeral.</p>
+<p>a) Positive exponents from 0 to infinity.</p>
+<p class='fade'>a) Potenties positiv de 0 ad ∞.</p>
+<p>beginning, principle, idea, material [???] of an object,</p>
+<p class='fade'>comensa, principe, idee[,] materiale ec. de obyect</p>
+<p>process of becoming, preparation, origin of the object</p>
+<p class='fade'>processe de devenition, preparation, origina del obyect</p>
+<p>the object itself, object as such, the object exists</p>
+<p class='fade'>obyect self, obyect quam tal, obyect existe</p>
+<p>function of an object</p>
+<p class='fade'>function del obyect</p>
+<p>end of an object, in the sense of transubstantiation in a product, [?] that the object itself appears as [some material…?]</p>
+<p class='fade'>fine de obyect, in sense de transsubstantation in un product, relativa quel l object self appare quam materiale</p>
+<p>Examples:</p>
+<p class='fade'>Exemples:</p>
+<p>steel, as pen material</p>
+<p class='fade'>stal, quam materiale de plum</p>
+<p>process of making a pen</p>
+<p class='fade'>process de fabrication de pl.</p>
+<p>pen put forward, pen exists</p>
+<p class='fade'>plum parat, plum existe</p>
+<p>function of pen, pen writing</p>
+<p class='fade'>function de plum, plum in scrition</p>
+<p>clay, jar material</p>
+<p class='fade'>argil, material de cruche</p>
+<p>making of a jar</p>
+<p class='fade'>fabrication de cruche</p>
+<p>jar itself, jar exists</p>
+<p class='fade'>cruche self, cruch existe</p>
+<p>function of jar, jar being used</p>
+<p class='fade'>function de cruche, cruche in usation</p>
+<p>household [???]</p>
+<p class='fade'>menage,</p>
+<p>gold</p>
+<p class='fade'>aure,</p>
+<p>printing of money</p>
+<p class='fade'>stampation de monete,</p>
+<p>money, money exists</p>
+<p class='fade'>monete, monete existe, </p>
+<p>use of money, circulation</p>
+<p class='fade'>usation de moné, circulation,</p>
+<p>wealth</p>
+<p class='fade'>richess;</p>
+<p>primordial material</p>
+<p class='fade'>materie primitif,</p>
+<p>origin of the earth</p>
+<p class='fade'>origine de terre,</p>
+<p>the earth, the earth exists</p>
+<p class='fade'>terre, terre existe, </p>
+<p>life of the earth</p>
+<p class='fade'>vive de terre,</p>
+<p>the world</p>
+<p class='fade'>mund;</p>
+<p>embryo</p>
+<p class='fade'>embrion,</p>
+<p>infant/child</p>
+<p class='fade'>infant, </p>
+<p>adult</p>
+<p class='fade'>adult,</p>
+<p>elderly, senile</p>
+<p class='fade'>velón, senil,</p>
+<p>corpse</p>
+<p class='fade'>cadáver;</p>
+<p>ability to emit sounds</p>
+<p class='fade'>capabilitá emisser sones,</p>
+<p>origin of speech</p>
+<p class='fade'>origina de parlada,</p>
+<p>language, speech in contemporary usage</p>
+<p class='fade'>lingue, parlada in stand contemporan,</p>
+<p>usage of words</p>
+<p class='fade'>usation de paroles,</p>
+<p>literature</p>
+<p class='fade'>litteratur;</p>
+<p>Indefinite concepts:</p>
+<p class='fade'>Conceptiones indefinit:</p>
+<p>nothing (not in the sense of zero!)</p>
+<p class='fade'>nequo (ne in sens de null!)</p>
+<p>origin of something</p>
+<p class='fade'>origina de alqui cose</p>
+<p>something, a unit exists</p>
+<p class='fade'>alquicose, unité existe</p>
+<p>function of a unit</p>
+<p class='fade'>function de unité</p>
+<p>everything</p>
+<p class='fade'>omne</p>
+<p>b) Negative exponents.</p>
+<p class='fade'>b) Potenties negativ.</p>
+<p>Negative exponents are fractions</p>
+<p class='fade'>Potenties negativ es fractiones</p>
+<p>and, keeping with the definition of division, express qualities, for example:</p>
+<p class='fade'>e, conform a definition de division, expresse qualitás, p.e.:</p>
+<p>of houses</p>
+<p class='fade'>domal, de dom,</p>
+<p>of steel</p>
+<p class='fade'>stalin, de stal,</p>
+<p>of the world</p>
+<p class='fade'>mundal, de mund,</p>
+<p>of apples</p>
+<p class='fade'>pomal, de pom,</p>
+<p>language of the world</p>
+<p class='fade'>lingue de mund,</p>
+<p>philosophic language</p>
+<p class='fade'>lingue filosofic,</p>
+<p>language of the future.</p>
+<p class='fade'>lingue de futur.</p>
+<p>B. Exponents of figures</p>
+<p class='fade'>B. Potenties figural. </p>
+<p>a) Total exponents express the active form of the verb:</p>
+<p class='fade'>a) Potenties total express form activ de verb:</p>
+<p>person exists, person is</p>
+<p class='fade'>homo existe, homo es, </p>
+<p>person chops</p>
+<p class='fade'>homo hacca,</p>
+<p>person chops tree</p>
+<p class='fade'>homo hacca arbor,</p>
+<p>the woman knits a sock</p>
+<p class='fade'>femina tricota strump,</p>
+<p>person marches</p>
+<p class='fade'>homo marcha</p>
+<p>horse runs</p>
+<p class='fade'>cavalle curre</p>
+<p>clock ticks</p>
+<p class='fade'>horloj tictaca</p>
+<p>clock rings</p>
+<p class='fade'>horloj clocha</p>
+<p>train moves itself</p>
+<p class='fade'>tren move se</p>
+<p>person speaks</p>
+<p class='fade'>homo parla</p>
+<p>rooster crows</p>
+<p class='fade'>gallino canta</p>
+<p>dog barks</p>
+<p class='fade'>can aboya</p>
+<p>bird flies</p>
+<p class='fade'>avio vola</p>
+<p>person sees</p>
+<p class='fade'>homo vide</p>
+<p>he/she reigns, he/she is a king/queen</p>
+<p class='fade'>il rege</p>
+<p>he/she lives</p>
+<p class='fade'>il vive</p>
+<p>I make a pen</p>
+<p class='fade'>mi prepara plum</p>
+<p>I write</p>
+<p class='fade'>mi scri</p>
+<p>I use a pen</p>
+<p class='fade'>mi usa plum</p>
+<p>I practice a literary profession</p>
+<p class='fade'>mi practica profession de litterator</p>
+<p>I prepare steel for a pen</p>
+<p class='fade'>mi prepara stal por plum</p>
+<p>Examples of conjugation:</p>
+<p class='fade'>Exemple de conjugation:</p>
+<p>I write, you write, he/she writes</p>
+<p class='fade'>mi scri, tu scri, il scri</p>
+<p>we write, you(pl.) write, they write</p>
+<p class='fade'>noi scri, vo scri, ili scri</p>
+<p>I will write</p>
+<p class='fade'>mi va scrir</p>
+<p>I wrote, I have written</p>
+<p class='fade'>mi fe scrir, mi ha scrit</p>
+<p>you will not write</p>
+<p class='fade'>tu ne va scrir</p>
+<p>you have not written</p>
+<p class='fade'>tu ne ha scrir</p>
+<p>not him/her writes, someone else writes</p>
+<p class='fade'>ne il scri, altri scri</p>
+<p>I write now</p>
+<p class='fade'>mi scri nu</p>
+<p>now, not now, some other time</p>
+<p class='fade'>nu, ne nu, altriquande</p>
+<p>I sit here</p>
+<p class='fade'>mi side ci</p>
+<p>he/she stands there in front</p>
+<p class='fade'>il sta ta avan,</p>
+<p>she lives to the left</p>
+<p class='fade'>illa habita (domicila) ad left,</p>
+<p>I (masculine)</p>
+<p class='fade'>mi (mascul),</p>
+<p>I (feminine), you (feminine)</p>
+<p class='fade'>mi (femina), tu (femina)</p>
+<p>I (unspecified gender)</p>
+<p class='fade'>mi (genere indifinit),</p>
+<p>I spoke a few times</p>
+<p class='fade'>mi fe parlar quelc vezes</p>
+<p>speak!</p>
+<p class='fade'>parla!</p>
+<p>I write and think, I write pensively</p>
+<p class='fade'>mi scri e pensa, mi scri pensante</p>
+<p>I write and don't think, I write automatically</p>
+<p class='fade'>mi scri (e) ne pensa, -mi scri automaticmen</p>
+<p>he/she talks with haste</p>
+<p class='fade'>il parla hastante,</p>
+<p>he/she talks without haste</p>
+<p class='fade'>il parla sin hasta,</p>
+<p>he/she is in a hurry, he/she is not in a hurry</p>
+<p class='fade'>il hasta, il ne hasta,</p>
+<p>I study</p>
+<p class='fade'>mi studia,</p>
+<p>scientist</p>
+<p class='fade'>scientist,</p>
+<p>student, scholer</p>
+<p class='fade'>student, scolero,</p>
+<p>professor</p>
+<p class='fade'>professor</p>
+<p>Growing exponents [exponents of exponents]:</p>
+<p class='fade'>Potenties crescent:</p>
+<p>I prepare to write</p>
+<p class='fade'>mi prepara scrir,</p>
+<p>I sit to write</p>
+<p class='fade'>mi sedenta me scrir,</p>
+<p>you go to sleep</p>
+<p class='fade'>tu ea dormir,</p>
+<p>he/she goes (walks) to reap [the crop]</p>
+<p class='fade'>il ea (marcha) falcear,</p>
+<p>I want to eat</p>
+<p class='fade'>mi vole manjar,</p>
+<p>I must walk</p>
+<p class='fade'>mi deve marchar,</p>
+<p>you can pay</p>
+<p class='fade'>tu posse payar, </p>
+<p>you may speak</p>
+<p class='fade'>tu have jure parlar,</p>
+<p>b) Fractional exponents express the passive form of the verb:</p>
+<p class='fade'>b) Potenties fractional expresse forme passive de verb:</p>
+<p>I see, I am seen</p>
+<p class='fade'>me vide, mi es videt,</p>
+<p>the house is seen</p>
+<p class='fade'>dom es videt,</p>
+<p>I see the house</p>
+<p class='fade'>mi vide dom;</p>
+<p>the person chops the tree</p>
+<p class='fade'>homo hacca arbor,</p>
+<p>the tree is chopped by the person</p>
+<p class='fade'>arbor es haccat de homo</p>
+<p>the tree is chopped by the person</p>
+<p class='fade'>arbor es haccat de homo</p>
+<p>the woman knits a sock</p>
+<p class='fade'>femina tricota strump</p>
+<p>the sock is knitted by the woman</p>
+<p class='fade'>strump etricotat de f.</p>
+<p>the letter is written</p>
+<p class='fade'>epistol es scrit</p>
+<p>speech is spoken</p>
+<p class='fade'>parla es parlat</p>
+<p>she loves</p>
+<p class='fade'>illa ama</p>
+<p>he/she is loved, someone loves him/her</p>
+<p class='fade'>il es amat, on ama le</p>
+<p>I have been loved</p>
+<p class='fade'>mi ha esset amat</p>
+<p>I speak</p>
+<p class='fade'>mi parla</p>
+<p>you will be spoken of</p>
+<p class='fade'>de tu va esser parlat</p>
+<p>I am, I exist</p>
+<p class='fade'>mi es, mi existe</p>
+<p>I am created, existence is given to me</p>
+<p class='fade'>mi es creat, a mi es dat existentie</p>
+<p>creature</p>
+<p class='fade'>creatur</p>
+<p>c) Irrational concepts.</p>
+<p class='fade'>c) Significationes irrational.</p>
+<p>spouse</p>
+<p class='fade'>marit,</p>
+<p>friend</p>
+<p class='fade'>amico,</p>
+<p>colleague</p>
+<p class='fade'>colleg,</p>
+<p>member of society</p>
+<p class='fade'>membre de societé,</p>
+<p>child of the same mother</p>
+<p class='fade'>infant de sam matre,</p>
+<p>celestial object</p>
+<p class='fade'>ether,</p>
+<p>the world is created by God</p>
+<p class='fade'>mund es creat per Deo,</p>
+<p>the forest speaks</p>
+<p class='fade'>forest parla,</p>
+<p>the clock walks</p>
+<p class='fade'>horloj marcha.</p>
+<p>d) Imaginary concepts</p>
+<p class='fade'>d) Significationes imaginari</p>
+<p>Means:</p>
+<p class='fade'>Sig.:</p>
+<p>imaginary quantity</p>
+<p class='fade'>quantatitá imaginari</p>
+<p>is, exists</p>
+<p class='fade'>es, existe</p>
+<p>stops existing, turns itself imaginary</p>
+<p class='fade'>cessa esser, fa -se imaginari,</p>
+<p>is not, does not exist</p>
+<p class='fade'>ne esse, ne existe, </p>
+<p>turns itself [real], becomes, stops being imaginary</p>
+<p class='fade'>fa-se, deveni, -cessa esser imaginari;</p>
+<p>day</p>
+<p class='fade'>die,</p>
+<p>day, which stops being, evening</p>
+<p class='fade'>die, quel cessa esser, -vesper, </p>
+<p>not-day, night</p>
+<p class='fade'>ne-die, nocte,</p>
+<p>day, which starts, night, which stops being, morning</p>
+<p class='fade'>die, quel comensa, -nocte, quel cessa esser, -matine;</p>
+<p>friendship</p>
+<p class='fade'>amcitá,</p>
+<p>end of friendship, beginning of enmity, argument</p>
+<p class='fade'>cessation de amicitá, origina de inamicitá, -querell,</p>
+<p>enmity</p>
+<p class='fade'>inamicitá,</p>
+<p>end of enmity, renewal of friendship</p>
+<p class='fade'>cesation de inamicitá, renovation de amicitá,</p>
+<p>end of enmity is renewal of friendship</p>
+<p class='fade'>cessation de inamicitá es renovation de amicitá.</p>
+<p>Examples to translate:</p>
+<p class='fade'>Exemples por traducter:</p>
+<h2>Logarithms<span class='fade'>Logaritmation</span></h2>
+<p>Logarithms express evolution. For example:</p>
+<p class='fade'>Logaritmation expresse evolution. P.e.:</p>
+<p>chopping</p>
+<p class='fade'>haccation</p>
+<p>writing</p>
+<p class='fade'>scrition</p>
+<p>deformation</p>
+<p class='fade'>deformation</p>
+<p>prolongation</p>
+<p class='fade'>prolongation</p>
+<p>diminution</p>
+<p class='fade'>deminuation</p>
+<p>illumination</p>
+<p class='fade'>illumination</p>
+<p>signalisation</p>
+<p class='fade'>signalisation</p>
+<p>origin of human from monkeys</p>
+<p class='fade'>origina de homo ex simie</p>
+<p>formation of the earth</p>
+<p class='fade'>devenition de terre</p>
+<p>formation of the world</p>
+<p class='fade'>devenition de mund</p>
+<p>Examples to translate:</p>
+<p class='fade'>Exemples por traducter:</p>
+<p>Mixed examples</p>
+<p class='fade'>Exemples mixt.</p>
+<h2>Equations<span class='fade'>Equationes</span></h2>
+<p>Equations (and inequalities) are logical judgements. </p>
+<p class='fade'>Equationes (e inegalitá) es logical judicamentes:</p>
+<p>a woman is a person</p>
+<p class='fade'>femina es homo</p>
+<p>“a chicken is not a bird, and a woman is not a person” (Russian proverb)</p>
+<p class='fade'>"gallina ne es avio, femina ne es homo" (proverbie russ)</p>
+<p>an elephant is larger than a horse</p>
+<p class='fade'>elefant es plu grand ca cavali</p>
+<p>a mouse is smaller than a cat</p>
+<p class='fade'>mus es plu minim ca cat</p>
+<p>a monkey is similar to a human</p>
+<p class='fade'>simio es simil a homo</p>
+<p>I will construct a house</p>
+<p class='fade'>mi va constructer dom</p>
+<p>he/she has constructed a house of lumber</p>
+<p class='fade'>il ha constructet dom de ligne</p>
+<p>a human chops a tree of a building</p>
+<p class='fade'>homo hacca arbor de construction</p>
+<p>a human chops a tree for building,</p>
+<p class='fade'>homo hacca arbor por constructer</p>
+<p>we construct a house in a forest,</p>
+<p class='fade'>noi constructe dom in foreste</p>
+<p>we construct a hoise, which is in a forest.</p>
+<p class='fade'>noi constructe dom, qui es in foreste</p>
+<p>the book you speak of, is it on the table?</p>
+<p class='fade'>parla tu del libre, que it es sur table?</p>
+<p>I ask for a book,</p>
+<p class='fade'>mi interroga per libre, </p>
+<p>is the book on the table?</p>
+<p class='fade'>es libre sur table?</p>
+<p>yes, the book is on the table!</p>
+<p class='fade'>yes, libre es sur table!</p>
+<p>no, the book is not on the table!</p>
+<p class='fade'>né, libre ne es sur table!</p>
+<p>Transcendent algebra gives the possibility to deduct mathematically from given expressions all logical consequences. For example:</p>
+<p class='fade'>Li transcendent algebra da li possibilitá deducter matematicmen ex dat expession omni consequenties logical. P.e.:</p>
+<p>he/she does not speak signifies something, that he/she has spoken</p>
+<p class='fade'>il ne parla significa alquicose, qui il ha dir</p>
+<p>“if the child (of the mother) doesn’t cry, the mother (of the child) does not understand his/her wants (i.e. cries)” (Russian proverb)</p>
+<p class='fade'>"infant (de matre) ne plora, -- matre (de infant) ne comprende (i.e. plora)" (proverbe russ);</p>
+<p>"there is no intelligence without language, no language without intelligence" (Max Müller) </p>
+<p class='fade'>"ne es intellectu sin lingue, ne es lingue sin intellectu" (Max Müller),</p>
+<p>“intelligence without language and language without intelligence do not exist”</p>
+<p class='fade'>"intellectu sin lingue e. linge sin intellectu ne existe"</p>
+<p>intelligence is language, truth</p>
+<p class='fade'>intellectu es lingue, logos</p>
+<p>Etc.</p>
+<p class='fade'>E c.</p>
+<h2>Conclusion<span class='fade'>Conclusion</span></h2>
+<p>Gallileo tells us:</p>
+<p class='fade'>Che Gallilei noi lee:</p>
+<p>"Philosophy is written in a great book, which stands continually open for all and everyone (I mean the universe),</p>
+<p class='fade'>"Filosofie es scrit in grandissim libre, quel es sempre apert por omni e chascun (mi parla peri li mundo).</p>
+<p>But one cannot understand it, who has not learned to read its language and characters, with which it is written.</p>
+<p class='fade'>Ma ne posse comprender it ti, qui avan ne ha aprendet leer su lingue e signes, per queles it es scrit.</p>
+<p>And it is written in the language of mathematics, and its characters of triangles, circles and other mathematical figures."</p>
+<p class='fade'>E it es scrit in lingue matematical, e su signes triángules, circules e altri matematical figures."</p>
+<p>The present brochure illustratively demonstrates the truth of these words.</p>
+<p class='fade'>Li veritá de ti paroles demonstra illustrativmen li present brochur.</p>
+<h2>Some examples.<span class='fade'>Einige Beispiele.</span><span class="fade">Quelques exemples.</span><span class="fade">Некоторые примеры.</span><span class="fade">Mōned näitused.</span></h2>
+<p>person</p>
+<p class='fade'>Mensch</p>
+<p class='fade'>homme</p>
+<p class='fade'>человекъ</p>
+<p class='fade'>inimene</p>
+<p>I, me</p>
+<p class='fade'>ich</p>
+<p class='fade'>je, moi</p>
+<p class='fade'>я</p>
+<p class='fade'>mina</p>
+<p>you</p>
+<p class='fade'>du</p>
+<p class='fade'>tu, toi</p>
+<p class='fade'>ты</p>
+<p class='fade'>sina</p>
+<p>he, him</p>
+<p class='fade'>er</p>
+<p class='fade'>il</p>
+<p class='fade'>онъ</p>
+<p class='fade'>tema</p>
+<p>someone</p>
+<p class='fade'>Jemand</p>
+<p class='fade'>quelq'un</p>
+<p class='fade'>некто</p>
+<p class='fade'>keegi</p>
+<p>Jacob Linzbach</p>
+<p class='fade'>Jacob Linzbach</p>
+<p class='fade'>Jacob Linzbach</p>
+<p class='fade'>Я. Линцбахъ</p>
+<p class='fade'>Jakob Linzbach</p>
+<p>giant, large person</p>
+<p class='fade'>ein grosser Mensch Riese</p>
+<p class='fade'>gigant, grand homme</p>
+<p class='fade'>человечище</p>
+<p class='fade'>suur inim., hiiglane</p>
+<p>dwarf, small person</p>
+<p class='fade'>Zwerg, Menschlein</p>
+<p class='fade'>petit homme, nain</p>
+<p class='fade'>человечекъ</p>
+<p class='fade'>väike inim., härjapōlvlane</p>
+<p>me, with me</p>
+<p class='fade'>ich, mit mir</p>
+<p class='fade'>moi, avec moi</p>
+<p class='fade'>я, со мною</p>
+<p class='fade'>mina, minuga</p>
+<p>not me, without me</p>
+<p class='fade'>nicht ich, ohne mich</p>
+<p class='fade'>pas moi, sans moi</p>
+<p class='fade'>не я, безъ меня</p>
+<p class='fade'>mitte mina, minuta</p>
+<p>I am to the right of you</p>
+<p class='fade'>ich bin rechts von dir</p>
+<p class='fade'>je suis à droite (de toi)</p>
+<p class='fade'>я направо от тебя</p>
+<p class='fade'>mina olen sinust paremat kätt</p>
+<p>you are to the left of me</p>
+<p class='fade'>du bist links von mir</p>
+<p class='fade'>tu es à ma gauche</p>
+<p class='fade'>ты налево отъ меня</p>
+<p class='fade'>sina oled minus pahemat kätt</p>
+<p>he is earlier than you</p>
+<p class='fade'>er ist früher als du</p>
+<p class='fade'>il est plus tôt que toi</p>
+<p class='fade'>онъ раньше тебя</p>
+<p class='fade'>tema on varem kui sina</p>
+<p>you are later than him</p>
+<p class='fade'>du bist nach ihm</p>
+<p class='fade'>tu es après lui</p>
+<p class='fade'>ты после него</p>
+<p class='fade'>sina oled hiljem kui tema</p>
+<p>two people, people</p>
+<p class='fade'>zwei Menschen, Menschen</p>
+<p class='fade'>deux hommes, des hommes</p>
+<p class='fade'>два человекаб, люди</p>
+<p class='fade'>kaks inimest, inimesed</p>
+<p>we, us</p>
+<p class='fade'>wir</p>
+<p class='fade'>nous</p>
+<p class='fade'>мы</p>
+<p class='fade'>meie</p>
+<p>you(pl.)</p>
+<p class='fade'>ihr</p>
+<p class='fade'>vous</p>
+<p class='fade'>вы</p>
+<p class='fade'>teie</p>
+<p>they</p>
+<p class='fade'>sie</p>
+<p class='fade'>ils</p>
+<p class='fade'>они</p>
+<p class='fade'>nemad</p>
+<p>product</p>
+<p class='fade'>Produkt</p>
+<p class='fade'>Produit</p>
+<p class='fade'>произведение</p>
+<p class='fade'>[missing]</p>
+<p>friendship</p>
+<p class='fade'>Freundschaft</p>
+<p class='fade'>amitié</p>
+<p class='fade'>дружба</p>
+<p class='fade'>sōprus</p>
+<p>company</p>
+<p class='fade'>Genossenschaft</p>
+<p class='fade'>association</p>
+<p class='fade'>товарищество</p>
+<p class='fade'>selts, kompanii</p>
+<p>society</p>
+<p class='fade'>Gesellschaft</p>
+<p class='fade'>societé</p>
+<p class='fade'>общество</p>
+<p class='fade'>suurem selts</p>
+<p>enmity</p>
+<p class='fade'>Feindschaft</p>
+<p class='fade'>inimitié</p>
+<p class='fade'>вражда</p>
+<p class='fade'>vaen</p>
+<p>not company</p>
+<p class='fade'>keine Genossenschaft</p>
+<p class='fade'>pas une association</p>
+<p class='fade'>не товарищество</p>
+<p class='fade'>[missing]</p>
+<p>crowd</p>
+<p class='fade'>Volksmenge</p>
+<p class='fade'>foule</p>
+<p class='fade'>толпа</p>
+<p class='fade'>seltsita olek</p>
+<p>ratio</p>
+<p class='fade'>Verhältniss, Relation</p>
+<p class='fade'>Relation</p>
+<p class='fade'>отношение</p>
+<p class='fade'>[missing]</p>
+<p>something human</p>
+<p class='fade'>etwas mënschliches</p>
+<p class='fade'>quelque chose d'humain</p>
+<p class='fade'>нечто человеческое</p>
+<p class='fade'>midagi inimlist</p>
+<p>human society</p>
+<p class='fade'>mensliche Gesellschaft</p>
+<p class='fade'>societé humaine</p>
+<p class='fade'>общество человеческое</p>
+<p class='fade'>inimline seltskond</p>
+<p>person of society</p>
+<p class='fade'>Mann der Gesellsch</p>
+<p class='fade'>homme de societé</p>
+<p class='fade'>человекъ общественный, человекъ общества</p>
+<p class='fade'>selts kondline inimene</p>
+<p>your friendship</p>
+<p class='fade'>deine Freundschaft</p>
+<p class='fade'>ton amintié</p>
+<p class='fade'>дружба твоя</p>
+<p class='fade'>sinu sōprus</p>
+<p>friend</p>
+<p class='fade'>Freund</p>
+<p class='fade'>ami</p>
+<p class='fade'>другъ</p>
+<p class='fade'>sōber</p>
+<p>not a friend</p>
+<p class='fade'>kein Freund</p>
+<p class='fade'>pas ami</p>
+<p class='fade'>не другъ</p>
+<p class='fade'>[missing]</p>
+<p>enemy</p>
+<p class='fade'>Feind</p>
+<p class='fade'>ennemi</p>
+<p class='fade'>врагъ</p>
+<p class='fade'>[missing]</p>
+<p>comrade</p>
+<p class='fade'>Genosse</p>
+<p class='fade'>camarade</p>
+<p class='fade'>товарищъ</p>
+<p class='fade'>seltsiline</p>
+<p>seed, embryo</p>
+<p class='fade'>Same, Embrio</p>
+<p class='fade'>semence, embryon</p>
+<p class='fade'>семя, эмбрионъ</p>
+<p class='fade'>seeme, liha</p>
+<p>child</p>
+<p class='fade'>Kind</p>
+<p class='fade'>enfant</p>
+<p class='fade'>ребенокъ</p>
+<p class='fade'>laps</p>
+<p>mature person</p>
+<p class='fade'>reifer Mensch</p>
+<p class='fade'>homme mûr</p>
+<p class='fade'>зрелый человекъ, совершенное</p>
+<p class='fade'>täieealine</p>
+<p>parent</p>
+<p class='fade'>Erwachsener, Alter</p>
+<p class='fade'>personne adulte, parent</p>
+<p class='fade'>родителъ</p>
+<p class='fade'>vanem</p>
+<p>deceased, spirit</p>
+<p class='fade'>Verstorbener, Geist</p>
+<p class='fade'>décédé, revenant</p>
+<p class='fade'>усопший, духъ</p>
+<p class='fade'>surnud, waim</p>
+<p>the person lives, produces life</p>
+<p class='fade'>der Mensch lebt, erzeugt Kinder</p>
+<p class='fade'>l'homme vit, produit des enfants</p>
+<p class='fade'>человекъ живетъ, производитъ жизнь</p>
+<p class='fade'>inimene elab, sünnitab</p>
+<p>the person exists</p>
+<p class='fade'>der Mensch existiert</p>
+<p class='fade'>l'homme existe</p>
+<p class='fade'>человекъ существуетъ</p>
+<p class='fade'>inimene on olemas</p>
+<p>the person is alive, produced</p>
+<p class='fade'>der Mensch ist belebt, erzeugt</p>
+<p class='fade'>l'homme est animé, produit</p>
+<p class='fade'>человекъ оживленъ</p>
+<p class='fade'>inimene on elustatud, sünnitatud</p>
+<p>I live, we live</p>
+<p class='fade'>ich lebe, wir leben</p>
+<p class='fade'>je vis, nous vivons</p>
+<p class='fade'>я живу, мы живемъ</p>
+<p class='fade'>mina elan, meie elame</p>
+<p>you live, you(pl.) live</p>
+<p class='fade'>du lebst, ihr lebt</p>
+<p class='fade'>tu vis, vous vivez</p>
+<p class='fade'>ты живешь, вы живете</p>
+<p class='fade'>sina elad, teie elate</p>
+<p>he lives, they live</p>
+<p class='fade'>er lebt, sie leben</p>
+<p class='fade'>il vit, ils vivent</p>
+<p class='fade'>онъ живетъ, они живутъ</p>
+<p class='fade'>tema elab, nemad elavad</p>
+<p>I lived, I will live</p>
+<p class='fade'>ich lebte, ich werde leben</p>
+<p class='fade'>je vecus, je vivrai</p>
+<p class='fade'>я жилъ, я буду жить</p>
+<p class='fade'>mina elasin, mina saan elama</p>
+<p>end</p>
+<p class='fade'>Abschaffung, Beseitigung, Ende</p>
+<p class='fade'>abolissement, ecartement, fin</p>
+<p class='fade'>прекращение действия</p>
+<p class='fade'>lōppemine</p>
+<p>beginning</p>
+<p class='fade'>Erneuerung, Werden, Anfang</p>
+<p class='fade'>renouvellement, naissance, commencement</p>
+<p class='fade'>возобновление, становление</p>
+<p class='fade'>algus, saamine</p>
+<p>the person is born, lives, and dies</p>
+<p class='fade'>der Mensch wird geboren, lebt und stirbt</p>
+<p class='fade'>l'homme naît, vit et meurt</p>
+<p class='fade'>человекъ родится, живетъ и умираетъ</p>
+<p class='fade'>ininene sünnib, elab ja sureb</p>
+<p>I do not die</p>
+<p class='fade'>ich sterbe nicht</p>
+<p class='fade'>je ne meurs pas</p>
+<p class='fade'>я не умираю</p>
+<p class='fade'>mina ei sure</p>
+<p>life</p>
+<p class='fade'>das Leben</p>
+<p class='fade'>la vie</p>
+<p class='fade'>жизнь</p>
+<p class='fade'>elu, elamine</p>
+<p>birth</p>
+<p class='fade'>Geburt</p>
+<p class='fade'>la naissance</p>
+<p class='fade'>рождение</p>
+<p class='fade'>sündimine</p>
+<p>dying</p>
+<p class='fade'>Sterben</p>
+<p class='fade'>[missing]</p>
+<p class='fade'>умирание</p>
+<p class='fade'>suremine</p>
+<p>death</p>
+<p class='fade'>Tod</p>
+<p class='fade'>la mort</p>
+<p class='fade'>смерть</p>
+<p class='fade'>surm</p>
+<p>I begin</p>
+<p class='fade'>ich fange an</p>
+<p class='fade'>je commence</p>
+<p class='fade'>я начинаю</p>
+<p class='fade'>mina hakkan peale</p>
+<p>I finish</p>
+<p class='fade'>ich endige</p>
+<p class='fade'>je finis</p>
+<p class='fade'>я кончаю</p>
+<p class='fade'>mina lōpetan</p>
+<p>physical</p>
+<p class='fade'>leiblich</p>
+<p class='fade'>corporel</p>
+<p class='fade'>плотский</p>
+<p class='fade'>lihalik</p>
+<p>childlike</p>
+<p class='fade'>kindlich</p>
+<p class='fade'>enfantin</p>
+<p class='fade'>детский</p>
+<p class='fade'>lapselik</p>
+<p>humanlike</p>
+<p class='fade'>menschlich</p>
+<p class='fade'>humain</p>
+<p class='fade'>зрелый</p>
+<p class='fade'>inimlik</p>
+<p>adultlike, parental</p>
+<p class='fade'>eterlich</p>
+<p class='fade'>des parent</p>
+<p class='fade'>взрослый, родительский</p>
+<p class='fade'>vanemlik</p>
+<p>spiritual</p>
+<p class='fade'>geistlich</p>
+<p class='fade'>spirituel, mourant</p>
+<p class='fade'>духовный</p>
+<p class='fade'>vaimlik</p>
+<p>spiritual person</p>
+<p class='fade'>geistlicher Mensch</p>
+<p class='fade'>homme spirituel</p>
+<p class='fade'>человекъ духовный</p>
+<p class='fade'>vaimuline inimene</p>
+<p>"man does not live" is an expression of the living</p>
+<p class='fade'>"der Mensch lebt nicht" ist eine Äusserung von Etwas lebende</p>
+<p class='fade'>"l'homme ne vit pas" est une expression de quelque chose de vivant</p>
+<p class='fade'>выражение "человекъ не живетъ" есть отношение ко живущему</p>
+<p class='fade'>üteldes: "inimene ei ela," oletame midagi (1), mis inimese viisi elab (i^i)</p>
+<p>dying, mortal</p>
+<p class='fade'>sterbender</p>
+<p class='fade'>mourant</p>
+<p class='fade'>умирающий</p>
+<p class='fade'>surelik</p>
+        </div></main>
     </body>
 </html>

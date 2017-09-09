@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>TRANSALG</title>
+        <script type="text/x-mathjax-config">
+        MathJax.Ajax.config.path["img"] = "https://cdn.rawgit.com/pkra/mathjax-img/1.0.0/";
+        MathJax.Hub.Config({
+            extensions: ['[img]/img.js'],
+            messageStyle: "none"
+        });
+        </script>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+        <script type='text/javascript' src='ta.js'></script>
+        <link rel='stylesheet' type='text/css' href='ta.css'></link>
+    </head>
+    <body>
+        <noscript>please enable javascript</noscript>
+        <form id='main' autocomplete='off'>
+            <input type='submit' value='render' id='render'>
+            <div id='inputwrap'><input type='text' id='input'></div>
+        </form>
+        <div id='output'>\(\)</div>
+        <p>examples from the IOL problem (2003#1):</p>
+        <ol>
+            <li><a class='ex' href='#'>(father+brother)^talk</a> "The father and the brother are talking."</li>
+            <li><a class='ex' href='#'>n(>person)^{work-t}</a> "The giants are working without haste."</li>
+            <li><a class='ex' href='#'>(orphans)^write = letter</a> "The orphans are writing a letter."</li>
+            <li><a class='ex' href='#'>(-n person_1)^write - t = person_2</a> "It wasn't us who wrote about you (sg.)."</li>
+            <li><a class='ex' href='#'>letter^{\sqrt{write}} - t = -woman_3</a> "It was not by her that the letter was written."</li>
+            <li><a class='ex' href='#'>(father)^{-like} = work</a> "The father doesn't like the work."</li>
+            <li><a class='ex' href='#'>((>person) - like)^eat - t = parents</a> "The wicked giant ate the parents."</li>
+            <li><a class='ex' href='#'>woman_3^{-t}</a> "She is not in a hurry."</li>
+        </ul>
+    </body>
+</html>
