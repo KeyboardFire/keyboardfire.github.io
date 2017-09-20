@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang='en'>
+<html lang='en' id='top'>
     <head>
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width'>
@@ -14,6 +14,25 @@
                 max-width: 1000px;
                 margin: 0px auto;
                 padding: 1em;
+            }
+
+            #totop {
+                display: block;
+                width: 2em;
+                height: 2em;
+                background-color: #ddd;
+                position: fixed;
+                top: 0.5em;
+                left: 0.5em;
+            }
+
+            #totop > div {
+                border-left: 0.5em solid transparent;
+                border-right: 0.5em solid transparent;
+                border-bottom: 0.866em solid #222;
+                position: absolute;
+                top: 0.5em;
+                left: 0.5em;
             }
 
             div#book .fade {
@@ -55,6 +74,7 @@
     </head>
     <body>
         <main>
+        <a id='totop' href='#top'><div></div></a>
 <h1>Transcendental Algebra (2017)</h1>
 <h2>Foreword</h2>
 <p>In 2003, Ksenia Gilyarova wrote a problem about a constructed writing system known as Transcendental Algebra, created by Jacob Linzbach, for the first International Linguistics Olympiad. An easily understandable and accessible resource documenting the details of this language has since been unavailable to years of subsequent IOL contestants. 14 years later, we have located a copy of Linzbach's original book <i>Transcendent algebra, ideografie matematical, experiment de un lingue filosofic</i>, transcribed it, and translated it to English for the benefit of anyone interested in learning more about Linzbach's work.</p>
@@ -62,7 +82,22 @@
 <p>We hope you find the following transcription and translation of <i>Transcendent algebra</i> to be as interesting as we did, as well as informative and helpful in learning about Linzbach's "philosophical language".</p>
 <p>Chuanshu Jiang (IOL team Australia)<br>Andrew Tockman (IOL team USA)</p>
 <hr><div id="book">
-<h2>Author's note.<span class='fade'>De autor.</span></h2>
+<h2 id="toc">Table of contents</h2>
+<a href='#aut'>Author's note</a><br>
+<a href='#int'>Introduction</a><br>
+<a href='#sym'>Symbolics</a><br>
+<a href='#add'>Addition</a><br>
+<a href='#sub'>Subtraction</a><br>
+<a href='#mul'>Multiplication</a><br>
+<a href='#div'>Division</a><br>
+<a href='#exp'>Exponentiation</a><br>
+<a href='#rad'>Radication</a><br>
+<a href='#int'>Interpretation of all exponents</a><br>
+<a href='#log'>Logarithms</a><br>
+<a href='#equ'>Equations</a><br>
+<a href='#con'>Conclusion</a><br>
+<a href='#som'>Some examples</a><br>
+<h2 id=aut>Author's note<span class='fade'>De autor</span></h2>
 <p>The present printed brochure is extracted from detailed work.</p>
 <p class='fade'>Li present brochur autolitografic es extract ex detaliat labor.</p>
 <p>Desiring to inform the European reader of this new problem,</p>
@@ -89,28 +124,28 @@
 <p class='fade'>Mi va esser mersios al letor por communication de remarcas.</p>
 <p>Jacob Linzbach.</p>
 <p class='fade'>Jacob Linzbach.</p>
-<h2>Introduction<span class='fade'>Introduction</span></h2>
-<p>Leibniz writes: </p>
-<p class='fade'>Leibniz scri: </p>
+<h2 id=int>Introduction<span class='fade'>Introduction</span></h2>
+<p>Leibniz writes:</p>
+<p class='fade'>Leibniz scri:</p>
 <p>"A part of the secret of the success of algebra consists in its characteristic;</p>
 <p class='fade'>"Un part del secrete del success de algebra consiste in su caracteristica,</p>
 <p>that is, in the art of utilizing symbols.</p>
 <p class='fade'>i.e. in arte utilisar symboles. </p>
 <p>Therefore there appears the possibility to imagine the creation of new algorithms,</p>
-<p class='fade'>Pro to appare possibilitia imaginar li creation de nov algoritmes, </p>
+<p class='fade'>Pro to appare possibilitia imaginar li creation de nov algoritmes,</p>
 <p>of new algebras, which study other relations too, different than relations between quantities.</p>
 <p class='fade'>de nov algebras, studiant anque altri relationes, different de relationes inter quantitas. </p>
 <p>Furthermore, there appears the hope of reducing all thoughts to a combination of characters,</p>
-<p class='fade'>Mem plu, -- appare li espera reducter omni consideration a un combination de signes, </p>
+<p class='fade'>Mem plu, -- appare li espera reducter omni consideration a un combination de signes,</p>
 <p>and there appears the possibility of pondering over a time when two philosophers, like two mathematicians,</p>
-<p class='fade'>e appare possibilita meditar super tel tempor quande du filosofos, simil du matematicos, </p>
+<p class='fade'>e appare possibilita meditar super tel tempor quande du filosofos, simil du matematicos,</p>
 <p>instead of [having] infinite disputes, will take pens in hands and, sitting at a table, will replace disputes with calcuation.</p>
 <p class='fade'>in vice de infinit disputes va prender plumes in manus e sedent ad table va vicear disput per calculation. </p>
-<p>The common mathematics transforms itself thus in calculation of thoughts (calculus ratiocinatus) and conflates itself with logic."</p>
+<p>The common mathematics transforms itself thus in calculation of thoughts (calculus ratiocinator) and conflates itself with logic."</p>
 <p class='fade'>Li commun matematica transforma-se talmen in calcul de considerationes (calculus ratiocinatus) e confunde con logical."</p>
 <p>This problem of universal mathematics is solved by transcendental algebra.</p>
 <p class='fade'>Ti ci problema de universal matematica es solvet per transcendent algebra.</p>
-<h2>Symbolics<span class='fade'>Symbolica</span></h2>
+<h2 id=sym>Symbolics<span class='fade'>Symbolica</span></h2>
 <p>To constant quantities a, b, c, d… correspond in transcendent algebra definite concepts represented by figures, for example:</p>
 <p class='fade'>A quantitas constant a, b, c, d… corresponde in transcendent algebra definit conceptiones, representat per figures, por exemple:</p>
 <img width='348' class='inline pad' src='19af4b1d72a5a7c688a552a9f4d518ab.png'>
@@ -118,17 +153,17 @@
 <p class='fade'>Quantitas variabil x, y, z, t… representa se per schemas:</p>
 <img width='499' class='inline pad' src='f47bff88f5c9dbbd23d153642bcdf73a.png'>
 <p>Beyond figures and symbols, also used are numbers 1, 2, 3, 4… and letters a, b, c, d…, x, y, z, t…</p>
-<p class='fade'>Ultra figures e schemas es usat anque cifres 1, 2, 3, 4… e litteres a, b, c, d…, x, y, z, t… </p>
+<p class='fade'>Ultra figures e schemas es usat anque cifres 1, 2, 3, 4… e litteres a, b, c, d…, x, y, z, t…</p>
 <p>Figures, symbols, numbers and letters join themselves using mathematical characters:</p>
 <p class='fade'>Figures, schemas, cifres e litteres junte se per matematical signes:</p>
 <img width='357' class='inline pad' src='7c1a84d6343c80750bea1bf7f0d4cc75.png'>
 <p>Concepts that are not able to be expressed immediately [through basic combinations of glyphs] represent themselves by means of mathematical operations.</p>
 <p class='fade'>Concepiones, ne possent esser expresset inmediatnen, representase por medie de matematical operationes.</p>
 <p>In calculation of concepts the value of all the laws of common algebra is conserved.</p>
-<p class='fade'>In calculation de conceptiones conserva valor omni leges de algebra commun. </p>
+<p class='fade'>In calculation de conceptiones conserva valor omni leges de algebra commun.</p>
 <p>The results of calculations are found intuitively by way of method of interpretation, used in philosophy.</p>
 <p class='fade'>Li resultates del calcul es trovat intuitivnen per medie de metode de interpretation, usat in filosofie.</p>
-<h2>Addition<span class='fade'>Addition</span></h2>
+<h2 id=add>Addition<span class='fade'>Addition</span></h2>
 <p><img width='24' class='inline' src='26b17225b626fb9238849fd60eabdf60.png'>plus, and, with, present</p>
 <p class='fade'>plus, e, con, presentie</p>
 <p><img width='97' class='inline' src='619aecb345c9373b0462f82cac08e57d.png'>horse and cow</p>
@@ -153,7 +188,7 @@
 <p class='fade'>gigant e pigméo</p>
 <p><img width='62' class='inline' src='cf4c4e2cd0c45df4decc7f7af13e0d26.png'>man with umbrella</p>
 <p class='fade'>homo con parapluvie</p>
-<h2>Subtraction<span class='fade'>Subtraction</span></h2>
+<h2 id=sub>Subtraction<span class='fade'>Subtraction</span></h2>
 <p>Subtraction is the reciprocal operation to addition.</p>
 <p class='fade'>Subtraction es operation reciproc a addition.</p>
 <p><img width='24' class='inline' src='336d5ebc5436534e61d16e63ddfca327.png'>minus, without, not, absent</p>
@@ -251,7 +286,7 @@
 <p class='fade'>ad cordie, til cordie</p>
 <p><img width='69' class='inline' src='ec6248a9c8a213e94c2bd2376daad2c7.png'>from above, <img width='69' class='inline' src='c9554a9da32d067216e90653a3675b88.png'>to above</p>
 <p class='fade'>de supre, ad supre</p>
-<h2>Multiplication<span class='fade'>Multiplication</span></h2>
+<h2 id=mul>Multiplication<span class='fade'>Multiplication</span></h2>
 <p>A. Multiplication of figures by numbers.</p>
 <p class='fade'>A. Multiplication de figures per número.</p>
 <img width='330' class='inline pad' src='1847f7100df116382602131d278f0cbe.png'>
@@ -273,20 +308,20 @@
 <p class='fade'>annus, tempores</p>
 <p>B. Multiplication of figures by figures</p>
 <p class='fade'>B. Multiplication de figures per figures</p>
-<p>Professor John Perry writes in his Practical Mathematics on the multiplication of vector quantities the following:</p>
+<p>Professor John Perry writes the following on the multiplication of vector quantities in his ‘Practical Mathematics’:</p>
 <p class='fade'>Professor John Perry scri in su Practical Matematica peri multiplication de quantitas vectora secuent:</p>
-<p>If I were asked to multiply 2 tables by 3 chairs I would not refuse; I would say,  </p>
-<p class='fade'>"Si on va petir me multiplicar 2 stules per 3 tables, mi ne var refusar; mi var dir, </p>
+<p>If I were asked to multiply 2 tables by 3 chairs I would not refuse; I would say,</p>
+<p class='fade'>"Si on va petir me multiplicar 2 stules per 3 tables, mi ne var refusar; mi var dir,</p>
 <p>6 chair-tables. But if I were asked to say what I mean by a chair-table, I would refuse to answer</p>
 <p class='fade'>que to var esser 6 stulotables. Ma mi va refusar respoder, quo esse stulotable,</p>
 <p>because nobody has ever given a meaning to the term.</p>
-<p class='fade'>Proque ancor nequi ha provat attribuer qualcunc signification a tal termin. </p>
+<p class='fade'>Proque ancor nequi ha provat attribuer qualcunc signification a tal termin.</p>
 <p>But I do know that when this sort of thing comes into a Physical Problem,</p>
 <p class='fade'>Tamen mi save que tal productes recontra se in solution de problemas fisical,</p>
 <p>we can always give a useful meaning.</p>
-<p class='fade'>e li termines correspondent sempre recive un util logical signification. </p>
+<p class='fade'>e li termines correspondent sempre recive un util logical signification.</p>
 <p>This is beyond ordinary Algebra,</p>
-<p class='fade'>Ti considerationes sta ultra limites de algebra commun, </p>
+<p class='fade'>Ti considerationes sta ultra limites de algebra commun,</p>
 <p>and yet our processes are carried on by the rules of Algebra.</p>
 <p class='fade'>quancam li process self de calculation es operat segun regules de algebra.</p>
 <p>Please observe, that I do not say that 2 tables x 3 chairs = 2 chairs x 3 tables.</p>
@@ -395,7 +430,7 @@
 <p class='fade'>communication, concentra[-tion]</p>
 <p><img width='59' class='inline' src='e5bbe59b16c01cfd665edba46a53b8aa.png'>oscillation, <img width='59' class='inline' src='b5adddf6990567d561b2548ec0d1b916.png'>perforation</p>
 <p class='fade'>oscillation, perforation</p>
-<h2>Division<span class='fade'>Division</span></h2>
+<h2 id=div>Division<span class='fade'>Division</span></h2>
 <p>A. Division of figures by numbers</p>
 <p class='fade'>A. Division de figures per números</p>
 <p>The operation is reduced to multiplication by the reciprocal number:</p>
@@ -406,10 +441,10 @@
 <p class='fade'>hor</p>
 <p>B. Division of figures by figures</p>
 <p class='fade'>B. Division de figures per figures</p>
-<p>Division is the reciprocal operation to multiplication. To the reciprocal meanings</p>
+<p>Division is the reciprocal operation to multiplication. The meanings of the reciprocals</p>
 <p class='fade'>Division es operation reciproc a multiplication. A significationes reciproc</p>
 <img width='64' class='inline pad' src='2114d7610da71dfd25bd34e159de101e.png'>
-<p>correspond the concepts of total and fractional, for example:</p>
+<p>correspond to the concepts of total and fractional, for example:</p>
 <p class='fade'>corresponde conceptiones total e fractional, p.e.:</p>
 <p><img width='36' class='inline' src='97f62668ced9095c8f0f2bfc5afcde21.png'>whole house, <img width='36' class='inline' src='2e6ce5a6a4f3b1c20c004f4e58254556.png'>some part of house</p>
 <p class='fade'>dom integri, alqui part de dom</p>
@@ -468,8 +503,8 @@
 <p><img width='51' class='inline' src='ddd9bbd7b8965a0e0ca4864d768ada6d.png'>people in general, every person</p>
 <p class='fade'>homo in general, chascun h.</p>
 <p><img width='51' class='inline' src='427ee4ba613aeabc5c5098e5fd99aa9c.png'>single person, individual</p>
-<p class='fade'>homo singul, individue.</p>
-<h2>Exponentiation<span class='fade'>Potentiation</span></h2>
+<p class='fade'>homo singul, individue</p>
+<h2 id=exp>Exponentiation<span class='fade'>Potentiation</span></h2>
 <p>Exponentiation is a function of figures, signifying the representation of an event in cinematographic form:</p>
 <p class='fade'>Potentie es un function de figur, significant representation de eveniment in form cinematografic:</p>
 <p><img width='535' class='inline' src='a10e7799e519bdfe20005c0b8806cf74.png'>flight</p>
@@ -493,14 +528,14 @@
 <p><img width='46' class='inline' src='51c3b3f3ff789a90c1f65710ffe889c7.png'>knitting</p>
 <p class='fade'>tricotagie</p>
 <p>Elevation of a figure in total exponentiation signifies an event,</p>
-<p class='fade'>Elevation de figur in total potentie significa un eveniment, </p>
+<p class='fade'>Elevation de figur in total potentie significa un eveniment,</p>
 <p>coming from the given concept, as of subject, for example:</p>
-<p class='fade'>exfluent del dat conception, quam de subyect, p.e.: </p>
+<p class='fade'>exfluent del dat conception, quam de subyect, p.e.:</p>
 <p><img width='339' class='inline' src='90c99e2a609dc750e9f1f1d2ef0d9f1f.png'>forge hammer, forging</p>
-<p class='fade'>martell forge, forgeada.</p>
-<h2>Radication<span class='fade'>Radication</span></h2>
+<p class='fade'>martell forge, forgeada</p>
+<h2 id=rad>Radication<span class='fade'>Radication</span></h2>
 <p>Radication is the reciprocal operation to exponentiation.</p>
-<p class='fade'>Radication es operation recproc a potentiation. </p>
+<p class='fade'>Radication es operation recproc a potentiation.</p>
 <img width='122' class='inline pad' src='e641c095268b996e48151945f81141d5.png'>
 <p><img width='148' class='inline' src='339b7c56cb8f803a2e6a9a686941da24.png'>bird, <img width='114' class='inline' src='bc2b7862dfc300bdc24c70b20f4ace45.png'>person</p>
 <p class='fade'>avio, homo</p>
@@ -512,25 +547,25 @@
 <p>signifies an event, guiding to the given concept, as of object, for example:</p>
 <p class='fade'>significa un eveniment, ductent al dat conception, quam ad obyect, p.e.:</p>
 <p><img width='135' class='inline' src='6c1971da49729cfe98cbd3cc39e55b6c.png'>making of an envelope</p>
-<p class='fade'>fabrication de covert,</p>
+<p class='fade'>fabrication de covert</p>
 <p><img width='119' class='inline' src='a074d103b4fa08a35479b3921239addf.png'>growth of a tree</p>
-<p class='fade'>cresentation de arbor,</p>
+<p class='fade'>cresentation de arbor</p>
 <p><img width='140' class='inline' src='0cf195e83efd5ba9d97d74d5e4a3fefc.png'>maturing of a fruit</p>
-<p class='fade'>maturijation de fruct,</p>
+<p class='fade'>maturijation de fruct</p>
 <p><img width='140' class='inline' src='ccd7074cafc4d37f8e9be53e99a5b59b.png'>beginning of a day, sunrise</p>
-<p class='fade'>comensa de die, aurore,</p>
+<p class='fade'>comensa de die, aurore</p>
 <p><img width='231' class='inline' src='468ebc063a8f1c7b8e4320f8776e5457.png'>beginning of a night, sunset</p>
-<p class='fade'>comensa de nocte, purpur de vespere,</p>
+<p class='fade'>comensa de nocte, purpur de vespere</p>
 <p><img width='144' class='inline' src='c573f9eeff7c3b70f30023d47aecfd39.png'>birth</p>
-<p class='fade'>nascentie,</p>
+<p class='fade'>nascentie</p>
 <p><img width='126' class='inline' src='eeaad0bfb6cb151164b7bf42ec29a3bb.png'>beginning of puberty</p>
-<p class='fade'>comensa de pubertá.</p>
-<h2>Interpretation of all exponents.<span class='fade'>Interpretation de omni potenties.</span></h2>
+<p class='fade'>comensa de pubertá</p>
+<h2 id=int>Interpretation of all exponents<span class='fade'>Interpretation de omni potenties</span></h2>
 <p>A. Numerical exponents</p>
 <p class='fade'>A. Potenties numeral.</p>
 <p>a) Positive exponents from 0 to infinity.</p>
 <p class='fade'>a) Potenties positiv de 0 ad ∞.</p>
-<p><img width='87' class='inline' src='064c79712f657cb2e166df3f0e51d32a.png'>beginning, principle, idea, material, etc. of an object,</p>
+<p><img width='87' class='inline' src='064c79712f657cb2e166df3f0e51d32a.png'>beginning, principle, idea, material, etc. of an object</p>
 <p class='fade'>comensa, principe, idee[,] materiale ec. de obyect</p>
 <p><img width='128' class='inline' src='8baa7923519a4da8586eb7b43e7a7b99.png'>process of becoming, preparation, origin of the object</p>
 <p class='fade'>processe de devenition, preparation, origina del obyect</p>
@@ -538,7 +573,7 @@
 <p class='fade'>obyect self, obyect quam tal, obyect existe</p>
 <p><img width='246' class='inline' src='f64d463708a044789abad9aa831057f2.png'>function of an object</p>
 <p class='fade'>function del obyect</p>
-<p><img width='340' class='inline' src='6503b4e3f2d48816c9ca0ee1106ad904.png'>end of an object, in the sense of transubstantiation in a product, [?] that the object itself appears as [some material…?]</p>
+<p><img width='340' class='inline' src='6503b4e3f2d48816c9ca0ee1106ad904.png'>end of an object, in the sense of transubstantiation in a product, relative to which the object itself appears as the material</p>
 <p class='fade'>fine de obyect, in sense de transsubstantation in un product, relativa quel l object self appare quam materiale</p>
 <p>Examples:</p>
 <p class='fade'>Exemples:</p>
@@ -558,48 +593,48 @@
 <p class='fade'>cruche self, cruch existe</p>
 <p><img width='42' class='inline' src='f6f2ea1dc2594c8831ceb2fd158881e1.png'>function of jar, jar being used</p>
 <p class='fade'>function de cruche, cruche in usation</p>
-<p><img width='52' class='inline' src='1c882dbfcb7e99f86043d021d5e80ce2.png'>household [???]</p>
-<p class='fade'>menage,</p>
+<p><img width='52' class='inline' src='1c882dbfcb7e99f86043d021d5e80ce2.png'>household</p>
+<p class='fade'>menage</p>
 <p><img width='43' class='inline' src='57b4f53e5ded2adceab6f492fa5c8f33.png'>gold</p>
-<p class='fade'>aure,</p>
+<p class='fade'>aure</p>
 <p><img width='66' class='inline' src='aaf875058cfda64ab187f5648c248206.png'>printing of money</p>
-<p class='fade'>stampation de monete,</p>
+<p class='fade'>stampation de monete</p>
 <p><img width='43' class='inline' src='1ec0df47677014f2bbc50e3cf70ca44b.png'>money, money exists</p>
-<p class='fade'>monete, monete existe, </p>
+<p class='fade'>monete, monete existe</p>
 <p><img width='46' class='inline' src='19ba64fea9d242999f40926dc62ea171.png'>use of money, circulation</p>
-<p class='fade'>usation de moné, circulation,</p>
+<p class='fade'>usation de moné, circulation</p>
 <p><img width='56' class='inline' src='7e2362f11e5417c4ced453ba6492b07e.png'>wealth</p>
-<p class='fade'>richess;</p>
+<p class='fade'>richess</p>
 <p><img width='36' class='inline' src='3aa74af431264bbaf85aa30a9d105031.png'>primordial material</p>
-<p class='fade'>materie primitif,</p>
+<p class='fade'>materie primitif</p>
 <p><img width='59' class='inline' src='cac119d369b0499109e3b95dead7ca4a.png'>origin of the earth</p>
-<p class='fade'>origine de terre,</p>
+<p class='fade'>origine de terre</p>
 <p><img width='36' class='inline' src='fc81e7d501e1c402bb21a39f22167144.png'>the earth, the earth exists</p>
-<p class='fade'>terre, terre existe, </p>
+<p class='fade'>terre, terre existe</p>
 <p><img width='39' class='inline' src='d68b17c76f659064a70dcfe2b4aed512.png'>life of the earth</p>
-<p class='fade'>vive de terre,</p>
+<p class='fade'>vive de terre</p>
 <p><img width='49' class='inline' src='550105acc94b4444ab64233f0cd6011a.png'>the world</p>
-<p class='fade'>mund;</p>
+<p class='fade'>mund</p>
 <p><img width='24' class='inline' src='9eb7fd0c7269cda2ac8fc539d821eddf.png'>embryo</p>
-<p class='fade'>embrion,</p>
+<p class='fade'>embrion</p>
 <p><img width='46' class='inline' src='1a7edeca558b5ca574b3162a648cdb43.png'>infant/child</p>
-<p class='fade'>infant, </p>
+<p class='fade'>infant</p>
 <p><img width='24' class='inline' src='0b8cecbc5ccc1483b9cf9ab0dd9544d9.png'>adult</p>
-<p class='fade'>adult,</p>
+<p class='fade'>adult</p>
 <p><img width='27' class='inline' src='9c36e56bc60c6a4ded84242cb10cc110.png'>elderly, senile</p>
-<p class='fade'>velón, senil,</p>
+<p class='fade'>velón, senil</p>
 <p><img width='36' class='inline' src='ae9cdeff6242a000e3b6ea0f30712c82.png'>corpse</p>
-<p class='fade'>cadáver;</p>
+<p class='fade'>cadáver</p>
 <p><img width='43' class='inline' src='2d79d47551b67932036619b34a18f000.png'>ability to emit sounds</p>
-<p class='fade'>capabilitá emisser sones,</p>
+<p class='fade'>capabilitá emisser sones</p>
 <p><img width='66' class='inline' src='f6be9a3ba78af9fa164f6efae28c7870.png'>origin of speech</p>
-<p class='fade'>origina de parlada,</p>
+<p class='fade'>origina de parlada</p>
 <p><img width='43' class='inline' src='d608d11faeebe2bb3ef8c28095ab5777.png'>language, speech in contemporary usage</p>
-<p class='fade'>lingue, parlada in stand contemporan,</p>
+<p class='fade'>lingue, parlada in stand contemporan</p>
 <p><img width='46' class='inline' src='6b63fb9b3e34f1af7c4be1e3185a20d6.png'>usage of words</p>
-<p class='fade'>usation de paroles,</p>
+<p class='fade'>usation de paroles</p>
 <p><img width='56' class='inline' src='7ad07d18efedb636bb278392812d539b.png'>literature</p>
-<p class='fade'>litteratur;</p>
+<p class='fade'>litteratur</p>
 <p>Indefinite concepts:</p>
 <p class='fade'>Conceptiones indefinit:</p>
 <p><img width='29' class='inline' src='ad43f6395c21af2b54def8fff5d9f65b.png'>nothing (not in the sense of zero!)</p>
@@ -620,31 +655,31 @@
 <p>and, keeping with the definition of division, express qualities, for example:</p>
 <p class='fade'>e, conform a definition de division, expresse qualitás, p.e.:</p>
 <p><img width='189' class='inline' src='eccaf67d58156873a2499ff47cd0af47.png'>of houses</p>
-<p class='fade'>domal, de dom,</p>
+<p class='fade'>domal, de dom</p>
 <p><img width='231' class='inline' src='70deb12cc7f9003357e26b18deb36967.png'>of steel</p>
-<p class='fade'>stalin, de stal,</p>
+<p class='fade'>stalin, de stal</p>
 <p><img width='69' class='inline' src='db5def641ae311fdc5f0b76101739061.png'>of the world</p>
-<p class='fade'>mundal, de mund,</p>
+<p class='fade'>mundal, de mund</p>
 <p><img width='63' class='inline' src='0f83b1c25168a46010123f3b6946a544.png'>of apples</p>
-<p class='fade'>pomal, de pom,</p>
+<p class='fade'>pomal, de pom</p>
 <p><img width='98' class='inline' src='6dc8cb6023b3341857d9e4e560d8569e.png'>language of the world</p>
-<p class='fade'>lingue de mund,</p>
+<p class='fade'>lingue de mund</p>
 <p><img width='189' class='inline' src='0d2c8b2afb41fdc7c1dfa1ad794eae31.png'>philosophic language</p>
-<p class='fade'>lingue filosofic,</p>
-<p><img width='163' class='inline' src='9f6a48bdfdcbbccd24d10cf85f0c1fcc.png'>language of the future.</p>
-<p class='fade'>lingue de futur.</p>
+<p class='fade'>lingue filosofic</p>
+<p><img width='163' class='inline' src='9f6a48bdfdcbbccd24d10cf85f0c1fcc.png'>language of the future</p>
+<p class='fade'>lingue de futur</p>
 <p>B. Exponents of figures</p>
-<p class='fade'>B. Potenties figural. </p>
+<p class='fade'>B. Potenties figural.</p>
 <p>a) Total exponents express the active form of the verb:</p>
 <p class='fade'>a) Potenties total express form activ de verb:</p>
 <p><img width='24' class='inline' src='0b8cecbc5ccc1483b9cf9ab0dd9544d9.png'>person exists, person is</p>
-<p class='fade'>homo existe, homo es, </p>
+<p class='fade'>homo existe, homo es</p>
 <p><img width='41' class='inline' src='220ef500ef414543c6a56e627bd50a87.png'>person chops</p>
-<p class='fade'>homo hacca,</p>
+<p class='fade'>homo hacca</p>
 <p><img width='107' class='inline' src='cb76181d59df787bf654a3b79c84b2ce.png'>person chops tree</p>
-<p class='fade'>homo hacca arbor,</p>
+<p class='fade'>homo hacca arbor</p>
 <p><img width='114' class='inline' src='a5e2a9131926642d746ddcab08dd0b12.png'>the woman knits a sock</p>
-<p class='fade'>femina tricota strump,</p>
+<p class='fade'>femina tricota strump</p>
 <p><img width='41' class='inline' src='73c97c16661f36b80a405147d40da277.png'>person marches</p>
 <p class='fade'>homo marcha</p>
 <p><img width='60' class='inline' src='a78dc5252d3954c667f997d3072b7d6f.png'>horse runs</p>
@@ -702,15 +737,15 @@
 <p><img width='95' class='inline' src='db4d37078a00990a27ea5eba5b428f96.png'>I sit here</p>
 <p class='fade'>mi side ci</p>
 <p><img width='131' class='inline' src='6f6b92dc9ed077a706f037b2030d1059.png'>he/she stands there in front</p>
-<p class='fade'>il sta ta avan,</p>
+<p class='fade'>il sta ta avan</p>
 <p><img width='108' class='inline' src='3befd82036fcabe852a107af7a3636ed.png'>she lives to the left</p>
-<p class='fade'>illa habita (domicila) ad left,</p>
+<p class='fade'>illa habita (domicila) ad left</p>
 <p><img width='29' class='inline' src='5115b36298c5fd2819859ae46b826aac.png'>I (masculine)</p>
-<p class='fade'>mi (mascul),</p>
+<p class='fade'>mi (mascul)</p>
 <p><img width='35' class='inline' src='e885ef030b66219bcc062773216a14a9.png'>I (feminine), <img width='35' class='inline' src='1299a211b1742d7801c63d2ba4a84f46.png'>you (feminine)</p>
 <p class='fade'>mi (femina), tu (femina)</p>
 <p><img width='24' class='inline' src='fa1242b3b056fccca9c368171dfff0fe.png'>I (unspecified gender)</p>
-<p class='fade'>mi (genere indifinit),</p>
+<p class='fade'>mi (genere indifinit)</p>
 <p><img width='105' class='inline' src='4fce5f7fc37f49d56afcab0ed9f9adb5.png'>I spoke a few times</p>
 <p class='fade'>mi fe parlar quelc vezes</p>
 <p><img width='49' class='inline' src='555b5cbc940ecb934729f60cbd53e2b2.png'>speak!</p>
@@ -720,49 +755,49 @@
 <p><img width='224' class='inline' src='9ec0589c0e8e654bc5631096300be14f.png'>I write and think, I write pensively</p>
 <p class='fade'>mi scri e pensa, mi scri pensante</p>
 <p><img width='228' class='inline' src='c8d3f22c1ea7a7a030fd5a635d907701.png'>I write and don't think, I write automatically</p>
-<p class='fade'>mi scri (e) ne pensa, -mi scri automaticmen</p>
+<p class='fade'>mi scri (e) ne pensa, mi scri automaticmen</p>
 <p><img width='69' class='inline' src='cb4b7d55d2282a12c02fcfcc6d410286.png'>he/she talks with haste</p>
-<p class='fade'>il parla hastante,</p>
+<p class='fade'>il parla hastante</p>
 <p><img width='69' class='inline' src='bb5e4092e2c0649216ce5c89061e3db9.png'>he/she talks without haste</p>
-<p class='fade'>il parla sin hasta,</p>
+<p class='fade'>il parla sin hasta</p>
 <p><img width='24' class='inline' src='fac7ac8288f9be1fc75dd28872339206.png'>he/she is in a hurry, <img width='40' class='inline' src='cfa0c338ace66202098c951ba6e4686a.png'>he/she is not in a hurry</p>
-<p class='fade'>il hasta, il ne hasta,</p>
+<p class='fade'>il hasta, il ne hasta</p>
 <p><img width='66' class='inline' src='c3435c80a594149f58d3f23809c525f0.png'>I study</p>
-<p class='fade'>mi studia,</p>
+<p class='fade'>mi studia</p>
 <p><img width='126' class='inline' src='b86c027298813e8a7215f80c13493ada.png'>scientist</p>
-<p class='fade'>scientist,</p>
+<p class='fade'>scientist</p>
 <p><img width='135' class='inline' src='b1a0fa85fe3c5b0d15cd4c1af74c571b.png'>student, scholer</p>
-<p class='fade'>student, scolero,</p>
+<p class='fade'>student, scolero</p>
 <p><img width='129' class='inline' src='dd3af28453d0582478ac8f47c58631bb.png'>professor</p>
 <p class='fade'>professor</p>
 <p>Growing exponents [exponents of exponents]:</p>
 <p class='fade'>Potenties crescent:</p>
 <p><img width='59' class='inline' src='300aaa29e88382d3c88d6d03952d1560.png'>I prepare to write</p>
-<p class='fade'>mi prepara scrir,</p>
+<p class='fade'>mi prepara scrir</p>
 <p><img width='54' class='inline' src='0882dc09f52853d6f6cff9428b73f466.png'>I sit to write</p>
-<p class='fade'>mi sedenta me scrir,</p>
+<p class='fade'>mi sedenta me scrir</p>
 <p><img width='72' class='inline' src='373924b05b948c89a7947eb48461413e.png'>you go to sleep</p>
-<p class='fade'>tu ea dormir,</p>
+<p class='fade'>tu ea dormir</p>
 <p><img width='65' class='inline' src='06a1096fb6220d8f866529fd414e52e2.png'>he/she goes (walks) to reap [the crop]</p>
-<p class='fade'>il ea (marcha) falcear,</p>
+<p class='fade'>il ea (marcha) falcear</p>
 <p><img width='54' class='inline' src='9e3e3225e97917e65f4eee4dd600fa2d.png'>I want to eat</p>
-<p class='fade'>mi vole manjar,</p>
+<p class='fade'>mi vole manjar</p>
 <p><img width='54' class='inline' src='8edc7234495d24be4d13eb8a889acb45.png'>I must walk</p>
-<p class='fade'>mi deve marchar,</p>
+<p class='fade'>mi deve marchar</p>
 <p><img width='54' class='inline' src='0e4f67911a4943c970ca2082e79db2d5.png'>you can pay</p>
-<p class='fade'>tu posse payar, </p>
+<p class='fade'>tu posse payar</p>
 <p><img width='52' class='inline' src='70a613cd455c1b49ba4b06774c442621.png'>you may speak</p>
-<p class='fade'>tu have jure parlar,</p>
+<p class='fade'>tu have jure parlar</p>
 <p>b) Fractional exponents express the passive form of the verb:</p>
 <p class='fade'>b) Potenties fractional expresse forme passive de verb:</p>
 <p><img width='41' class='inline' src='1e34d4393dedf737e40364d8c576758d.png'>I see, <img width='48' class='inline' src='95ce2a3572e2cdec4764260720d130d0.png'>I am seen</p>
-<p class='fade'>me vide, mi es videt,</p>
+<p class='fade'>me vide, mi es videt</p>
 <p><img width='191' class='inline' src='02ba66fe45059886d4882d52acec0eca.png'>the house is seen</p>
-<p class='fade'>dom es videt,</p>
+<p class='fade'>dom es videt</p>
 <p><img width='112' class='inline' src='ae58a1a437bcfab6dc0d60e17a27586c.png'>I see the house</p>
-<p class='fade'>mi vide dom;</p>
+<p class='fade'>mi vide dom</p>
 <p><img width='107' class='inline' src='e549acc1029aa870880ed9362f8b785c.png'>the person chops the tree</p>
-<p class='fade'>homo hacca arbor,</p>
+<p class='fade'>homo hacca arbor</p>
 <p><img width='142' class='inline' src='2ca768504e3c97ef77b17b0c643d5b42.png'>the tree is chopped by the person</p>
 <p class='fade'>arbor es haccat de homo</p>
 <p><img width='114' class='inline' src='7d507828c08a9eda0582f73ea3fd53f9.png'>the tree is chopped by the person</p>
@@ -794,23 +829,23 @@
 <p>c) Irrational concepts.</p>
 <p class='fade'>c) Significationes irrational.</p>
 <p><img width='69' class='inline' src='b7b0ea2aa2885a267a269626ef7ecca1.png'>spouse</p>
-<p class='fade'>marit,</p>
+<p class='fade'>marit</p>
 <p><img width='81' class='inline' src='d28c19b3b2a8cb95130a384e864691d5.png'>friend</p>
-<p class='fade'>amico,</p>
+<p class='fade'>amico</p>
 <p><img width='105' class='inline' src='7ea3c0a63b2b37740d640083c8fd9113.png'>colleague</p>
-<p class='fade'>colleg,</p>
+<p class='fade'>colleg</p>
 <p><img width='158' class='inline' src='731dc5a8edcd46418f4beef259870caa.png'>member of society</p>
-<p class='fade'>membre de societé,</p>
+<p class='fade'>membre de societé</p>
 <p><img width='60' class='inline' src='8526d38cbc910aced212c5894b8d9104.png'>child of the same mother</p>
-<p class='fade'>infant de sam matre,</p>
+<p class='fade'>infant de sam matre</p>
 <p><img width='155' class='inline' src='66ab148de79b83379f066f49191e5b7d.png'>celestial object</p>
-<p class='fade'>ether,</p>
+<p class='fade'>ether</p>
 <p><img width='260' class='inline' src='04f16efe29143040c6f61a0e9774249a.png'>the world is created by God</p>
-<p class='fade'>mund es creat per Deo,</p>
+<p class='fade'>mund es creat per Deo</p>
 <p><img width='117' class='inline' src='d5e3071c66ef424772d1b6dcaa8040f4.png'>the forest speaks</p>
-<p class='fade'>forest parla,</p>
+<p class='fade'>forest parla</p>
 <p><img width='49' class='inline' src='6d57443a69502dbc6383a74d6c5105cd.png'>the clock walks</p>
-<p class='fade'>horloj marcha.</p>
+<p class='fade'>horloj marcha</p>
 <p>d) Imaginary concepts</p>
 <p class='fade'>d) Significationes imaginari</p>
 <img width='471' class='inline pad' src='dbe13072b459d6cfbe2af6823dfc8147.png'>
@@ -819,33 +854,33 @@
 <p><img width='39' class='inline' src='7015440590904d38e35615ff0672d21c.png'>is, exists</p>
 <p class='fade'>es, existe</p>
 <p><img width='35' class='inline' src='ec58d8ea1da7f04c7b2bc522b6e573f9.png'>stops existing, turns itself imaginary</p>
-<p class='fade'>cessa esser, fa -se imaginari,</p>
+<p class='fade'>cessa esser, fa -se imaginari</p>
 <p><img width='39' class='inline' src='6bb61e3b7bce0931da574d19d1d82c88.png'>is not, does not exist</p>
-<p class='fade'>ne esse, ne existe, </p>
+<p class='fade'>ne esse, ne existe</p>
 <p><img width='35' class='inline' src='20f011826070657b0f0092278d65ec74.png'>turns itself [real], becomes, stops being imaginary</p>
-<p class='fade'>fa-se, deveni, -cessa esser imaginari;</p>
+<p class='fade'>fa-se, deveni, cessa esser imaginari</p>
 <p><img width='29' class='inline' src='ebd556e6dfc99dbed29675ce1c6c68e5.png'>day</p>
-<p class='fade'>die,</p>
+<p class='fade'>die</p>
 <p><img width='40' class='inline' src='89d8e2540f35c60c3390424c40892a8b.png'>day, which stops being, evening</p>
-<p class='fade'>die, quel cessa esser, -vesper, </p>
+<p class='fade'>die, quel cessa esser, vesper</p>
 <p><img width='54' class='inline' src='aeed32c34df70d18daee310d41140c6e.png'>not-day, night</p>
-<p class='fade'>ne-die, nocte,</p>
+<p class='fade'>ne-die, nocte</p>
 <p><img width='64' class='inline' src='bf03a657a54b93ea99c0a2e5d1310fbc.png'>day, which starts, night, which stops being, morning</p>
-<p class='fade'>die, quel comensa, -nocte, quel cessa esser, -matine;</p>
+<p class='fade'>die, quel comensa, nocte, quel cessa esser, matine</p>
 <p><img width='76' class='inline' src='253d83d158804d4fbb2113a044880d21.png'>friendship</p>
-<p class='fade'>amcitá,</p>
+<p class='fade'>amcitá</p>
 <p><img width='92' class='inline' src='1b3481633caa547f49a18840f3d535d4.png'>end of friendship, beginning of enmity, argument</p>
-<p class='fade'>cessation de amicitá, origina de inamicitá, -querell,</p>
+<p class='fade'>cessation de amicitá, origina de inamicitá, querell</p>
 <p><img width='105' class='inline' src='0383411e64950026f307146c7efe4ee2.png'>enmity</p>
-<p class='fade'>inamicitá,</p>
+<p class='fade'>inamicitá</p>
 <p><img width='117' class='inline' src='a055aa8f0a2b7278efccb331b400ff78.png'>end of enmity, renewal of friendship</p>
-<p class='fade'>cesation de inamicitá, renovation de amicitá,</p>
+<p class='fade'>cesation de inamicitá, renovation de amicitá</p>
 <p><img width='265' class='inline' src='9a88a9cbfa8e40d7d5ee0dfe62b21e4c.png'>end of enmity is renewal of friendship</p>
-<p class='fade'>cessation de inamicitá es renovation de amicitá.</p>
+<p class='fade'>cessation de inamicitá es renovation de amicitá</p>
 <p>Examples to translate:</p>
 <p class='fade'>Exemples por traducter:</p>
 <img width='417' class='inline pad' src='61d38238e2e8192afbf89fd68077a604.png'>
-<h2>Logarithms<span class='fade'>Logaritmation</span></h2>
+<h2 id=log>Logarithms<span class='fade'>Logaritmation</span></h2>
 <p>Logarithms express evolution. For example:</p>
 <p class='fade'>Logaritmation expresse evolution. P.e.:</p>
 <img width='378' class='inline pad' src='2b2a033d6360216078e31091f1476aab.png'>
@@ -875,7 +910,7 @@
 <p>Mixed examples</p>
 <p class='fade'>Exemples mixt.</p>
 <img width='564' class='inline pad' src='5747da47885217c7c66e86489ff4095d.png'>
-<h2>Equations<span class='fade'>Equationes</span></h2>
+<h2 id=equ>Equations<span class='fade'>Equationes</span></h2>
 <p>Equations (and inequalities) are logical judgements:</p>
 <p class='fade'>Equationes (e inegalitá) es logical judicamentes:</p>
 <img width='446' class='inline pad' src='85209c76631682b9b4623e53695d4638.png'>
@@ -895,16 +930,16 @@
 <p class='fade'>il ha constructet dom de ligne</p>
 <p><img width='176' class='inline' src='ae1faaed9e71721cd60243d4e7071976.png'>a human chops a tree of a building</p>
 <p class='fade'>homo hacca arbor de construction</p>
-<p><img width='144' class='inline' src='d8c3ff7dd36fef4131f72f8d9045331c.png'>a human chops a tree for building,</p>
+<p><img width='144' class='inline' src='d8c3ff7dd36fef4131f72f8d9045331c.png'>a human chops a tree for building</p>
 <p class='fade'>homo hacca arbor por constructer</p>
-<p><img width='326' class='inline' src='989abc2d28d49f8187b6e9c40db03a93.png'>we construct a house in a forest,</p>
+<p><img width='326' class='inline' src='989abc2d28d49f8187b6e9c40db03a93.png'>we construct a house in a forest</p>
 <p class='fade'>noi constructe dom in foreste</p>
-<p><img width='297' class='inline' src='f820c2ba85ec6c56d284e63c672b925a.png'>we construct a hoise, which is in a forest.</p>
+<p><img width='297' class='inline' src='f820c2ba85ec6c56d284e63c672b925a.png'>we construct a house, which is in a forest</p>
 <p class='fade'>noi constructe dom, qui es in foreste</p>
 <p><img width='334' class='inline' src='4d0391803f2e899cec9b7f7ec3a695a0.png'>the book you speak of, is it on the table?</p>
 <p class='fade'>parla tu del libre, que it es sur table?</p>
-<p><img width='95' class='inline' src='ef4c572f05f48b35013aa1c0e9dae6a0.png'>I ask for a book,</p>
-<p class='fade'>mi interroga per libre, </p>
+<p><img width='95' class='inline' src='ef4c572f05f48b35013aa1c0e9dae6a0.png'>I ask for a book</p>
+<p class='fade'>mi interroga per libre</p>
 <p><img width='207' class='inline' src='5740fc3a63309cabcf73059db7e9d5b9.png'>is the book on the table?</p>
 <p class='fade'>es libre sur table?</p>
 <p><img width='201' class='inline' src='c905be7609f8f4671d4f5b5972e562da.png'>yes, the book is on the table!</p>
@@ -916,16 +951,16 @@
 <p><img width='150' class='inline' src='21da27f3096cb0f11747b0200b2c55c1.png'>he/she does not speak signifies something, that he/she has spoken</p>
 <p class='fade'>il ne parla significa alquicose, qui il ha dir</p>
 <p><img width='553' class='inline' src='a1b2864df288266e2c4279d7aa86767f.png'>“if the child (of the mother) doesn’t cry, the mother (of the child) does not understand his/her wants (i.e. cries)” (Russian proverb)</p>
-<p class='fade'>"infant (de matre) ne plora, -- matre (de infant) ne comprende (i.e. plora)" (proverbe russ);</p>
-<p><img width='214' class='inline' src='6014bbc5d4a85a5e0ce5a223f8ee27d7.png'>"there is no intelligence without language, no language without intelligence" (Max Müller) </p>
-<p class='fade'>"ne es intellectu sin lingue, ne es lingue sin intellectu" (Max Müller),</p>
+<p class='fade'>"infant (de matre) ne plora, -- matre (de infant) ne comprende (i.e. plora)" (proverbe russ)</p>
+<p><img width='214' class='inline' src='6014bbc5d4a85a5e0ce5a223f8ee27d7.png'>"there is no intelligence without language, no language without intelligence" (Max Müller)</p>
+<p class='fade'>"ne es intellectu sin lingue, ne es lingue sin intellectu" (Max Müller)</p>
 <p><img width='289' class='inline' src='710d1f9aa8fb39e0e6e42ce7d5e2a755.png'>“intelligence without language and language without intelligence do not exist”</p>
 <p class='fade'>"intellectu sin lingue e. linge sin intellectu ne existe"</p>
 <p><img width='100' class='inline' src='713599df7619d54b58e38d6fd0a56322.png'>intelligence is language, truth</p>
 <p class='fade'>intellectu es lingue, logos</p>
 <p>Etc.</p>
 <p class='fade'>E c.</p>
-<h2>Conclusion<span class='fade'>Conclusion</span></h2>
+<h2 id=con>Conclusion<span class='fade'>Conclusion</span></h2>
 <p>Gallileo tells us:</p>
 <p class='fade'>Che Gallilei noi lee:</p>
 <p>"Philosophy is written in a great book, which stands continually open for all and everyone (I mean the universe),</p>
@@ -936,7 +971,7 @@
 <p class='fade'>E it es scrit in lingue matematical, e su signes triángules, circules e altri matematical figures."</p>
 <p>The present brochure illustratively demonstrates the truth of these words.</p>
 <p class='fade'>Li veritá de ti paroles demonstra illustrativmen li present brochur.</p>
-<h2>Some examples.<span class='fade'>Einige Beispiele.</span><span class="fade">Quelques exemples.</span><span class="fade">Некоторые примеры.</span><span class="fade">Mōned näitused.</span></h2>
+<h2 id=som>Some examples<span class='fade'>Einige Beispiele</span><span class="fade">Quelques exemples</span><span class="fade">Некоторые примеры</span><span class="fade">Mōned näitused</span></h2>
 <p><img width='9' class='inline' src='8b0a44048f58988b486bdd0d245b22a8.png'>person</p>
 <p class='fade'>Mensch</p>
 <p class='fade'>homme</p>
