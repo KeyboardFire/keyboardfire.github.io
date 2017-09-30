@@ -1,7 +1,9 @@
 var data = [
     { id: 'school', name: 'school starts', happens: 1503464400 },
     { id: 'czech', name: 'Czech Duolingo', happens: 1504242000 },
-    { id: 'korean', name: 'Korean Duolingo', happens: 1504760400 }
+    { id: 'korean', name: 'Korean Duolingo', happens: 1504760400 },
+    { id: 'open', name: 'NACLO open round', happens: 1516860000 },
+    { id: 'inv', name: 'NACLO invitational round', happens: 1520488800 }
 ];
 
 window.addEventListener('load', function() {
