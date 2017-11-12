@@ -3,7 +3,7 @@ var data = [
     { id: 'czech',  name: 'Czech Duolingo',           happens: 1504242000 },
     { id: 'korean', name: 'Korean Duolingo',          happens: 1504760400 },
     { id: 'gci',    name: 'GCI',                      happens: 1511848800 },
-    { id: 'usaco1', name: 'USACO 1',                  happens: 1513576800 },
+    { id: 'usaco1', name: 'USACO 1',                  happens: 1513317600 },
     { id: 'wint',   name: 'winter break',             happens: 1513836000 },
     { id: 'usaco2', name: 'USACO 2',                  happens: 1516341600 },
     { id: 'open',   name: 'NACLO open round',         happens: 1516860000 },
