@@ -5,6 +5,7 @@
 // @include     https://sjs.myschoolapp.com/*
 // @version     1
 // @grant       none
+// @require     https://code.jquery.com/jquery-3.3.1.min.js
 // ==/UserScript==
 
 /*
@@ -24,12 +25,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-function wait() {
-    if (window.$) run();
-    else setTimeout(run, 50);
-}
-wait();
-
 function run() {
     $(window).on('load hashchange', function() {
         if (location.hash == '#studentmyday/assignment-center') {
@@ -41,6 +36,7 @@ function run() {
         }
     });
 }
+run();
 
 function fixAssignmentStatus(tries) {
     if (!$('.assignment-status-update').length) {
@@ -52,7 +48,10 @@ function fixAssignmentStatus(tries) {
 
     var sortDue = $('.assignment-table-sort[data-sort="date_due"]');
     if (sortDue.hasClass('muted')) {
-        sortDue.click();
+        var ev = document.createEvent('MouseEvents');
+        ev.initEvent('click', true, true);
+        sortDue[0].dispatchEvent(ev);
+        //sortDue.click();
         fixAssignmentStatus(0);
         return;
     }
@@ -65,10 +64,14 @@ function fixAssignmentStatus(tries) {
                 .click(function() {
                     $.ajax({
                         type: 'POST',
-                        url: '/api/assignment2/assignmentstatusupdate?format=json&assigngmentIndexId=' + index + '&assignmentStatus=' + (i-1),
+                        url: '/api/assignment2/assignmentstatusupdate?format=json&assignmentIndexId=' + index + '&assignmentStatus=' + (i-1),
+                        beforeSend: function(req) {
+                            req.setRequestHeader('RequestVerificationToken', $('#__AjaxAntiForgery input').val());
+                        },
                         data: JSON.stringify({
                             assignmentIndexId: index,
-                            assignmentStatus: i - 1
+                            assignmentStatus: i - 1,
+                            userTaskInd: false
                         }),
                         contentType: 'application/json',
                         success: function() {
